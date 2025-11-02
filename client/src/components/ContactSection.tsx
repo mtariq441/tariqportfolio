@@ -58,8 +58,16 @@ export function ContactSection() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Card className="p-8">
-              <form onSubmit={handleSubmit}>
+            <Card className="p-8 relative overflow-hidden">
+              <motion.div
+                className="absolute top-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"
+                animate={{ 
+                  x: [0, 50, 0],
+                  y: [0, 30, 0],
+                }}
+                transition={{ duration: 8, repeat: Infinity }}
+              />
+              <form onSubmit={handleSubmit} className="relative z-10">
                 <div className="space-y-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-2">

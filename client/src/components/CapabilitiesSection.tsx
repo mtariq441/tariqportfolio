@@ -73,14 +73,22 @@ export function CapabilitiesSection() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <Card className="p-6 text-center hover-elevate active-elevate-2" data-testid={`card-stat-${index}`}>
-                <stat.icon className="h-8 w-8 text-primary mx-auto mb-4" />
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+              <Card className="p-6 text-center hover-elevate active-elevate-2 relative overflow-hidden group" data-testid={`card-stat-${index}`}>
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+                />
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  className="absolute -top-10 -right-10 w-32 h-32 bg-primary/5 rounded-full blur-2xl"
+                />
+                <stat.icon className="h-8 w-8 text-primary mx-auto mb-4 relative z-10" />
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2 relative z-10">
                   {stat.prefix}
                   <CountUp end={stat.value} />
                   {stat.suffix}
                 </div>
-                <div className="text-sm text-muted-foreground">
+                <div className="text-sm text-muted-foreground relative z-10">
                   {stat.label}
                 </div>
               </Card>
@@ -102,13 +110,21 @@ export function CapabilitiesSection() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                className="flex flex-col items-center gap-2 group"
+
+                className="flex flex-col items-center gap-2 group cursor-pointer"
                 data-testid={`tech-${name.toLowerCase()}`}
+                whileHover={{ y: -8 }}
               >
-                <div className="p-4 rounded-lg bg-card border border-card-border hover-elevate active-elevate-2 transition-all">
-                  <Icon className="h-12 w-12 text-foreground group-hover:text-primary transition-colors" />
-                </div>
-                <span className="text-sm text-muted-foreground">{name}</span>
+                <motion.div 
+                  className="p-4 rounded-lg bg-card border border-card-border hover-elevate active-elevate-2 transition-all relative overflow-hidden"
+                  whileHover={{ scale: 1.1 }}
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"
+                  />
+                  <Icon className="h-12 w-12 text-foreground group-hover:text-primary transition-colors relative z-10" />
+                </motion.div>
+                <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">{name}</span>
               </motion.div>
             ))}
           </div>

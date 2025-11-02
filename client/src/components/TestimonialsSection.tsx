@@ -71,11 +71,31 @@ export function TestimonialsSection() {
             >
               {testimonials.map((testimonial, index) => (
                 <div key={index} className="w-full flex-shrink-0 px-4">
-                  <Card className="p-8 hover-elevate" data-testid={`card-testimonial-${index}`}>
-                    <CardContent className="p-0">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: activeIndex === index ? 1 : 0.5, scale: activeIndex === index ? 1 : 0.95 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <Card className="p-8 hover-elevate relative overflow-hidden group" data-testid={`card-testimonial-${index}`}>
+                      <motion.div
+                        className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl"
+                        animate={{ 
+                          x: [0, 20, 0],
+                          y: [0, -20, 0],
+                        }}
+                        transition={{ duration: 5, repeat: Infinity }}
+                      />
+                      <CardContent className="p-0 relative z-10">
                       <div className="flex gap-1 mb-6">
                         {Array.from({ length: testimonial.rating }).map((_, i) => (
-                          <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+                          <motion.div
+                            key={i}
+                            initial={{ opacity: 0, scale: 0 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: i * 0.1 }}
+                          >
+                            <Star className="h-5 w-5 fill-primary text-primary" />
+                          </motion.div>
                         ))}
                       </div>
                       
@@ -96,6 +116,7 @@ export function TestimonialsSection() {
                       </div>
                     </CardContent>
                   </Card>
+                  </motion.div>
                 </div>
               ))}
             </motion.div>

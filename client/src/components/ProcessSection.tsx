@@ -67,27 +67,53 @@ export function ProcessSection() {
               >
                 <div className="flex-1" />
                 
-                <div className="relative flex-shrink-0">
-                  <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-xl">
-                    {step.number}
-                  </div>
-                  <div className="absolute -z-10 inset-0 bg-primary/20 rounded-full blur-xl" />
-                </div>
-
-                <Card
-                  className="flex-1 p-6 hover-elevate active-elevate-2"
-                  data-testid={`card-step-${index}`}
+                <motion.div 
+                  className="relative flex-shrink-0"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2, type: "spring", stiffness: 200 }}
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-primary/10">
-                      <step.icon className="h-6 w-6 text-primary" />
+                  <motion.div 
+                    className="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-xl relative z-10"
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    {step.number}
+                  </motion.div>
+                  <motion.div 
+                    className="absolute -z-10 inset-0 bg-primary/20 rounded-full blur-xl"
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  />
+                </motion.div>
+
+                <motion.div
+                  className="flex-1"
+                  whileHover={{ x: index % 2 === 0 ? 10 : -10 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <Card
+                    className="p-6 hover-elevate active-elevate-2 relative overflow-hidden group"
+                    data-testid={`card-step-${index}`}
+                  >
+                    <motion.div
+                      className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/50 to-transparent scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"
+                    />
+                    <div className="flex items-start gap-4">
+                      <motion.div 
+                        className="p-3 rounded-lg bg-primary/10 relative"
+                        whileHover={{ rotate: [0, -10, 10, -10, 0] }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        <step.icon className="h-6 w-6 text-primary" />
+                      </motion.div>
+                      <div>
+                        <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+                        <p className="text-muted-foreground">{step.description}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                      <p className="text-muted-foreground">{step.description}</p>
-                    </div>
-                  </div>
-                </Card>
+                  </Card>
+                </motion.div>
               </motion.div>
             ))}
           </div>
