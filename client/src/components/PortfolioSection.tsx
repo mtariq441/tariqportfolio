@@ -6,6 +6,9 @@ import { ExternalLink } from "lucide-react";
 import ecommerceProject from "@assets/generated_images/E-commerce_portfolio_project_fd27f7bd.png";
 import realEstateProject from "@assets/generated_images/Real_estate_portfolio_project_9b5a9e94.png";
 import agencyProject from "@assets/generated_images/Agency_portfolio_project_b598085e.png";
+import saasDashboard from "@assets/generated_images/SaaS_Dashboard_Analytics_Interface_5aa11254.png";
+import healthcareBooking from "@assets/generated_images/Healthcare_Appointment_Booking_System_c3225af0.png";
+import foodDelivery from "@assets/generated_images/Food_Delivery_Platform_Interface_e10a46bf.png";
 
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -133,21 +136,21 @@ const projects = [
     title: "SaaS Dashboard Application",
     category: "SaaS",
     description: "Full-featured analytics dashboard with real-time data visualization and reporting",
-    image: ecommerceProject,
+    image: saasDashboard,
     tags: ["React", "D3.js", "PostgreSQL", "Express"],
   },
   {
     title: "Healthcare Booking System",
     category: "Healthcare",
     description: "Comprehensive appointment scheduling system with patient management features",
-    image: realEstateProject,
+    image: healthcareBooking,
     tags: ["Next.js", "Prisma", "Tailwind", "Stripe"],
   },
   {
     title: "Food Delivery Platform",
     category: "Marketplace",
     description: "End-to-end delivery platform with real-time tracking and payment integration",
-    image: agencyProject,
+    image: foodDelivery,
     tags: ["React Native", "Node.js", "MongoDB", "Socket.io"],
   },
 ];
