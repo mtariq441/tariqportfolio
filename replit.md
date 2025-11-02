@@ -6,6 +6,13 @@ This is a premium portfolio website for Muhammad Tariq, a Webflow developer show
 
 ## Recent Changes (November 2, 2025)
 
+**Calendly Integration:**
+- Added Calendly meeting scheduler to the Contact section
+- Implemented tabbed interface allowing users to choose between "Send Message" and "Schedule Meeting"
+- Calendly widget loads dynamically via official Calendly embed script
+- Users can now book 30-minute meetings directly through the portfolio: https://calendly.com/muhammadtariqw33/30min
+- Clean UX with Radix UI Tabs component for seamless switching between contact methods
+
 **Portfolio Section Update:**
 - Replaced placeholder projects with 10 real client projects
 - All projects now include actual screenshots, live URLs, and detailed descriptions
