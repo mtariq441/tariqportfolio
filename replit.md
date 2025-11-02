@@ -20,22 +20,14 @@ This is a premium portfolio website for Muhammad Tariq, a Webflow developer show
 - Hero background image fades in smoothly without secondary loading overlay
 - Eliminated potential loading screen flicker and redundant animations
 
-**Full-Stack Meeting Scheduling System:**
-- Replaced Calendly with custom-built meeting scheduler
-- Implemented complete backend infrastructure:
-  - RESTful API with Express routes (GET, POST, DELETE meetings)
-  - Zod schema validation with strict regex patterns for date/time
-  - In-memory storage system with CRUD operations
-  - Conflict detection to prevent double-booking
-- Frontend features:
-  - Two-column layout: contact form on left, meeting scheduler on right
-  - Interactive calendar with date selection
-  - Real-time availability checking - only shows open time slots
-  - Attendee information form (name, email, notes)
-  - Timezone selector with 6 timezone options
-  - Confirmation screen after successful booking
-- Validation ensures data integrity with proper date (YYYY-MM-DD) and time (12-hour format) validation
-- React Query integration for optimistic updates and cache invalidation
+**Calendly Meeting Scheduler Integration:**
+- Integrated actual Calendly account (https://calendly.com/muhammadtariqw33/30min) into Contact section
+- Two-column layout: contact form on left, Calendly scheduler on right
+- Calendly widget loads dynamically via official embed script
+- Users can book 30-minute meetings directly with real-time availability
+- Custom styling with brand color (#c6ff00) matching the site theme
+- GDPR banner hidden for cleaner interface
+- Professional scheduling experience with automatic confirmation emails
 
 **Portfolio Section Update:**
 - Replaced placeholder projects with 10 real client projects
@@ -110,10 +102,7 @@ Preferred communication style: Simple, everyday language.
 
 **Server Setup:**
 - **Node.js** runtime with ESM modules
-- **Express** server with JSON middleware
-- **Vite dev server** integrated in middleware mode (port 5000)
-- RESTful API routes for meeting scheduling
-- In-memory storage for meeting data
+- **Vite dev server** for development (port 5000)
 - Static file serving from dist/public in production
 
 **Build Process:**
@@ -122,32 +111,13 @@ Preferred communication style: Simple, everyday language.
 - Development: tsx with hot module replacement via Vite
 - Production: Pre-bundled server with static assets
 
-### Data Layer
+### Data Layer (Available)
 
-**Schema Definitions:**
-- Zod schemas in `shared/schema.ts` for type-safe data validation
-- Meeting schema with strict validation:
-  - Date format: YYYY-MM-DD with regex validation
-  - Time format: 12-hour with AM/PM (e.g., "9:30 AM")
-  - Required fields: attendeeName, attendeeEmail, date, time, timezone
-  - Optional notes field
-
-**Storage System:**
-- In-memory storage implementation (`MemStorage` class)
-- CRUD operations: create, read, filter by date, delete
-- Interface-based design for easy migration to persistent storage
-- Conflict detection logic to prevent double-booking
-
-**API Endpoints:**
-- `GET /api/meetings` - Retrieve all meetings
-- `GET /api/meetings/:date` - Get meetings for specific date
-- `POST /api/meetings` - Schedule new meeting with validation
-- `DELETE /api/meetings/:id` - Cancel a meeting
-
-**ORM Configuration (Available):**
+**ORM Configuration:**
 - **Drizzle ORM** configured for PostgreSQL/Neon database
 - Migration support via drizzle-kit push command
 - Connection via @neondatabase/serverless for edge compatibility
+- Ready for future database-driven features
 
 ### Routing Architecture
 
