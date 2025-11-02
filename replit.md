@@ -4,6 +4,30 @@
 
 This is a premium portfolio website for Muhammad Tariq, a Webflow developer showcasing professional expertise, completed projects, and client success stories. The site features a modern dark theme with neon lime green accents (#C6FF00), glassmorphic UI elements, and smooth animations powered by Framer Motion. The application is built as a single-page application (SPA) with multiple sections including hero, capabilities, portfolio, process timeline, testimonials, blog, and contact.
 
+## Recent Changes (November 2, 2025)
+
+**Portfolio Section Update:**
+- Replaced placeholder projects with 10 real client projects
+- All projects now include actual screenshots, live URLs, and detailed descriptions
+- Project cards are clickable and open project websites in new tabs
+- Featured projects include:
+  1. Kate Bagoy - Freelance Product Designer Portfolio
+  2. 5Four Digital - Full-Service Branding & Web Design Agency
+  3. HeyMara - E-Commerce Platform (Shopify Plus Partner)
+  4. BH Field Behavioral Health - Bilingual ABA Therapy Practice
+  5. Evvvolution - Employee Testimonial Marketing Platform
+  6. DealerVault - Automotive Dealership SaaS Platform
+  7. Rippleshot - AI-Powered Fraud Intelligence Platform
+  8. Record Recharge - Customer Data Verification Platform
+  9. Atriz - Modern Recruitment Platform
+  10. PFP Clinic Gym - Professional Fitness & Personal Training
+
+**Technical Improvements:**
+- Fixed LoadingScreen animation bug that prevented proper exit transitions
+- Optimized loading experience with 300ms delay for smooth fade-out
+- All project images stored in `attached_assets/` and imported via `@assets` alias
+- Enhanced type safety with TypeScript inference from projects array
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
