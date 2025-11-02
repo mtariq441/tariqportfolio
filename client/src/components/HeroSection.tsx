@@ -185,14 +185,14 @@ export function HeroSection() {
         ))}
       </div>
       
-      <div className="relative z-10 max-w-5xl mx-auto px-6 py-20 text-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-20 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <motion.p
-            className="text-primary font-medium mb-4 text-lg"
+            className="text-primary font-medium mb-3 sm:mb-4 text-base sm:text-lg"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -201,7 +201,7 @@ export function HeroSection() {
           </motion.p>
           
           <motion.h1
-            className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
@@ -226,7 +226,7 @@ export function HeroSection() {
           </motion.h1>
           
           <motion.p
-            className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-6 sm:mb-8 max-w-3xl mx-auto px-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
@@ -235,15 +235,15 @@ export function HeroSection() {
           </motion.p>
           
           <motion.div
-            className="flex flex-wrap gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
           >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
               <Button
                 size="lg"
-                className="text-base relative overflow-hidden group"
+                className="text-sm sm:text-base relative overflow-hidden group w-full sm:w-auto"
                 data-testid="button-hire-me"
                 onClick={() => {
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
@@ -254,22 +254,22 @@ export function HeroSection() {
                   animate={{ x: ["-200%", "200%"] }}
                   transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                 />
-                <Briefcase className="mr-2 h-5 w-5 relative z-10" />
+                <Briefcase className="mr-2 h-4 w-4 sm:h-5 sm:w-5 relative z-10" />
                 <span className="relative z-10">Hire Me</span>
               </Button>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
               <Button
                 size="lg"
                 variant="outline"
-                className="text-base backdrop-blur-md bg-background/10 relative group overflow-hidden"
+                className="text-sm sm:text-base backdrop-blur-md bg-background/10 relative group overflow-hidden w-full sm:w-auto"
                 data-testid="button-view-work"
                 onClick={() => {
                   document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
                 <span className="relative z-10">View My Work</span>
-                <ArrowRight className="ml-2 h-5 w-5 relative z-10 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 relative z-10 group-hover:translate-x-1 transition-transform" />
               </Button>
             </motion.div>
           </motion.div>

@@ -57,23 +57,23 @@ export function CapabilitiesSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-20 px-6" ref={ref}>
+    <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
             Proven Track Record
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
             Delivering exceptional results for clients worldwide
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-10 sm:mb-12 md:mb-16">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -81,7 +81,7 @@ export function CapabilitiesSection() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <Card className="p-6 text-center hover-elevate active-elevate-2 relative overflow-hidden group" data-testid={`card-stat-${index}`}>
+              <Card className="p-4 sm:p-6 text-center hover-elevate active-elevate-2 relative overflow-hidden group" data-testid={`card-stat-${index}`}>
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
                 />
@@ -90,11 +90,11 @@ export function CapabilitiesSection() {
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                   className="absolute -top-10 -right-10 w-32 h-32 bg-primary/5 rounded-full blur-2xl"
                 />
-                <stat.icon className="h-8 w-8 text-primary mx-auto mb-4 relative z-10" />
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2 relative z-10">
+                <stat.icon className="h-6 w-6 sm:h-8 sm:w-8 text-primary mx-auto mb-2 sm:mb-4 relative z-10" />
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-1 sm:mb-2 relative z-10">
                   <CountUp end={stat.value} />
                 </div>
-                <div className="text-sm text-muted-foreground relative z-10">
+                <div className="text-xs sm:text-sm text-muted-foreground relative z-10">
                   {stat.label}
                 </div>
               </Card>
@@ -108,8 +108,8 @@ export function CapabilitiesSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center"
         >
-          <h3 className="text-2xl font-semibold mb-8">Technologies I Master</h3>
-          <div className="flex justify-center gap-8 flex-wrap">
+          <h3 className="text-xl sm:text-2xl font-semibold mb-6 sm:mb-8 px-4">Technologies I Master</h3>
+          <div className="flex justify-center gap-4 sm:gap-6 md:gap-8 flex-wrap px-4">
             {technologies.map(({ Icon, name }, index) => (
               <motion.div
                 key={name}

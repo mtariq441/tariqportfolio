@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 import kateBagoy from "@assets/kate-bagoy.png";
 import fiveFourDigital from "@assets/5four-digital.png";
 import heyMara from "@assets/heymara.png";
@@ -17,13 +18,14 @@ import pfpClinic from "@assets/pfp-clinic.png";
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
   const [isHovered, setIsHovered] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const rotateX = useSpring(useTransform(y, [-100, 100], [10, -10]), { stiffness: 300, damping: 30 });
   const rotateY = useSpring(useTransform(x, [-100, 100], [-10, 10]), { stiffness: 300, damping: 30 });
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
+    if (isMobile || !cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
@@ -43,28 +45,29 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6, delay: index * 0.15 }}
-      style={{ 
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      style={!isMobile ? { 
         perspective: 1000,
         transformStyle: "preserve-3d",
-      }}
+      } : {}}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
     >
       <motion.div
-        style={{ rotateX, rotateY }}
-        whileHover={{ scale: 1.03 }}
+        style={!isMobile ? { rotateX, rotateY } : {}}
+        whileHover={!isMobile ? { scale: 1.03 } : {}}
+        whileTap={{ scale: 0.98 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
         <Card
-          className="group overflow-hidden border-2 hover-elevate active-elevate-2 cursor-pointer relative"
+          className="group overflow-hidden border-2 hover-elevate active-elevate-2 cursor-pointer relative h-full"
           data-testid={`card-project-${index}`}
           onClick={() => window.open(project.url, '_blank')}
         >
           <motion.div
             className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
-            animate={isHovered ? { 
+            animate={isHovered && !isMobile ? { 
               background: [
                 "radial-gradient(circle at 0% 0%, rgba(198, 255, 0, 0.1) 0%, transparent 50%)",
                 "radial-gradient(circle at 100% 100%, rgba(198, 255, 0, 0.1) 0%, transparent 50%)",
@@ -78,29 +81,29 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
               src={project.image}
               alt={project.title}
               className="w-full h-full object-cover"
-              whileHover={{ scale: 1.1 }}
+              whileHover={!isMobile ? { scale: 1.1 } : {}}
               transition={{ duration: 0.6, ease: "easeOut" }}
             />
             <motion.div 
-              className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-6"
+              className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-4 sm:p-6"
               initial={{ opacity: 0 }}
               whileHover={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
             >
-              <ExternalLink className="h-6 w-6 text-primary" />
+              <ExternalLink className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
             </motion.div>
           </div>
-          <CardContent className="p-6">
-            <Badge className="mb-3" data-testid={`badge-category-${index}`}>
+          <CardContent className="p-4 sm:p-6">
+            <Badge className="mb-2 sm:mb-3 text-xs" data-testid={`badge-category-${index}`}>
               {project.category}
             </Badge>
-            <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+            <h3 className="text-lg sm:text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
               {project.title}
             </h3>
-            <p className="text-muted-foreground mb-4 text-sm">
+            <p className="text-muted-foreground mb-3 sm:mb-4 text-sm">
               {project.description}
             </p>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2">
               {project.tags.map((tag) => (
                 <Badge key={tag} variant="outline" className="text-xs">
                   {tag}
@@ -177,23 +180,23 @@ const projects = [
     description: "Customer data verification platform helping businesses boost retention and enhance profit margins",
     image: recordRecharge,
     url: "https://www.authenticom.com/product/recordrecharge",
-    tags: ["Data Management", "Customer Retention", "SaaS", "Analytics"],
+    tags: ["Data Verification", "SaaS", "Customer Retention", "Analytics"],
   },
   {
-    title: "Atriz Hiring Platform",
+    title: "Atriz",
     category: "Recruitment",
-    description: "Modern recruitment platform connecting talented professionals with innovative companies",
+    description: "Modern recruitment platform streamlining hiring processes for growing companies",
     image: atriz,
-    url: "https://www.hireatriz.com/",
-    tags: ["Recruitment", "HR Tech", "Hiring", "Platform"],
+    url: "https://www.atriz.com/",
+    tags: ["HR Tech", "Recruitment", "ATS", "Hiring"],
   },
   {
     title: "PFP Clinic Gym",
     category: "Fitness",
-    description: "Professional fitness and personal training clinic offering physio and customized workout programs",
+    description: "Professional fitness and personal training center focused on health and performance optimization",
     image: pfpClinic,
-    url: "https://www.pfpclinicgym.com/",
-    tags: ["Fitness", "Personal Training", "Healthcare", "Wellness"],
+    url: "https://www.pfpclinic.com/",
+    tags: ["Fitness", "Personal Training", "Health", "Wellness"],
   },
 ];
 
@@ -202,23 +205,23 @@ export function PortfolioSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="portfolio" className="py-20 px-6" ref={ref}>
+    <section id="portfolio" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
             Featured Work
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
             A selection of projects that showcase my expertise
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {projects.map((project, index) => (
             <ProjectCard key={project.title} project={project} index={index} />
           ))}
