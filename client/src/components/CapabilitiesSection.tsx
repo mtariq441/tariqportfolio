@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Award, Briefcase, TrendingUp, Users } from "lucide-react";
-import { SiReact, SiNodedotjs, SiTypescript, SiPostgresql, SiMongodb, SiTailwindcss, SiNextdotjs, SiExpress, SiWebflow, SiFigma } from "react-icons/si";
+import { SiReact, SiNodedotjs, SiTypescript, SiPostgresql, SiMongodb, SiTailwindcss, SiNextdotjs, SiExpress, SiWebflow, SiFigma, SiJavascript, SiGithub } from "react-icons/si";
 
 function CountUp({ end, duration = 2 }: { end: number; duration?: number }) {
   const [count, setCount] = useState(0);
@@ -42,12 +42,14 @@ const technologies = [
   { Icon: SiFigma, name: "Figma" },
   { Icon: SiReact, name: "React" },
   { Icon: SiNodedotjs, name: "Node.js" },
+  { Icon: SiJavascript, name: "JavaScript" },
   { Icon: SiTypescript, name: "TypeScript" },
   { Icon: SiNextdotjs, name: "Next.js" },
   { Icon: SiPostgresql, name: "PostgreSQL" },
   { Icon: SiMongodb, name: "MongoDB" },
   { Icon: SiTailwindcss, name: "Tailwind" },
   { Icon: SiExpress, name: "Express" },
+  { Icon: SiGithub, name: "GitHub" },
 ];
 
 export function CapabilitiesSection() {
