@@ -6,6 +6,12 @@ This is a premium portfolio website for Muhammad Tariq, a Webflow developer show
 
 ## Recent Changes (November 2, 2025)
 
+**Calendly Widget Overflow Fix:**
+- Fixed horizontal overflow in desktop/horizontal view for Calendly widget
+- Set fixed height (700px) to prevent overflow and ensure consistent display
+- Widget now perfectly fits within its container without any horizontal scrolling
+- Maintains responsive behavior across all devices
+
 **Mobile Responsive Design Improvements:**
 - Made entire portfolio fully responsive across all devices (mobile, tablet, desktop)
 - **Portfolio Section:**

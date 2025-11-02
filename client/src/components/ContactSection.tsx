@@ -148,11 +148,11 @@ export function ContactSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="max-w-4xl mx-auto"
           >
-            <Card className="p-0 overflow-hidden">
+            <Card className="p-0 overflow-hidden border-2">
               <div 
-                className="calendly-inline-widget w-full" 
+                className="calendly-inline-widget" 
                 data-url="https://calendly.com/muhammadtariqw33/30min?hide_gdpr_banner=1&primary_color=c6ff00"
-                style={{ minHeight: '630px', height: '100%' }}
+                style={{ minHeight: '700px', height: '700px', width: '100%' }}
                 data-testid="calendly-widget"
               />
             </Card>
