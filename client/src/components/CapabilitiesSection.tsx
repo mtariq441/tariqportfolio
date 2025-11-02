@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Award, Briefcase, TrendingUp, Users } from "lucide-react";
-import { SiWebflow, SiReact, SiFigma, SiNotion } from "react-icons/si";
+import { SiReact, SiNodedotjs, SiTypescript, SiPostgresql, SiMongodb, SiTailwindcss, SiNextdotjs, SiExpress } from "react-icons/si";
 
 function CountUp({ end, duration = 2 }: { end: number; duration?: number }) {
   const [count, setCount] = useState(0);
@@ -31,17 +31,21 @@ function CountUp({ end, duration = 2 }: { end: number; duration?: number }) {
 }
 
 const stats = [
-  { icon: Briefcase, label: "Projects Completed", value: 157 },
-  { icon: TrendingUp, label: "Client Growth", value: 27, prefix: "$", suffix: "M+" },
-  { icon: Award, label: "Years Experience", value: 6 },
-  { icon: Users, label: "Happy Clients", value: 89 },
+  { icon: Briefcase, label: "Projects Completed", value: 150 },
+  { icon: TrendingUp, label: "Code Commits", value: 5000 },
+  { icon: Award, label: "Years Experience", value: 5 },
+  { icon: Users, label: "Happy Clients", value: 80 },
 ];
 
 const technologies = [
-  { Icon: SiWebflow, name: "Webflow" },
   { Icon: SiReact, name: "React" },
-  { Icon: SiFigma, name: "Figma" },
-  { Icon: SiNotion, name: "Notion" },
+  { Icon: SiNodedotjs, name: "Node.js" },
+  { Icon: SiTypescript, name: "TypeScript" },
+  { Icon: SiNextdotjs, name: "Next.js" },
+  { Icon: SiPostgresql, name: "PostgreSQL" },
+  { Icon: SiMongodb, name: "MongoDB" },
+  { Icon: SiTailwindcss, name: "Tailwind" },
+  { Icon: SiExpress, name: "Express" },
 ];
 
 export function CapabilitiesSection() {
@@ -84,9 +88,7 @@ export function CapabilitiesSection() {
                 />
                 <stat.icon className="h-8 w-8 text-primary mx-auto mb-4 relative z-10" />
                 <div className="text-3xl md:text-4xl font-bold text-primary mb-2 relative z-10">
-                  {stat.prefix}
                   <CountUp end={stat.value} />
-                  {stat.suffix}
                 </div>
                 <div className="text-sm text-muted-foreground relative z-10">
                   {stat.label}
