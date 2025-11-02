@@ -1,22 +1,99 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Briefcase } from "lucide-react";
 import heroBackground from "@assets/generated_images/Hero_background_tech_workspace_5838e7bb.png";
 import { useEffect, useState } from "react";
 
+const GeometricShape = ({ index, mouseX, mouseY }: { index: number; mouseX: any; mouseY: any }) => {
+  const positions = [
+    { left: '10%', top: '20%' },
+    { right: '15%', top: '15%' },
+    { left: '15%', bottom: '25%' },
+    { right: '20%', bottom: '30%' },
+    { left: '50%', top: '10%' },
+  ];
+  
+  const position = positions[index % positions.length];
+  const size = 120 + (index * 30);
+  
+  const xOffset = useTransform(mouseX, [0, window.innerWidth], [-30, 30]);
+  const yOffset = useTransform(mouseY, [0, window.innerHeight], [-30, 30]);
+  
+  return (
+    <motion.div
+      className="absolute"
+      style={{
+        ...position,
+        width: size,
+        height: size,
+        x: xOffset,
+        y: yOffset,
+      }}
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{ 
+        opacity: [0.15, 0.25, 0.15],
+        scale: 1,
+        rotateX: [0, 360],
+        rotateY: [0, 360],
+        rotateZ: [0, 180],
+      }}
+      transition={{
+        opacity: { duration: 3, repeat: Infinity, delay: index * 0.5 },
+        rotateX: { duration: 20 + index * 5, repeat: Infinity, ease: "linear" },
+        rotateY: { duration: 15 + index * 3, repeat: Infinity, ease: "linear" },
+        rotateZ: { duration: 25 + index * 4, repeat: Infinity, ease: "linear" },
+        scale: { duration: 0.6, delay: index * 0.2 }
+      }}
+    >
+      <div className="w-full h-full border-2 border-primary/40 relative"
+        style={{
+          transformStyle: 'preserve-3d',
+          transform: 'translateZ(0)',
+        }}
+      >
+        <div className="absolute inset-0 border-2 border-primary/30"
+          style={{ transform: `translateZ(${size/2}px)` }}
+        />
+        <div className="absolute inset-0 border-2 border-primary/30"
+          style={{ transform: `translateZ(-${size/2}px)` }}
+        />
+        <div className="absolute inset-0 border-2 border-primary/30"
+          style={{ transform: `rotateY(90deg) translateZ(${size/2}px)` }}
+        />
+        <div className="absolute inset-0 border-2 border-primary/30"
+          style={{ transform: `rotateY(90deg) translateZ(-${size/2}px)` }}
+        />
+        <div className="absolute inset-0 border-2 border-primary/30"
+          style={{ transform: `rotateX(90deg) translateZ(${size/2}px)` }}
+        />
+        <div className="absolute inset-0 border-2 border-primary/30"
+          style={{ transform: `rotateX(90deg) translateZ(-${size/2}px)` }}
+        />
+      </div>
+    </motion.div>
+  );
+};
+
 export function HeroSection() {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  }, [mouseX, mouseY]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section 
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{ perspective: '1000px' }}
+    >
       <div
         className="absolute inset-0 bg-cover bg-center transition-transform duration-[3000ms] ease-out"
         style={{ 
@@ -25,6 +102,12 @@ export function HeroSection() {
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-background" />
+      
+      <div className="absolute inset-0 overflow-hidden" style={{ transformStyle: 'preserve-3d' }}>
+        {Array.from({ length: 5 }).map((_, i) => (
+          <GeometricShape key={`shape-${i}`} index={i} mouseX={mouseX} mouseY={mouseY} />
+        ))}
+      </div>
       
       <div className="absolute inset-0 overflow-hidden">
         {Array.from({ length: 20 }).map((_, i) => (
