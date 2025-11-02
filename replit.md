@@ -6,6 +6,13 @@ This is a premium portfolio website for Muhammad Tariq, a Webflow developer show
 
 ## Recent Changes (November 2, 2025)
 
+**Loading Screen Optimization:**
+- Removed duplicate loading screen from HeroSection component
+- Application now shows only one clean loading screen on initial page load
+- Improved user experience with smooth, single-phase loading transition
+- Hero background image fades in smoothly without secondary loading overlay
+- Eliminated potential loading screen flicker and redundant animations
+
 **Calendly Integration:**
 - Added Calendly meeting scheduler to the Contact section
 - Implemented tabbed interface allowing users to choose between "Send Message" and "Schedule Meeting"
