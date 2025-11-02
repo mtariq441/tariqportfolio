@@ -1,10 +1,11 @@
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MessageSquare, Send } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Mail, MessageSquare, Send, Calendar } from "lucide-react";
 import { SiFiverr, SiUpwork, SiLinkedin } from "react-icons/si";
 import { useToast } from "@/hooks/use-toast";
 
@@ -24,6 +25,17 @@ export function ContactSection() {
     email: "",
     message: "",
   });
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -67,55 +79,81 @@ export function ContactSection() {
                 }}
                 transition={{ duration: 8, repeat: Infinity }}
               />
-              <form onSubmit={handleSubmit} className="relative z-10">
-                <div className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">
-                      Name
-                    </label>
-                    <Input
-                      id="name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="Your name"
-                      required
-                      data-testid="input-name"
+              <div className="relative z-10">
+                <Tabs defaultValue="message" className="w-full">
+                  <TabsList className="grid w-full grid-cols-2 mb-6">
+                    <TabsTrigger value="message" data-testid="tab-message">
+                      <Send className="mr-2 h-4 w-4" />
+                      Send Message
+                    </TabsTrigger>
+                    <TabsTrigger value="schedule" data-testid="tab-schedule">
+                      <Calendar className="mr-2 h-4 w-4" />
+                      Schedule Meeting
+                    </TabsTrigger>
+                  </TabsList>
+                  
+                  <TabsContent value="message">
+                    <form onSubmit={handleSubmit}>
+                      <div className="space-y-6">
+                        <div>
+                          <label htmlFor="name" className="block text-sm font-medium mb-2">
+                            Name
+                          </label>
+                          <Input
+                            id="name"
+                            value={formData.name}
+                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                            placeholder="Your name"
+                            required
+                            data-testid="input-name"
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="email" className="block text-sm font-medium mb-2">
+                            Email
+                          </label>
+                          <Input
+                            id="email"
+                            type="email"
+                            value={formData.email}
+                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                            placeholder="your@email.com"
+                            required
+                            data-testid="input-email"
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="message" className="block text-sm font-medium mb-2">
+                            Message
+                          </label>
+                          <Textarea
+                            id="message"
+                            value={formData.message}
+                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                            placeholder="Tell me about your project..."
+                            rows={6}
+                            required
+                            data-testid="input-message"
+                          />
+                        </div>
+                        <Button type="submit" className="w-full" size="lg" data-testid="button-submit">
+                          <Send className="mr-2 h-5 w-5" />
+                          Send Message
+                        </Button>
+                      </div>
+                    </form>
+                  </TabsContent>
+                  
+                  <TabsContent value="schedule">
+                    <div 
+                      className="calendly-inline-widget" 
+                      data-url="https://calendly.com/muhammadtariqw33/30min"
+                      data-testid="calendly-widget"
+                      style={{ minWidth: '320px', height: '700px' }}
                     />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">
-                      Email
-                    </label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="your@email.com"
-                      required
-                      data-testid="input-email"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2">
-                      Message
-                    </label>
-                    <Textarea
-                      id="message"
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Tell me about your project..."
-                      rows={6}
-                      required
-                      data-testid="input-message"
-                    />
-                  </div>
-                  <Button type="submit" className="w-full" size="lg" data-testid="button-submit">
-                    <Send className="mr-2 h-5 w-5" />
-                    Send Message
-                  </Button>
-                </div>
-              </form>
+                  </TabsContent>
+                </Tabs>
+              </div>
             </Card>
           </motion.div>
 
