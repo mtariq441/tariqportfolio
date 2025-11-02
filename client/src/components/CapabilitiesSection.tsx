@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Award, Briefcase, TrendingUp, Users } from "lucide-react";
-import { SiReact, SiNodedotjs, SiTypescript, SiPostgresql, SiMongodb, SiTailwindcss, SiNextdotjs, SiExpress } from "react-icons/si";
+import { SiReact, SiNodedotjs, SiTypescript, SiPostgresql, SiMongodb, SiTailwindcss, SiNextdotjs, SiExpress, SiWebflow, SiFigma } from "react-icons/si";
 
 function CountUp({ end, duration = 2 }: { end: number; duration?: number }) {
   const [count, setCount] = useState(0);
@@ -38,6 +38,8 @@ const stats = [
 ];
 
 const technologies = [
+  { Icon: SiWebflow, name: "Webflow" },
+  { Icon: SiFigma, name: "Figma" },
   { Icon: SiReact, name: "React" },
   { Icon: SiNodedotjs, name: "Node.js" },
   { Icon: SiTypescript, name: "TypeScript" },

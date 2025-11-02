@@ -9,6 +9,12 @@ import agencyProject from "@assets/generated_images/Agency_portfolio_project_b59
 import saasDashboard from "@assets/generated_images/SaaS_Dashboard_Analytics_Interface_5aa11254.png";
 import healthcareBooking from "@assets/generated_images/Healthcare_Appointment_Booking_System_c3225af0.png";
 import foodDelivery from "@assets/generated_images/Food_Delivery_Platform_Interface_e10a46bf.png";
+import luxuryFashion from "@assets/generated_images/Luxury_Fashion_Webflow_Site_92fd526e.png";
+import saasLanding from "@assets/generated_images/SaaS_Startup_Webflow_Landing_7bbc3a8e.png";
+import creativeAgency from "@assets/generated_images/Creative_Agency_Webflow_Portfolio_4f7b1fff.png";
+import restaurantSite from "@assets/generated_images/Restaurant_Webflow_Website_6478901e.png";
+import fitnessStudio from "@assets/generated_images/Fitness_Studio_Webflow_Site_5d60e8c3.png";
+import blogPlatform from "@assets/generated_images/Blog_Platform_Webflow_CMS_89cbcea7.png";
 
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -152,6 +158,48 @@ const projects = [
     description: "End-to-end delivery platform with real-time tracking and payment integration",
     image: foodDelivery,
     tags: ["React Native", "Node.js", "MongoDB", "Socket.io"],
+  },
+  {
+    title: "Luxury Fashion E-Commerce",
+    category: "Webflow",
+    description: "High-end fashion brand website with elegant design and seamless shopping experience",
+    image: luxuryFashion,
+    tags: ["Webflow", "E-Commerce", "Custom Code", "Animations"],
+  },
+  {
+    title: "SaaS Startup Landing Page",
+    category: "Webflow",
+    description: "Modern landing page converted from Figma to Webflow with interactive features",
+    image: saasLanding,
+    tags: ["Webflow", "Figma to Webflow", "Responsive", "CMS"],
+  },
+  {
+    title: "Creative Agency Showcase",
+    category: "Webflow",
+    description: "Bold portfolio website with smooth animations and interactive project gallery",
+    image: creativeAgency,
+    tags: ["Webflow", "Interactions", "Portfolio", "Figma Design"],
+  },
+  {
+    title: "Restaurant & Dining",
+    category: "Webflow",
+    description: "Beautiful restaurant website with menu integration and reservation system",
+    image: restaurantSite,
+    tags: ["Webflow", "CMS", "Integrations", "Custom Forms"],
+  },
+  {
+    title: "Fitness Studio Platform",
+    category: "Webflow",
+    description: "Dynamic fitness website with class schedules and membership management",
+    image: fitnessStudio,
+    tags: ["Webflow", "CMS", "Memberstack", "Figma to Webflow"],
+  },
+  {
+    title: "Content & Blog Platform",
+    category: "Webflow",
+    description: "Magazine-style blog platform with advanced CMS and author profiles",
+    image: blogPlatform,
+    tags: ["Webflow CMS", "Blog", "SEO", "Figma to Webflow"],
   },
 ];
 

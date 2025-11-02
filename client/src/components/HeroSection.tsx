@@ -71,6 +71,8 @@ export function HeroSection() {
           >
             <span className="text-foreground">Full Stack Engineer</span>
             <br />
+            <span className="text-foreground">&</span>
+            <br />
             <motion.span 
               className="text-primary inline-block"
               animate={{ 
@@ -82,7 +84,7 @@ export function HeroSection() {
               }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              Building Digital Solutions
+              Webflow Designer
             </motion.span>
           </motion.h1>
           
@@ -92,7 +94,7 @@ export function HeroSection() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            Transforming ideas into powerful web applications with modern technologies
+            Crafting pixel-perfect Webflow websites and building scalable full-stack applications
           </motion.p>
           
           <motion.div
