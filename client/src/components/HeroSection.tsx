@@ -79,13 +79,6 @@ export function HeroSection() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [imageLoaded, setImageLoaded] = useState(false);
-
-  useEffect(() => {
-    const img = new Image();
-    img.src = heroBackground;
-    img.onload = () => setImageLoaded(true);
-  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -102,29 +95,6 @@ export function HeroSection() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{ perspective: '1500px' }}
     >
-      {!imageLoaded && (
-        <div className="absolute inset-0 bg-background flex items-center justify-center z-50">
-          <motion.div
-            className="flex flex-col items-center gap-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-          >
-            <motion.div
-              className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-            />
-            <motion.p
-              className="text-primary text-sm font-medium"
-              animate={{ opacity: [0.5, 1, 0.5] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            >
-              Loading Experience...
-            </motion.p>
-          </motion.div>
-        </div>
-      )}
-      
       <motion.div
         className="absolute inset-0 bg-cover bg-center"
         style={{ 
@@ -132,12 +102,12 @@ export function HeroSection() {
           transformStyle: 'preserve-3d',
         }}
         initial={{ opacity: 0, scale: 1.2 }}
-        animate={imageLoaded ? { 
+        animate={{ 
           opacity: 1, 
           scale: 1.1,
           rotateX: [0, 2, 0, -2, 0],
           rotateY: [0, -2, 0, 2, 0],
-        } : {}}
+        }}
         transition={{
           opacity: { duration: 1 },
           scale: { duration: 1 },
