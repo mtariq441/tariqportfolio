@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "./ThemeToggle";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -73,7 +72,6 @@ export function Navigation() {
             </div>
 
             <div className="flex items-center gap-4">
-              <ThemeToggle />
               <Button
                 variant="ghost"
                 size="icon"

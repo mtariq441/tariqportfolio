@@ -14,10 +14,11 @@ const GeometricShape = ({ index, mouseX, mouseY }: { index: number; mouseX: any;
   ];
   
   const position = positions[index % positions.length];
-  const size = 120 + (index * 30);
+  const baseSize = 80;
+  const size = baseSize + (index * 20);
   
-  const xOffset = useTransform(mouseX, [0, window.innerWidth], [-30, 30]);
-  const yOffset = useTransform(mouseY, [0, window.innerHeight], [-30, 30]);
+  const xOffset = useTransform(mouseX, [0, typeof window !== 'undefined' ? window.innerWidth : 1000], [-20, 20]);
+  const yOffset = useTransform(mouseY, [0, typeof window !== 'undefined' ? window.innerHeight : 1000], [-20, 20]);
   
   return (
     <motion.div
@@ -78,6 +79,13 @@ export function HeroSection() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = heroBackground;
+    img.onload = () => setImageLoaded(true);
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -92,35 +100,111 @@ export function HeroSection() {
   return (
     <section 
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{ perspective: '1000px' }}
+      style={{ perspective: '1500px' }}
     >
-      <div
-        className="absolute inset-0 bg-cover bg-center transition-transform duration-[3000ms] ease-out"
+      {!imageLoaded && (
+        <div className="absolute inset-0 bg-background flex items-center justify-center z-50">
+          <motion.div
+            className="flex flex-col items-center gap-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
+            <motion.div
+              className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+            />
+            <motion.p
+              className="text-primary text-sm font-medium"
+              animate={{ opacity: [0.5, 1, 0.5] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+              Loading Experience...
+            </motion.p>
+          </motion.div>
+        </div>
+      )}
+      
+      <motion.div
+        className="absolute inset-0 bg-cover bg-center"
         style={{ 
           backgroundImage: `url(${heroBackground})`,
-          transform: `translate(${mousePosition.x * 0.01}px, ${mousePosition.y * 0.01}px) scale(1.1)`
+          transformStyle: 'preserve-3d',
         }}
-      />
+        initial={{ opacity: 0, scale: 1.2 }}
+        animate={imageLoaded ? { 
+          opacity: 1, 
+          scale: 1.1,
+          rotateX: [0, 2, 0, -2, 0],
+          rotateY: [0, -2, 0, 2, 0],
+        } : {}}
+        transition={{
+          opacity: { duration: 1 },
+          scale: { duration: 1 },
+          rotateX: { duration: 20, repeat: Infinity, ease: "easeInOut" },
+          rotateY: { duration: 15, repeat: Infinity, ease: "easeInOut" },
+        }}
+      >
+        <motion.div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ 
+            backgroundImage: `url(${heroBackground})`,
+            transform: `translate(${mousePosition.x * 0.015}px, ${mousePosition.y * 0.015}px)`,
+            filter: 'blur(8px)',
+            opacity: 0.3,
+          }}
+          transition={{ type: "spring", stiffness: 50, damping: 20 }}
+        />
+      </motion.div>
+      
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-background" />
       
-      <div className="absolute inset-0 overflow-hidden" style={{ transformStyle: 'preserve-3d' }}>
+      <div className="absolute inset-0 overflow-hidden hidden md:block" style={{ transformStyle: 'preserve-3d' }}>
         {Array.from({ length: 5 }).map((_, i) => (
           <GeometricShape key={`shape-${i}`} index={i} mouseX={mouseX} mouseY={mouseY} />
         ))}
       </div>
       
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden md:hidden" style={{ transformStyle: 'preserve-3d' }}>
+        {Array.from({ length: 3 }).map((_, i) => (
+          <GeometricShape key={`shape-mobile-${i}`} index={i} mouseX={mouseX} mouseY={mouseY} />
+        ))}
+      </div>
+      
+      <div className="absolute inset-0 overflow-hidden hidden md:block">
         {Array.from({ length: 20 }).map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-1 h-1 bg-primary/30 rounded-full"
             initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
+              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
             }}
             animate={{
-              y: [null, Math.random() * window.innerHeight],
-              x: [null, Math.random() * window.innerWidth],
+              y: [null, Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000)],
+              x: [null, Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000)],
+            }}
+            transition={{
+              duration: Math.random() * 10 + 10,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          />
+        ))}
+      </div>
+      
+      <div className="absolute inset-0 overflow-hidden md:hidden">
+        {Array.from({ length: 8 }).map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-primary/30 rounded-full"
+            initial={{
+              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
+              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
+            }}
+            animate={{
+              y: [null, Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000)],
+              x: [null, Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000)],
             }}
             transition={{
               duration: Math.random() * 10 + 10,
