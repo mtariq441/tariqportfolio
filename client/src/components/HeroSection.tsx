@@ -69,7 +69,7 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-            <span className="text-foreground">Webflow Developer</span>
+            <span className="text-foreground">Full Stack Engineer</span>
             <br />
             <motion.span 
               className="text-primary inline-block"
@@ -82,7 +82,7 @@ export function HeroSection() {
               }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              $27M+ Client Growth
+              Building Digital Solutions
             </motion.span>
           </motion.h1>
           
@@ -92,7 +92,7 @@ export function HeroSection() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            Development Expert transforming ideas into high-converting websites
+            Transforming ideas into powerful web applications with modern technologies
           </motion.p>
           
           <motion.div
