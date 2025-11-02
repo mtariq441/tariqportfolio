@@ -1,9 +1,17 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import maraNikolicImg from "@assets/image_1762114716597.png";
+import danaisaUrgellesImg from "@assets/image_1762114738745.png";
+import kamMalikImg from "@assets/image_1762114747594.png";
+import kateBagoyImg from "@assets/image_1762114755255.png";
+import johnDSaundersImg from "@assets/image_1762114763233.png";
+import vincentArrouetImg from "@assets/image_1762114783628.png";
+import leonDapozImg from "@assets/image_1762114793858.png";
+import harbikDavidyanImg from "@assets/image_1762114800820.png";
 
 const testimonials = [
   {
@@ -13,6 +21,7 @@ const testimonials = [
     rating: 5,
     text: "Tariq provides great design and has a great sense of user experience and aesthetics. He delivers on time and is an overall great communicator. I highly recommend working with him.",
     initials: "MN",
+    image: maraNikolicImg,
   },
   {
     name: "Danaisa Urgelles",
@@ -21,6 +30,7 @@ const testimonials = [
     rating: 5,
     text: "He will exceed your expectations. Super easy to work with Tariq, incredibly intelligent, and perceptive. He took the fumbled thoughts from my head and turned it all into a beautiful creation. I am very impressed, Tariq is extremely talented and attentive. He delivered exactly what I was looking for based on my very picky taste.",
     initials: "DU",
+    image: danaisaUrgellesImg,
   },
   {
     name: "Kam Malik",
@@ -29,6 +39,7 @@ const testimonials = [
     rating: 5,
     text: "Tariq is clearly a very talented designer. The project went smoothly, and we're happy with the outcome!",
     initials: "KM",
+    image: kamMalikImg,
   },
   {
     name: "Kate Bagoy",
@@ -37,6 +48,7 @@ const testimonials = [
     rating: 5,
     text: "Tariq is an amazing designer, delivered on time and communicated well. I asked for a few revisions after the initial concept and he got updates back to me just 24-hours later. Fully intend to hire again in the future.",
     initials: "KB",
+    image: kateBagoyImg,
   },
   {
     name: "John D Saunders",
@@ -45,6 +57,7 @@ const testimonials = [
     rating: 5,
     text: "Amazing designer with an eye for aesthetics. I had pretty vigorous requests and he hit every single one. He was patient and highly skilled!",
     initials: "JS",
+    image: johnDSaundersImg,
   },
   {
     name: "Vincent Arrouet",
@@ -53,6 +66,7 @@ const testimonials = [
     rating: 5,
     text: "Working with Tariq is always smooth and full of empathy. The project is very high quality, and has been done in a tight schedule. I recommend working with Tariq if you want to get a fast and pro service.",
     initials: "VA",
+    image: vincentArrouetImg,
   },
   {
     name: "Leon Dapoz",
@@ -61,6 +75,7 @@ const testimonials = [
     rating: 5,
     text: "Excellent Webflow Development Service. I recently had the pleasure of working with Tariq on a Webflow development project, and I must say that I am thoroughly impressed with the level of service that I received. Really great! Thanks",
     initials: "LD",
+    image: leonDapozImg,
   },
   {
     name: "Harbik Davidyan",
@@ -69,6 +84,7 @@ const testimonials = [
     rating: 5,
     text: "Great designer as I love his work. Produced a great design with little time, tho would love to see what he can do with a proper heads up on a project.",
     initials: "HD",
+    image: harbikDavidyanImg,
   },
 ];
 
@@ -145,6 +161,7 @@ export function TestimonialsSection() {
                       
                       <div className="flex items-center gap-4">
                         <Avatar className="h-14 w-14 border-2 border-primary">
+                          <AvatarImage src={testimonial.image} alt={testimonial.name} />
                           <AvatarFallback className="bg-primary text-primary-foreground font-semibold">
                             {testimonial.initials}
                           </AvatarFallback>
