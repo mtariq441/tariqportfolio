@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Briefcase } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
@@ -72,6 +72,22 @@ export function Navigation() {
             </div>
 
             <div className="flex items-center gap-4">
+              <motion.div
+                className="hidden md:block"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+              >
+                <Button
+                  size="sm"
+                  onClick={() => scrollToSection("#contact")}
+                  className="gap-2"
+                  data-testid="button-nav-hire"
+                >
+                  <Briefcase className="h-4 w-4" />
+                  Hire Me
+                </Button>
+              </motion.div>
               <Button
                 variant="ghost"
                 size="icon"
@@ -109,6 +125,16 @@ export function Navigation() {
                   {item.label}
                 </button>
               ))}
+              <div className="pt-2">
+                <Button
+                  onClick={() => scrollToSection("#contact")}
+                  className="w-full gap-2"
+                  data-testid="button-nav-hire-mobile"
+                >
+                  <Briefcase className="h-4 w-4" />
+                  Hire Me
+                </Button>
+              </div>
             </div>
           </motion.div>
         )}
