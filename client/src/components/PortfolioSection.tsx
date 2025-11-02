@@ -3,18 +3,16 @@ import { useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink } from "lucide-react";
-import ecommerceProject from "@assets/generated_images/E-commerce_portfolio_project_fd27f7bd.png";
-import realEstateProject from "@assets/generated_images/Real_estate_portfolio_project_9b5a9e94.png";
-import agencyProject from "@assets/generated_images/Agency_portfolio_project_b598085e.png";
-import saasDashboard from "@assets/generated_images/SaaS_Dashboard_Analytics_Interface_5aa11254.png";
-import healthcareBooking from "@assets/generated_images/Healthcare_Appointment_Booking_System_c3225af0.png";
-import foodDelivery from "@assets/generated_images/Food_Delivery_Platform_Interface_e10a46bf.png";
-import luxuryFashion from "@assets/generated_images/Luxury_Fashion_Webflow_Site_92fd526e.png";
-import saasLanding from "@assets/generated_images/SaaS_Startup_Webflow_Landing_7bbc3a8e.png";
-import creativeAgency from "@assets/generated_images/Creative_Agency_Webflow_Portfolio_4f7b1fff.png";
-import restaurantSite from "@assets/generated_images/Restaurant_Webflow_Website_6478901e.png";
-import fitnessStudio from "@assets/generated_images/Fitness_Studio_Webflow_Site_5d60e8c3.png";
-import blogPlatform from "@assets/generated_images/Blog_Platform_Webflow_CMS_89cbcea7.png";
+import kateBagoy from "@assets/kate-bagoy.png";
+import fiveFourDigital from "@assets/5four-digital.png";
+import heyMara from "@assets/heymara.png";
+import bhField from "@assets/bhfield.png";
+import evvvolution from "@assets/evvvolution.png";
+import dealerVault from "@assets/dealervault.png";
+import rippleshot from "@assets/rippleshot.png";
+import recordRecharge from "@assets/record-recharge.png";
+import atriz from "@assets/atriz.png";
+import pfpClinic from "@assets/pfp-clinic.png";
 
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -62,7 +60,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
         <Card
           className="group overflow-hidden border-2 hover-elevate active-elevate-2 cursor-pointer relative"
           data-testid={`card-project-${index}`}
-          onClick={() => console.log(`Project clicked: ${project.title}`)}
+          onClick={() => window.open(project.url, '_blank')}
         >
           <motion.div
             className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
@@ -118,88 +116,84 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 
 const projects = [
   {
-    title: "Premium E-Commerce Platform",
-    category: "E-Commerce",
-    description: "Built a high-converting online store with seamless checkout experience and inventory management",
-    image: ecommerceProject,
-    tags: ["React", "Node.js", "Stripe", "MongoDB"],
+    title: "Kate Bagoy Portfolio",
+    category: "Portfolio",
+    description: "Freelance product designer portfolio showcasing end-to-end design work for startups and edTech",
+    image: kateBagoy,
+    url: "https://katebagoy.com/",
+    tags: ["Product Design", "UI/UX", "Portfolio", "Freelancing"],
   },
   {
-    title: "Luxury Real Estate Website",
-    category: "Real Estate",
-    description: "Developed an elegant property showcase platform with advanced search and virtual tours",
-    image: realEstateProject,
-    tags: ["Next.js", "TypeScript", "Tailwind", "Mapbox"],
-  },
-  {
-    title: "Creative Agency Portfolio",
+    title: "5Four Digital",
     category: "Agency",
-    description: "Designed and developed a stunning portfolio with smooth animations and modern UI",
-    image: agencyProject,
-    tags: ["React", "Framer Motion", "Vite", "Shadcn UI"],
+    description: "Full-service branding and web design agency crafting profitable brands and websites for business growth",
+    image: fiveFourDigital,
+    url: "https://www.5fourdigital.com/",
+    tags: ["Branding", "Web Design", "Agency", "Business Growth"],
   },
   {
-    title: "SaaS Dashboard Application",
-    category: "SaaS",
-    description: "Full-featured analytics dashboard with real-time data visualization and reporting",
-    image: saasDashboard,
-    tags: ["React", "D3.js", "PostgreSQL", "Express"],
+    title: "HeyMara",
+    category: "E-Commerce",
+    description: "World-class online store platform for e-commerce teams, Shopify Plus partner specializing in conversions",
+    image: heyMara,
+    url: "https://heymara.com/",
+    tags: ["Shopify Plus", "E-Commerce", "Conversions", "Online Store"],
   },
   {
-    title: "Healthcare Booking System",
+    title: "BH Field Behavioral Health",
     category: "Healthcare",
-    description: "Comprehensive appointment scheduling system with patient management features",
-    image: healthcareBooking,
-    tags: ["Next.js", "Prisma", "Tailwind", "Stripe"],
+    description: "Bilingual ABA therapy practice offering joyful and engaged learning experiences for children",
+    image: bhField,
+    url: "https://www.bhfield.com/",
+    tags: ["Healthcare", "ABA Therapy", "Bilingual", "Education"],
   },
   {
-    title: "Food Delivery Platform",
-    category: "Marketplace",
-    description: "End-to-end delivery platform with real-time tracking and payment integration",
-    image: foodDelivery,
-    tags: ["React Native", "Node.js", "MongoDB", "Socket.io"],
+    title: "Evvvolution",
+    category: "Marketing",
+    description: "Employee testimonial marketing platform helping businesses attract candidates through authentic storytelling",
+    image: evvvolution,
+    url: "https://www.evvvolution.com/",
+    tags: ["Marketing", "Recruitment", "Testimonials", "HR Tech"],
   },
   {
-    title: "Luxury Fashion E-Commerce",
-    category: "Webflow",
-    description: "High-end fashion brand website with elegant design and seamless shopping experience",
-    image: luxuryFashion,
-    tags: ["Webflow", "E-Commerce", "Custom Code", "Animations"],
+    title: "DealerVault",
+    category: "SaaS",
+    description: "Automotive dealership platform streamlining vendor management and dealer-vendor relationships",
+    image: dealerVault,
+    url: "https://www.authenticom.com/product/dealervault",
+    tags: ["Automotive", "SaaS", "B2B", "Platform"],
   },
   {
-    title: "SaaS Startup Landing Page",
-    category: "Webflow",
-    description: "Modern landing page converted from Figma to Webflow with interactive features",
-    image: saasLanding,
-    tags: ["Webflow", "Figma to Webflow", "Responsive", "CMS"],
+    title: "Rippleshot",
+    category: "FinTech",
+    description: "AI-powered fraud intelligence platform combining machine learning with human insight for financial institutions",
+    image: rippleshot,
+    url: "https://www.rippleshot.com/",
+    tags: ["AI", "FinTech", "Fraud Detection", "Machine Learning"],
   },
   {
-    title: "Creative Agency Showcase",
-    category: "Webflow",
-    description: "Bold portfolio website with smooth animations and interactive project gallery",
-    image: creativeAgency,
-    tags: ["Webflow", "Interactions", "Portfolio", "Figma Design"],
+    title: "Record Recharge",
+    category: "SaaS",
+    description: "Customer data verification platform helping businesses boost retention and enhance profit margins",
+    image: recordRecharge,
+    url: "https://www.authenticom.com/product/recordrecharge",
+    tags: ["Data Management", "Customer Retention", "SaaS", "Analytics"],
   },
   {
-    title: "Restaurant & Dining",
-    category: "Webflow",
-    description: "Beautiful restaurant website with menu integration and reservation system",
-    image: restaurantSite,
-    tags: ["Webflow", "CMS", "Integrations", "Custom Forms"],
+    title: "Atriz Hiring Platform",
+    category: "Recruitment",
+    description: "Modern recruitment platform connecting talented professionals with innovative companies",
+    image: atriz,
+    url: "https://www.hireatriz.com/",
+    tags: ["Recruitment", "HR Tech", "Hiring", "Platform"],
   },
   {
-    title: "Fitness Studio Platform",
-    category: "Webflow",
-    description: "Dynamic fitness website with class schedules and membership management",
-    image: fitnessStudio,
-    tags: ["Webflow", "CMS", "Memberstack", "Figma to Webflow"],
-  },
-  {
-    title: "Content & Blog Platform",
-    category: "Webflow",
-    description: "Magazine-style blog platform with advanced CMS and author profiles",
-    image: blogPlatform,
-    tags: ["Webflow CMS", "Blog", "SEO", "Figma to Webflow"],
+    title: "PFP Clinic Gym",
+    category: "Fitness",
+    description: "Professional fitness and personal training clinic offering physio and customized workout programs",
+    image: pfpClinic,
+    url: "https://www.pfpclinicgym.com/",
+    tags: ["Fitness", "Personal Training", "Healthcare", "Wellness"],
   },
 ];
 
