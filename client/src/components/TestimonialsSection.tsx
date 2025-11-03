@@ -8,7 +8,7 @@ import maraNikolicImg from "@assets/image_1762114716597.png";
 import danaisaUrgellesImg from "@assets/image_1762114738745.png";
 import kamMalikImg from "@assets/image_1762114747594.png";
 import kateBagoyImg from "@assets/image_1762114755255.png";
-import johnDSaundersImg from "@assets/image_1762114763233.png";
+import johnDSaundersImg from "@assets/image_1762202781701.png";
 import vincentArrouetImg from "@assets/image_1762114783628.png";
 import leonDapozImg from "@assets/image_1762114793858.png";
 import harbikDavidyanImg from "@assets/image_1762114800820.png";
