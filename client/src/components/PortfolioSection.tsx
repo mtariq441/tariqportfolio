@@ -50,9 +50,12 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
         perspective: 1000,
         transformStyle: "preserve-3d",
       } : {}}
+      className="cursor-pointer"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
+      onClick={() => window.open(project.url, '_blank')}
+      data-testid={`card-project-${index}`}
     >
       <motion.div
         style={!isMobile ? { rotateX, rotateY } : {}}
@@ -61,9 +64,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
         <Card
-          className="group overflow-hidden border-2 hover-elevate active-elevate-2 cursor-pointer relative h-full"
-          data-testid={`card-project-${index}`}
-          onClick={() => window.open(project.url, '_blank')}
+          className="group overflow-hidden border-2 hover-elevate active-elevate-2 relative h-full"
         >
           <motion.div
             className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
