@@ -5,7 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import maraNikolicImg from "@assets/image_1762114716597.png";
-import danaisaUrgellesImg from "@assets/image_1762114738745.png";
+import danaisaUrgellesImg from "@assets/image_1762202849213.png";
 import kamMalikImg from "@assets/image_1762114747594.png";
 import kateBagoyImg from "@assets/image_1762114755255.png";
 import johnDSaundersImg from "@assets/image_1762202781701.png";
