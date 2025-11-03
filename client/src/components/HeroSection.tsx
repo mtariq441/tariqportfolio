@@ -201,15 +201,12 @@ export function HeroSection() {
           </motion.p>
           
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-2"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight px-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-            <span className="text-foreground">Full Stack Engineer</span>
-            <br />
-            <span className="text-foreground">&</span>
-            <br />
+            <span className="text-foreground">Full Stack Engineer | </span>
             <motion.span 
               className="text-primary inline-block"
               animate={{ 
@@ -221,8 +218,10 @@ export function HeroSection() {
               }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              Webflow Designer
+              Webflow Developer
             </motion.span>
+            <br />
+            <span className="text-foreground">| $27M+ Client Growth</span>
           </motion.h1>
           
           <motion.p
@@ -231,7 +230,7 @@ export function HeroSection() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            Crafting pixel-perfect Webflow websites and building scalable full-stack applications
+            Crafting pixel-perfect Webflow websites and building scalable, high-performing full-stack applications.
           </motion.p>
           
           <motion.div
