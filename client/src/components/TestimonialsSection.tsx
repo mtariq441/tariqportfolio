@@ -9,8 +9,8 @@ import danaisaUrgellesImg from "@assets/image_1762202849213.png";
 import kamMalikImg from "@assets/image_1762202919284.png";
 import kateBagoyImg from "@assets/image_1762202947311.png";
 import johnDSaundersImg from "@assets/image_1762202781701.png";
-import vincentArrouetImg from "@assets/image_1762114783628.png";
-import leonDapozImg from "@assets/image_1762114793858.png";
+import vincentArrouetImg from "@assets/image_1762203292467.png";
+import leonDapozImg from "@assets/image_1762203317918.png";
 import harbikDavidyanImg from "@assets/image_1762114800820.png";
 
 const testimonials = [
