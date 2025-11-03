@@ -85,7 +85,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
               transition={{ duration: 0.6, ease: "easeOut" }}
             />
             <motion.div 
-              className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-4 sm:p-6"
+              className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-4 sm:p-6 pointer-events-none"
               initial={{ opacity: 0 }}
               whileHover={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
