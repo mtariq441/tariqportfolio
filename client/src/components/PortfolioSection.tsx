@@ -14,6 +14,7 @@ import rippleshot from "@assets/rippleshot.png";
 import recordRecharge from "@assets/record-recharge.png";
 import atriz from "@assets/atriz.png";
 import pfpClinic from "@assets/pfp-clinic.png";
+import laptopMockup from "@assets/generated_images/MacBook_laptop_mockup_website_860d0c79.png";
 
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -220,6 +221,26 @@ export function PortfolioSection() {
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
             A showcase of my Webflow development and design work
           </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-12 sm:mb-16 md:mb-20"
+        >
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <motion.img
+              src={laptopMockup}
+              alt="Website mockup on laptop"
+              className="w-full h-auto"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.4 }}
+            />
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"
+            />
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
