@@ -1,7 +1,7 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Briefcase } from "lucide-react";
-import heroBackground from "@assets/generated_images/Hero_background_tech_workspace_5838e7bb.png";
+import heroBackground from "@assets/generated_images/Modern_tech_hero_background_5cf5f1a9.png";
 import { useEffect, useState } from "react";
 
 const GeometricShape = ({ index, mouseX, mouseY }: { index: number; mouseX: any; mouseY: any }) => {
