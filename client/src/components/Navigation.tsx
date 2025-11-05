@@ -6,8 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 const navItems = [
   { label: "Home", href: "#home" },
   { label: "Portfolio", href: "#portfolio" },
-  { label: "Process", href: "#process" },
-  { label: "Blog", href: "#blog" },
+  { label: "Services", href: "#services" },
+  { label: "Testimonials", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -85,7 +85,7 @@ export function Navigation() {
                   data-testid="button-nav-hire"
                 >
                   <Briefcase className="h-4 w-4" />
-                  Hire Me
+                  Get a Quote
                 </Button>
               </motion.div>
               <Button
@@ -132,7 +132,7 @@ export function Navigation() {
                   data-testid="button-nav-hire-mobile"
                 >
                   <Briefcase className="h-4 w-4" />
-                  Hire Me
+                  Get a Quote
                 </Button>
               </div>
             </div>

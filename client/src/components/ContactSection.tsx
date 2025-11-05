@@ -54,10 +54,10 @@ export function ContactSection() {
             className="text-center mb-8 sm:mb-10 md:mb-12"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 px-4">
-              Get in Touch
+              Let's Build Something Amazing Together
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-              Have a question or want to work together? Send me a message and I'll get back to you as soon as possible.
+              Ready to start your project? Fill out the form below or schedule a consultation call.
             </p>
           </motion.div>
 
@@ -151,7 +151,7 @@ export function ContactSection() {
             <Card className="p-0 overflow-hidden border-2">
               <div 
                 className="calendly-inline-widget" 
-                data-url="https://calendly.com/muhammadtariqw33/30min?hide_gdpr_banner=1&primary_color=c6ff00"
+                data-url="https://calendly.com/muhammadtariqw33/30min?hide_gdpr_banner=1&primary_color=146ef5"
                 style={{ minHeight: '700px', height: '700px', width: '100%' }}
                 data-testid="calendly-widget"
               />

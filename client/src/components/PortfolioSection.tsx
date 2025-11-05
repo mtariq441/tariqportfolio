@@ -70,9 +70,9 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
             animate={isHovered && !isMobile ? { 
               background: [
-                "radial-gradient(circle at 0% 0%, rgba(198, 255, 0, 0.1) 0%, transparent 50%)",
-                "radial-gradient(circle at 100% 100%, rgba(198, 255, 0, 0.1) 0%, transparent 50%)",
-                "radial-gradient(circle at 0% 0%, rgba(198, 255, 0, 0.1) 0%, transparent 50%)",
+                "radial-gradient(circle at 0% 0%, rgba(20, 110, 245, 0.1) 0%, transparent 50%)",
+                "radial-gradient(circle at 100% 100%, rgba(20, 110, 245, 0.1) 0%, transparent 50%)",
+                "radial-gradient(circle at 0% 0%, rgba(20, 110, 245, 0.1) 0%, transparent 50%)",
               ]
             } : {}}
             transition={{ duration: 3, repeat: Infinity }}
@@ -215,10 +215,10 @@ export function PortfolioSection() {
           className="text-center mb-10 sm:mb-12 md:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
-            Featured Work
+            Selected Projects
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-            A selection of projects that showcase my expertise
+            A showcase of my Webflow development and design work
           </p>
         </motion.div>
 

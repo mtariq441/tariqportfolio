@@ -1,10 +1,9 @@
 import { Navigation } from "@/components/Navigation";
 import { HeroSection } from "@/components/HeroSection";
-import { CapabilitiesSection } from "@/components/CapabilitiesSection";
+import { AboutSection } from "@/components/AboutSection";
+import { ServicesSection } from "@/components/ServicesSection";
 import { PortfolioSection } from "@/components/PortfolioSection";
-import { ProcessSection } from "@/components/ProcessSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
-import { BlogSection } from "@/components/BlogSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 
@@ -13,11 +12,10 @@ export default function Home() {
     <div className="min-h-screen" id="home">
       <Navigation />
       <HeroSection />
-      <CapabilitiesSection />
+      <AboutSection />
+      <ServicesSection />
       <PortfolioSection />
-      <ProcessSection />
       <TestimonialsSection />
-      <BlogSection />
       <ContactSection />
       <Footer />
     </div>

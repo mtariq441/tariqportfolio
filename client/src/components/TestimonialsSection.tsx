@@ -102,7 +102,7 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section className="py-20 px-6" ref={ref}>
+    <section id="testimonials" className="py-20 px-6" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -111,10 +111,10 @@ export function TestimonialsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Client Testimonials
+            What My Clients Say
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            What clients say about working with me
+            Real feedback from satisfied clients
           </p>
         </motion.div>
 
