@@ -80,12 +80,12 @@ export function Navigation() {
               >
                 <Button
                   size="sm"
-                  onClick={() => scrollToSection("#contact")}
+                  onClick={() => window.open("https://contra.com/muhammad_tariq_bb4x9zai?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=muhammad_tariq_bb4x9zai", "_blank")}
                   className="gap-2"
                   data-testid="button-nav-hire"
                 >
                   <Briefcase className="h-4 w-4" />
-                  Get a Quote
+                  For Hire
                 </Button>
               </motion.div>
               <Button
@@ -127,12 +127,12 @@ export function Navigation() {
               ))}
               <div className="pt-2">
                 <Button
-                  onClick={() => scrollToSection("#contact")}
+                  onClick={() => window.open("https://contra.com/muhammad_tariq_bb4x9zai?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=muhammad_tariq_bb4x9zai", "_blank")}
                   className="w-full gap-2"
                   data-testid="button-nav-hire-mobile"
                 >
                   <Briefcase className="h-4 w-4" />
-                  Get a Quote
+                  For Hire
                 </Button>
               </div>
             </div>
