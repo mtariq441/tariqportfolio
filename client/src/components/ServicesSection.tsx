@@ -14,10 +14,18 @@ import {
   Database, 
   Zap, 
   Sparkles,
-  ArrowRight
+  ArrowRight,
+  Bot,
+  Cpu
 } from "lucide-react";
 
 const services = [
+  {
+    icon: Bot,
+    title: "Replit AI Development",
+    description: "Build intelligent, automated AI-powered applications using Replit. From chatbots to automation bots, I develop functional, scalable solutions tailored to real-world use cases with fast prototyping and deployment.",
+    featured: true,
+  },
   {
     icon: Code,
     title: "Webflow Development",
@@ -92,7 +100,7 @@ export function ServicesSection() {
             What I Can Do for You
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-            Comprehensive Webflow development and design services tailored to your needs
+            Comprehensive AI development and Webflow services tailored to your needs
           </p>
         </motion.div>
 
@@ -104,13 +112,18 @@ export function ServicesSection() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <Card className="h-full hover-elevate active-elevate-2 relative overflow-hidden group border-2 hover:border-primary/50 transition-all" data-testid={`card-service-${index}`}>
+              <Card className={`h-full hover-elevate active-elevate-2 relative overflow-hidden group border-2 hover:border-primary/50 transition-all ${service.featured ? 'ring-2 ring-primary/30' : ''}`} data-testid={`card-service-${index}`}>
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity"
                 />
                 <motion.div
                   className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity"
                 />
+                {service.featured && (
+                  <div className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs font-semibold px-2 py-1 rounded-full">
+                    Featured
+                  </div>
+                )}
                 <CardContent className="p-6 relative z-10">
                   <motion.div
                     className="mb-4 p-3 rounded-lg bg-primary/10 w-fit"
