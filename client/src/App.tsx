@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { LoadingScreen } from "@/components/LoadingScreen";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/not-found";
 
@@ -25,6 +26,7 @@ function App() {
           <LoadingScreen />
           <Toaster />
           <Router />
+          <SpeedInsights />
         </TooltipProvider>
       </ThemeProvider>
     </QueryClientProvider>
