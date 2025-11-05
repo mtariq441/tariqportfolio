@@ -1,0 +1,172 @@
+Hero Section
+
+Heading:
+
+Premium Webflow Development & Design Services
+
+Subheading:
+
+Building beautiful, functional, and high-converting websites using Webflow, Figma, and powerful integrations.
+
+CTA Buttons:
+
+Get a Free Quote → links to contact form
+
+View My Work → links to portfolio section
+
+Visual Idea:
+
+Animated Webflow website mockups on desktop and mobile with smooth micro-interactions
+
+2. About Section
+
+Heading:
+
+Hi, I’m Muhammad Tariq – Your Webflow Expert
+
+Content:
+
+I specialize in transforming ideas into fully functional Webflow websites. With expertise in Webflow development, SEO optimization, UX/UI design, and complex integrations like Memberstack and Airtable, I help businesses build modern, responsive, and high-performing websites that convert.
+
+CTA:
+
+Work With Me → links to contact form
+
+3. Services Section
+
+Heading:
+
+What I Can Do for You
+
+Service Cards Content:
+
+Webflow Development
+Custom, responsive, and interactive websites built entirely in Webflow.
+
+Webflow SEO Optimization
+Improve your website’s visibility on Google with Webflow-specific SEO strategies.
+
+Webflow UX Design
+User-focused design for seamless navigation and higher engagement.
+
+Webflow UI Design
+Beautiful, modern interfaces designed to match your brand identity.
+
+Figma → Webflow Conversion
+Pixel-perfect conversion of your Figma designs into fully functional Webflow websites.
+
+Webflow Ecommerce Development
+Build high-converting online stores with Webflow Ecommerce features.
+
+Webflow API Integration
+Connect your website to external tools and services for automation and better workflow.
+
+Memberstack Integration
+Add memberships, gated content, and subscription-based features to your Webflow site.
+
+Airtable Integration
+Connect Airtable with your website for dynamic content, inventory, or data management.
+
+Custom Integrations
+Tailor your website to work with any service, CRM, or API you need.
+
+UI/UX Design Services
+Complete design services for web apps, landing pages, and mobile-friendly sites.
+
+CTA:
+
+Get a Custom Quote → links to contact form
+
+4. Portfolio Section
+
+Heading:
+
+Selected Projects
+
+Project Card Template:
+
+Project Name: Maple Sugar Studio
+
+Services Used: Webflow Development, UX/UI Design
+
+Description: A modern, interactive portfolio for a creative studio, built entirely in Webflow.
+
+CTA: View Project
+
+Project Name: Studio Leaf
+
+Services Used: Figma → Webflow Conversion, Webflow SEO
+
+Description: Pixel-perfect conversion of a creative Figma design into a fully functional Webflow site.
+
+CTA: View Project
+
+Project Name: EcomShop
+
+Services Used: Webflow Ecommerce, Memberstack Integration
+
+Description: A high-converting Webflow Ecommerce store with user memberships and dynamic content.
+
+CTA: View Project
+
+Repeat for all your portfolio projects, 3–6 per row. Use screenshots, videos, or live links.
+
+5. Testimonials Section
+
+Heading:
+
+What My Clients Say
+
+Testimonial Examples:
+
+“Muhammad transformed our outdated website into a modern, responsive, and high-performing Webflow site. The process was smooth, and the results exceeded our expectations.” – Client Name
+
+“The Figma to Webflow conversion was seamless, and the interactive design brought our vision to life perfectly.” – Client Name
+
+6. Contact Section
+
+Heading:
+
+Let’s Build Something Amazing Together
+
+Form Fields:
+
+Name
+
+Email
+
+Project Details / Message
+
+Optional: File upload (for Figma designs, assets, etc.)
+
+CTA Button:
+
+Send Message
+
+Other Contact Options:
+
+Email: your-email@example.com
+
+LinkedIn: linkedin.com/in/yourprofile
+
+WhatsApp: +92XXXXXXXXXX
+
+7. Footer
+
+Social links: LinkedIn, Dribbble, Behance, Twitter
+
+Copyright © 2025 Muhammad Tariq
+
+Optional mini sitemap
+
+Implementation Tips
+
+Add animations and interactions in Webflow to showcase your skills.
+
+Highlight integrations (Memberstack, Airtable, APIs) using icons or badges.
+
+Keep consistent typography, spacing, and color scheme.
+
+Add sticky CTA buttons (“Get a Quote”) for better conversions.
+
+Optimize for SEO with proper meta titles, headings, alt texts, and fast load speed.
