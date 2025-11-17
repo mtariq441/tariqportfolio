@@ -127,7 +127,7 @@ export function ServicesSection() {
                   className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity"
                 />
                 {service.featured && (
-                  <div className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs font-semibold px-2 py-1 rounded-full">
+                  <div className="absolute top-4 left-4 bg-primary text-primary-foreground text-xs font-semibold px-2 py-1 rounded-full z-20">
                     Featured
                   </div>
                 )}
