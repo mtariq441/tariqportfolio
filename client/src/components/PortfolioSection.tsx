@@ -216,10 +216,10 @@ export function PortfolioSection() {
           className="text-center mb-10 sm:mb-12 md:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
-            Selected Projects
+            Portfolio
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-            A showcase of my Webflow development and design work
+            A selection of development and design projects showcasing my technical and creative capabilities
           </p>
         </motion.div>
 

@@ -102,19 +102,19 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section id="testimonials" className="py-20 px-6" ref={ref}>
+    <section id="testimonials" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            What My Clients Say
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
+            Testimonials
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Real feedback from satisfied clients
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
+            What clients say about working with me
           </p>
         </motion.div>
 
