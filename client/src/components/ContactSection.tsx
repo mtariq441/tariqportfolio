@@ -53,7 +53,7 @@ export function ContactSection() {
             transition={{ duration: 0.6 }}
             className="text-center mb-8 sm:mb-10 md:mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 px-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 px-4" data-testid="heading-contact">
               Let's Work Together
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
@@ -134,7 +134,7 @@ export function ContactSection() {
             transition={{ duration: 0.6 }}
             className="text-center mb-8 sm:mb-10 md:mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 px-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 px-4" data-testid="heading-schedule-meeting">
               Schedule a Meeting
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">

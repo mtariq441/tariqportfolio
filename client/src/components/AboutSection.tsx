@@ -16,7 +16,7 @@ export function AboutSection() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6" data-testid="heading-about">
             About Me
           </h2>
           <motion.div
@@ -24,6 +24,7 @@ export function AboutSection() {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.2, duration: 0.6 }}
+            data-testid="text-about-content"
           >
             <p className="text-foreground">
               Hi, I'm <span className="font-semibold text-primary">Muhammad Tariq</span> — a <span className="font-semibold">Certified Full-Stack Developer</span> and <span className="font-semibold">Graphic & Brand Designer</span> with a unique blend of technical expertise and creative vision.

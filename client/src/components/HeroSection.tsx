@@ -196,6 +196,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
+            data-testid="text-hero-headline"
           >
             <span className="text-foreground">Certified </span>
             <motion.span 
@@ -233,6 +234,7 @@ export function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
+            data-testid="text-hero-subheadline"
           >
             Combining technical expertise with creative vision to build stunning, high-performance digital experiences. From code to design, I bring your vision to life.
           </motion.p>
