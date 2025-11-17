@@ -197,7 +197,7 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            <span className="text-foreground">Premium </span>
+            <span className="text-foreground">Certified </span>
             <motion.span 
               className="text-primary inline-block"
               animate={{ 
@@ -209,10 +209,23 @@ export function HeroSection() {
               }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              Webflow
+              Full-Stack Developer
             </motion.span>
             <br />
-            <span className="text-foreground">Development & Design Services</span>
+            <span className="text-foreground">& </span>
+            <motion.span 
+              className="text-primary inline-block"
+              animate={{ 
+                textShadow: [
+                  "0 0 20px rgba(20, 110, 245, 0.5)",
+                  "0 0 30px rgba(20, 110, 245, 0.3)",
+                  "0 0 20px rgba(20, 110, 245, 0.5)",
+                ]
+              }}
+              transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+            >
+              Graphic Designer
+            </motion.span>
           </motion.h1>
           
           <motion.p
@@ -221,7 +234,7 @@ export function HeroSection() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            Building beautiful, functional, and high-converting websites using Webflow, Figma, and powerful integrations.
+            Combining technical expertise with creative vision to build stunning, high-performance digital experiences. From code to design, I bring your vision to life.
           </motion.p>
           
           <motion.div
