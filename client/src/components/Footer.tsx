@@ -55,7 +55,7 @@ export function Footer() {
               <span className="text-primary">.</span>
             </div>
             <p className="text-sm text-muted-foreground mb-4">
-              Premium Webflow Development & Design Services
+              Certified Full-Stack Developer & Graphic Designer
             </p>
             <div className="flex gap-2">
               {socialLinks.map((social) => {
@@ -117,7 +117,7 @@ export function Footer() {
               © {new Date().getFullYear()} Muhammad Tariq. All rights reserved.
             </div>
             <div className="text-sm text-muted-foreground">
-              Built with Webflow expertise
+              Crafted with code and creativity
             </div>
           </div>
         </div>
