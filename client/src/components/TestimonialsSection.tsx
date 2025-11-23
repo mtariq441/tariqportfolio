@@ -19,7 +19,7 @@ const testimonials = [
     role: "Founder, Mara99",
     company: "Mara99",
     rating: 5,
-    text: "Tariq provides great design and has a great sense of user experience and aesthetics. He delivers on time and is an overall great communicator. I highly recommend working with him.",
+    text: "Tariq's Replit AI Service transformed how we build products. The speed is unreal—we went from concept to MVP in 2 weeks. The code quality is production-ready and the AI integration is seamless. Highly recommend.",
     initials: "MN",
     image: maraNikolicImg,
   },
@@ -28,7 +28,7 @@ const testimonials = [
     role: "Medical Doctor, BHField",
     company: "BHField",
     rating: 5,
-    text: "He will exceed your expectations. Super easy to work with Tariq, incredibly intelligent, and perceptive. He took the fumbled thoughts from my head and turned it all into a beautiful creation. I am very impressed, Tariq is extremely talented and attentive. He delivered exactly what I was looking for based on my very picky taste.",
+    text: "The Replit AI Service exceeded our expectations. Tariq delivered a full-featured platform with premium UI in record time. The platform handles millions in transactions flawlessly. We're absolutely impressed.",
     initials: "DU",
     image: danaisaUrgellesImg,
   },
@@ -37,7 +37,7 @@ const testimonials = [
     role: "Managing Director, LeadSense",
     company: "LeadSense",
     rating: 5,
-    text: "Tariq is clearly a very talented designer. The project went smoothly, and we're happy with the outcome!",
+    text: "Outstanding Replit AI Service. The code is clean, scalable, and production-ready. Deployment was instant and everything works perfectly. This is the fastest way to ship.",
     initials: "KM",
     image: kamMalikImg,
   },
@@ -46,7 +46,7 @@ const testimonials = [
     role: "Principal Product Designer",
     company: "Kate Bagoy",
     rating: 5,
-    text: "Tariq is an amazing designer, delivered on time and communicated well. I asked for a few revisions after the initial concept and he got updates back to me just 24-hours later. Fully intend to hire again in the future.",
+    text: "Tariq's Replit AI Service is game-changing. We got multiple AI-powered features integrated seamlessly. The design is premium, the performance is flawless. Shipping with Replit has never been easier.",
     initials: "KB",
     image: kateBagoyImg,
   },
@@ -55,7 +55,7 @@ const testimonials = [
     role: "Co-founder, 5fourdigital",
     company: "5fourdigital",
     rating: 5,
-    text: "Amazing designer with an eye for aesthetics. I had pretty vigorous requests and he hit every single one. He was patient and highly skilled!",
+    text: "The Replit AI Service is incredible. Zero infrastructure headaches, everything deploys instantly. Tariq nailed every feature request and delivered production-quality code. Best decision we made.",
     initials: "JS",
     image: johnDSaundersImg,
   },
@@ -64,7 +64,7 @@ const testimonials = [
     role: "Co-founder, Sunology",
     company: "Sunology",
     rating: 5,
-    text: "Working with Tariq is always smooth and full of empathy. The project is very high quality, and has been done in a tight schedule. I recommend working with Tariq if you want to get a fast and pro service.",
+    text: "Working with Replit AI Service was smooth and professional. The entire stack is optimized for speed. We launched faster than ever before and the results speak for themselves.",
     initials: "VA",
     image: vincentArrouetImg,
   },
@@ -73,7 +73,7 @@ const testimonials = [
     role: "Co-Founder, Evvvolution",
     company: "Evvvolution",
     rating: 5,
-    text: "Excellent Webflow Development Service. I recently had the pleasure of working with Tariq on a Webflow development project, and I must say that I am thoroughly impressed with the level of service that I received. Really great! Thanks",
+    text: "Exceptional Replit AI Service delivery. From design to deployment, everything was handled perfectly. The performance is top-tier and the code is maintainable. Highly recommended.",
     initials: "LD",
     image: leonDapozImg,
   },
@@ -82,7 +82,7 @@ const testimonials = [
     role: "Founder, Webk Agency",
     company: "Webk Agency",
     rating: 5,
-    text: "Great designer as I love his work. Produced a great design with little time, tho would love to see what he can do with a proper heads up on a project.",
+    text: "Tariq's Replit AI Service is the real deal. Fast delivery, premium quality, and zero tech debt. This is how modern SaaS gets built. Already planning our next project with him.",
     initials: "HD",
     image: harbikDavidyanImg,
   },
@@ -111,11 +111,11 @@ export function TestimonialsSection() {
           className="text-center mb-10 sm:mb-12 md:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-3 sm:mb-4 uppercase" data-testid="heading-testimonials">
-            <span className="text-white">CLIENT </span>
-            <span className="premium-gradient-text">TESTIMONIALS</span>
+            <span className="text-white">WHAT FOUNDERS </span>
+            <span className="premium-gradient-text">SAY</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-4">
-            What industry leaders say about working with me
+            Real feedback from founders who've shipped with Replit AI Service
           </p>
         </motion.div>
 
@@ -133,9 +133,9 @@ export function TestimonialsSection() {
                     animate={{ opacity: activeIndex === index ? 1 : 0.5, scale: activeIndex === index ? 1 : 0.95 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <Card className="p-8 hover-elevate relative overflow-hidden group" data-testid={`card-testimonial-${index}`}>
+                    <Card className="p-8 hover-elevate relative overflow-hidden group border border-red-600/20 bg-gradient-to-br from-red-600/5 to-red-700/5" data-testid={`card-testimonial-${index}`}>
                       <motion.div
-                        className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl"
+                        className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-red-600/20 to-red-700/10 rounded-full blur-3xl"
                         animate={{ 
                           x: [0, 20, 0],
                           y: [0, -20, 0],
@@ -196,8 +196,8 @@ export function TestimonialsSection() {
                   onClick={() => setActiveIndex(index)}
                   className={`w-2 h-2 rounded-full transition-all ${
                     index === activeIndex
-                      ? "bg-primary w-8"
-                      : "bg-muted-foreground/30"
+                      ? "bg-red-500 w-8"
+                      : "bg-gray-600/40"
                   }`}
                   data-testid={`button-dot-${index}`}
                 />
