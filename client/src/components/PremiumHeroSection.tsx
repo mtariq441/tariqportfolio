@@ -84,27 +84,24 @@ export function PremiumHeroSection() {
             ref={titleRef}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight tracking-tight uppercase"
           >
-            <span className="block text-white mb-2">I SHIP</span>
-            <motion.span
-              className="premium-gradient-text block mb-2"
-              animate={{
-                textShadow: [
-                  '0 0 20px rgba(220, 20, 60, 0.15)',
-                  '0 0 40px rgba(220, 20, 60, 0.25)',
-                  '0 0 20px rgba(220, 20, 60, 0.15)',
-                ],
-              }}
-              transition={{ duration: 3, repeat: Infinity }}
-            >
-              $1M–$10M+
-            </motion.span>
-            <span className="block text-gray-200 leading-tight">
-              SAAS PRODUCTS
+            <span className="block text-white mb-2">
+              I SHIP <motion.span
+                className="premium-gradient-text inline-block ml-1"
+                animate={{
+                  textShadow: [
+                    '0 0 20px rgba(220, 20, 60, 0.15)',
+                    '0 0 40px rgba(220, 20, 60, 0.25)',
+                    '0 0 20px rgba(220, 20, 60, 0.15)',
+                  ],
+                }}
+                transition={{ duration: 3, repeat: Infinity }}
+              >
+                $1M–$10M+
+              </motion.span>
             </span>
-            <span className="block text-gray-200 leading-tight">
-              ON REPLIT IN
+            <span className="block text-gray-200">
+              SAAS PRODUCTS ON REPLIT IN WEEKS
             </span>
-            <span className="block text-gray-200">WEEKS</span>
           </h1>
         </motion.div>
 
@@ -126,14 +123,13 @@ export function PremiumHeroSection() {
 
         {/* Premium CTA Buttons */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center pt-8"
+          className="flex flex-col sm:flex-row gap-4 justify-center pt-8 flex-wrap"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.8 }}
         >
           <Button
-            size="lg"
-            className="relative overflow-hidden group bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold border-0 px-8 py-6 text-lg shadow-2xl hover:shadow-[0_0_30px_rgba(220,20,60,0.4)]"
+            className="relative overflow-hidden group bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold border-0 text-base px-8 py-3 min-h-12 shadow-xl hover:shadow-[0_0_30px_rgba(220,20,60,0.4)]"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             <motion.div
@@ -141,18 +137,17 @@ export function PremiumHeroSection() {
               animate={{ x: ['-200%', '200%'] }}
               transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
             />
-            <span className="relative z-10 flex items-center gap-2">
-              Book 15-min Call (2 Spots Left)
-              <ArrowRight className="h-5 w-5" />
+            <span className="relative z-10 flex items-center gap-2 whitespace-nowrap">
+              Book Call (2 Spots)
+              <ArrowRight className="h-4 w-4 flex-shrink-0" />
             </span>
           </Button>
           <Button
-            size="lg"
-            className="border-2 border-red-500 text-red-500 hover:text-red-400 bg-transparent hover:bg-red-600/10 font-bold px-6 py-6 text-sm sm:text-base transition-all duration-300 inline-flex items-center gap-2"
+            className="border-2 border-red-500 text-red-500 hover:text-red-400 bg-transparent hover:bg-red-600/10 font-bold text-base px-8 py-3 min-h-12 transition-all duration-300 flex items-center gap-2 whitespace-nowrap"
             onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            See $1M+ Results
-            <ArrowRight className="h-4 w-4" />
+            See Results
+            <ArrowRight className="h-4 w-4 flex-shrink-0" />
           </Button>
         </motion.div>
 
