@@ -39,7 +39,7 @@ export function TrustSection() {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           className="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-10"
-          style={{ background: 'linear-gradient(135deg, #00d4ff, #0099cc)' }}
+          style={{ background: 'linear-gradient(135deg, #dc143c, #c41e3a)' }}
           animate={{ x: [0, 50, 0], y: [0, -50, 0] }}
           transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
         />
@@ -74,13 +74,13 @@ export function TrustSection() {
                 whileHover={{ y: -8, scale: 1.02 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 20 }}
               >
-                <Card className="relative overflow-hidden h-full border-[#00d4ff]/10 bg-gradient-to-br from-white/2 to-white/0 backdrop-blur-sm hover:border-[#00d4ff]/30 transition-all duration-300">
+                <Card className="relative overflow-hidden h-full border-red-600/10 bg-gradient-to-br from-white/2 to-white/0 backdrop-blur-sm hover:border-red-600/30 transition-all duration-300">
                   <CardContent className="p-8 relative z-10">
                     <motion.div
-                      className={`w-14 h-14 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-6 border border-[#00d4ff]/20`}
+                      className={`w-14 h-14 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-6 border border-red-600/20`}
                       whileHover={{ scale: 1.1, rotate: 5 }}
                     >
-                      <item.icon className="w-7 h-7 text-[#00d4ff]" />
+                      <item.icon className="w-7 h-7 text-red-500" />
                     </motion.div>
 
                     <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>

@@ -132,7 +132,7 @@ function ProjectCard({
         whileTap={{ scale: 0.98 }}
         transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       >
-        <Card className="overflow-hidden border-cyan-500/10 bg-gradient-to-br from-white/2 to-white/0 backdrop-blur-sm hover:border-cyan-500/20 transition-all duration-300 h-full">
+        <Card className="overflow-hidden border-red-600/10 bg-gradient-to-br from-white/2 to-white/0 backdrop-blur-sm hover:border-red-600/20 transition-all duration-300 h-full">
           <div className="relative aspect-[4/3] overflow-hidden">
             <motion.img
               src={project.image}
@@ -147,14 +147,14 @@ function ProjectCard({
               whileHover={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
             >
-              <ExternalLink className="h-6 w-6 text-cyan-400" />
+              <ExternalLink className="h-6 w-6 text-red-500" />
             </motion.div>
           </div>
           <CardContent className="p-6">
-            <Badge className="mb-3 text-xs bg-cyan-500/20 text-cyan-300 border-cyan-500/30">
+            <Badge className="mb-3 text-xs bg-red-600/20 text-red-400 border-red-600/30">
               {project.category}
             </Badge>
-            <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+            <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-red-500 transition-colors">
               {project.title}
             </h3>
             <p className="text-sm text-gray-400 mb-4">{project.description}</p>
@@ -181,7 +181,7 @@ export function PremiumPortfolioSection() {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           className="absolute bottom-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-10"
-          style={{ background: 'linear-gradient(135deg, #00d4ff, #8e2de2)' }}
+          style={{ background: 'linear-gradient(135deg, #dc143c, #ff1744)' }}
           animate={{ x: [0, -50, 0], y: [0, 50, 0] }}
           transition={{ duration: 25, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
         />

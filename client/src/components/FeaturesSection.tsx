@@ -51,7 +51,7 @@ export function FeaturesSection() {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           className="absolute bottom-0 left-0 w-96 h-96 rounded-full blur-3xl opacity-10"
-          style={{ background: 'linear-gradient(135deg, #00d4ff, #0099cc)' }}
+          style={{ background: 'linear-gradient(135deg, #dc143c, #c41e3a)' }}
           animate={{ x: [0, 50, 0], y: [0, -50, 0] }}
           transition={{ duration: 25, repeat: Infinity, ease: 'easeInOut' }}
         />

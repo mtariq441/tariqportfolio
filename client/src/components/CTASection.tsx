@@ -8,7 +8,7 @@ export function CTASection() {
       {/* Background gradient orbs */}
       <motion.div
         className="absolute top-0 left-0 w-96 h-96 rounded-full blur-3xl opacity-10"
-        style={{ background: 'linear-gradient(135deg, #8e2de2, #00d4ff)' }}
+        style={{ background: 'linear-gradient(135deg, #c41e3a, #dc143c)' }}
         animate={{ x: [0, 50, 0], y: [0, -50, 0] }}
         transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
       />
@@ -29,8 +29,8 @@ export function CTASection() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <div className="glass-effect px-6 py-2 rounded-full border border-cyan-500/20 backdrop-blur-md w-fit mx-auto">
-              <span className="text-cyan-300/90 font-semibold text-sm flex items-center gap-2">
+            <div className="glass-effect px-6 py-2 rounded-full border border-red-600/20 backdrop-blur-md w-fit mx-auto">
+              <span className="text-red-400/90 font-semibold text-sm flex items-center gap-2">
                 <Sparkles className="h-4 w-4" />
                 Ready to Transform Your Vision?
               </span>
@@ -81,7 +81,7 @@ export function CTASection() {
           >
             <Button
               size="lg"
-              className="relative overflow-hidden group bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white border-0 px-8 py-6 text-lg"
+              className="relative overflow-hidden group bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white border-0 px-8 py-6 text-lg"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <motion.div
@@ -97,7 +97,7 @@ export function CTASection() {
             <Button
               size="lg"
               variant="outline"
-              className="glass-effect border-cyan-500/20 text-white hover:bg-cyan-500/10 px-8 py-6 text-lg"
+              className="glass-effect border-red-600/20 text-white hover:bg-red-600/10 px-8 py-6 text-lg"
               onClick={() => window.open('https://twitter.com', '_blank')}
             >
               Get in Touch
@@ -117,8 +117,8 @@ export function CTASection() {
               {['Premium Quality', 'Fast Delivery', 'Expert Team', '24/7 Support'].map((item) => (
                 <motion.div
                   key={item}
-                  className="px-3 py-1 rounded-full border border-cyan-500/20 bg-cyan-500/5 text-xs text-gray-300"
-                  whileHover={{ borderColor: 'rgb(0, 212, 255)', backgroundColor: 'rgba(0, 212, 255, 0.1)' }}
+                  className="px-3 py-1 rounded-full border border-red-600/20 bg-red-600/5 text-xs text-gray-300"
+                  whileHover={{ borderColor: 'rgb(220, 20, 60)', backgroundColor: 'rgba(220, 20, 60, 0.1)' }}
                 >
                   {item}
                 </motion.div>

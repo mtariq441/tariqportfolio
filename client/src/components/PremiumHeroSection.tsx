@@ -30,7 +30,7 @@ export function PremiumHeroSection() {
       <motion.div
         className="absolute top-32 left-12 w-96 h-96 rounded-full blur-3xl opacity-25"
         style={{
-          background: 'linear-gradient(135deg, #00d4ff, #0099cc)',
+          background: 'linear-gradient(135deg, #dc143c, #c41e3a)',
         }}
         animate={{
           x: [0, 50, 0],
@@ -41,7 +41,7 @@ export function PremiumHeroSection() {
       <motion.div
         className="absolute bottom-20 right-12 w-96 h-96 rounded-full blur-3xl opacity-20"
         style={{
-          background: 'linear-gradient(135deg, #0099cc, #00d4ff)',
+          background: 'linear-gradient(135deg, #c41e3a, #dc143c)',
         }}
         animate={{
           x: [0, -50, 0],
@@ -64,10 +64,10 @@ export function PremiumHeroSection() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="inline-block"
         >
-          <div className="glass-effect-premium px-6 py-3 rounded-full border border-[#00d4ff]/40 w-fit mx-auto backdrop-blur-xl hover:border-[#00d4ff]/60 transition-all duration-300">
+          <div className="glass-effect-premium px-6 py-3 rounded-full border border-red-600/40 w-fit mx-auto backdrop-blur-xl hover:border-red-600/60 transition-all duration-300">
             <div className="flex items-center gap-2">
-              <Zap className="w-4 h-4 text-[#00d4ff]" />
-              <span className="text-[#00d4ff] font-bold text-sm tracking-wide">
+              <Zap className="w-4 h-4 text-red-500" />
+              <span className="text-red-500 font-bold text-sm tracking-wide">
                 Trusted by 157+ Clients Worldwide
               </span>
             </div>
@@ -89,9 +89,9 @@ export function PremiumHeroSection() {
               className="premium-gradient-text inline-block"
               animate={{
                 textShadow: [
-                  '0 0 20px rgba(0, 212, 255, 0.15)',
-                  '0 0 40px rgba(0, 212, 255, 0.25)',
-                  '0 0 20px rgba(0, 212, 255, 0.15)',
+                  '0 0 20px rgba(220, 20, 60, 0.15)',
+                  '0 0 40px rgba(220, 20, 60, 0.25)',
+                  '0 0 20px rgba(220, 20, 60, 0.15)',
                 ],
               }}
               transition={{ duration: 3, repeat: Infinity }}
@@ -123,7 +123,7 @@ export function PremiumHeroSection() {
         >
           <Button
             size="lg"
-            className="relative overflow-hidden group bg-gradient-to-r from-[#00d4ff] to-blue-500 hover:from-[#00d4ff] hover:to-blue-600 text-black font-bold border-0 px-8 py-6 text-lg shadow-2xl hover:shadow-[0_0_30px_rgba(0,212,255,0.4)]"
+            className="relative overflow-hidden group bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold border-0 px-8 py-6 text-lg shadow-2xl hover:shadow-[0_0_30px_rgba(220,20,60,0.4)]"
             onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
           >
             <motion.div
@@ -138,7 +138,7 @@ export function PremiumHeroSection() {
           </Button>
           <Button
             size="lg"
-            className="glass-effect-premium border border-[#00d4ff]/40 text-[#00d4ff] hover:bg-[#00d4ff]/10 hover:border-[#00d4ff]/60 font-bold px-8 py-6 text-lg transition-all duration-300"
+            className="glass-effect-premium border border-red-600/40 text-red-400 hover:bg-red-600/10 hover:border-red-600/60 font-bold px-8 py-6 text-lg transition-all duration-300"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             <span className="flex items-center gap-2">
@@ -167,7 +167,7 @@ export function PremiumHeroSection() {
                 whileHover={{ y: -5 }}
                 transition={{ type: 'spring', stiffness: 300 }}
               >
-                <div className="text-2xl md:text-3xl font-black text-[#00d4ff]">{stat.number}</div>
+                <div className="text-2xl md:text-3xl font-black text-red-500">{stat.number}</div>
                 <div className="text-xs md:text-sm text-gray-400 mt-1">{stat.label}</div>
               </motion.div>
             ))}

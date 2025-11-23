@@ -267,49 +267,49 @@
   background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(220, 20, 60, 0.1);
 }
 
 .dark .glass-effect {
   background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 212, 255, 0.15);
+  border: 1px solid rgba(220, 20, 60, 0.15);
 }
 
 .glass-effect-strong {
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(0, 212, 255, 0.2);
+  border: 1px solid rgba(220, 20, 60, 0.2);
 }
 
 .glass-effect-premium {
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 212, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.05);
+  border: 1px solid rgba(220, 20, 60, 0.2);
+  box-shadow: 0 8px 32px rgba(220, 20, 60, 0.05);
 }
 
 .glass-effect-premium:hover {
   background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(0, 212, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(220, 20, 60, 0.3);
+  box-shadow: 0 8px 32px rgba(220, 20, 60, 0.1);
 }
 
 /* GRADIENT TEXT */
 .gradient-text {
-  background: linear-gradient(135deg, #00d4ff, #8e2de2);
+  background: linear-gradient(135deg, #dc143c, #c41e3a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-weight: 700;
 }
 
-/* PREMIUM GRADIENT TEXT - Replit Brand */
+/* PREMIUM GRADIENT TEXT - Maroon Brand */
 .premium-gradient-text {
-  background: linear-gradient(135deg, #00d4ff, #0099cc, #00d4ff);
+  background: linear-gradient(135deg, #dc143c, #ff1744, #dc143c);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -332,18 +332,18 @@
 
 /* NEON GLOW EFFECTS - SUBTLE */
 .neon-glow {
-  box-shadow: 0 0 8px rgba(0, 212, 255, 0.1), 0 0 16px rgba(142, 45, 226, 0.08);
+  box-shadow: 0 0 8px rgba(220, 20, 60, 0.1), 0 0 16px rgba(255, 23, 68, 0.08);
 }
 
 .dark .neon-glow {
-  box-shadow: 0 0 8px rgba(0, 212, 255, 0.15), 0 0 16px rgba(142, 45, 226, 0.1);
+  box-shadow: 0 0 8px rgba(220, 20, 60, 0.15), 0 0 16px rgba(255, 23, 68, 0.1);
 }
 
 .neon-border {
   border: 2px solid transparent;
   background-image: 
     linear-gradient(rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.02)),
-    linear-gradient(90deg, #8e2de2, #00d4ff, #8e2de2);
+    linear-gradient(90deg, #dc143c, #ff1744, #dc143c);
   background-clip: padding-box, border-box;
   background-origin: border-box;
 }
@@ -352,7 +352,7 @@
   border: 2px solid transparent;
   background-image: 
     linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    linear-gradient(90deg, #8e2de2, #00d4ff, #8e2de2);
+    linear-gradient(90deg, #dc143c, #ff1744, #dc143c);
   background-clip: padding-box, border-box;
   background-origin: border-box;
 }
@@ -413,9 +413,9 @@
   transform: translateZ(0);
 }
 
-/* GRADIENT TEXT */
+/* GRADIENT TEXT FALLBACK */
 .gradient-text {
-  background: linear-gradient(135deg, #00d4ff 0%, #8e2de2 100%);
+  background: linear-gradient(135deg, #dc143c 0%, #c41e3a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
