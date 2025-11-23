@@ -150,32 +150,6 @@ export function PremiumHeroSection() {
             <ArrowRight className="h-4 w-4 flex-shrink-0" />
           </Button>
         </motion.div>
-
-        {/* Trust Indicators */}
-        <motion.div
-          className="pt-8 space-y-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.9 }}
-        >
-          <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto">
-            {[
-              { number: '$27M+', label: 'Revenue Generated' },
-              { number: '350+', label: 'Apps Shipped' },
-              { number: '2', label: 'Spots Left Q1' },
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                className="text-center"
-                whileHover={{ y: -5 }}
-                transition={{ type: 'spring', stiffness: 300 }}
-              >
-                <div className="text-2xl md:text-3xl font-black text-red-500">{stat.number}</div>
-                <div className="text-xs md:text-sm text-gray-400 mt-1">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </motion.div>
     </section>
   );
