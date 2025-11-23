@@ -1,9 +1,9 @@
 import { Navigation } from "@/components/Navigation";
 import { WebGLBackground } from "@/components/WebGLBackground";
 import { PremiumHeroSection } from "@/components/PremiumHeroSection";
-import { TrustSection } from "@/components/TrustSection";
 import { FeaturesSection } from "@/components/FeaturesSection";
-import { PremiumPortfolioSection } from "@/components/PremiumPortfolioSection";
+import { CaseStudiesSection } from "@/components/CaseStudiesSection";
+import { SelectiveSection } from "@/components/SelectiveSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { CTASection } from "@/components/CTASection";
 import { ContactSection } from "@/components/ContactSection";
@@ -19,10 +19,10 @@ export default function Home() {
       <div className="relative z-10">
         <Navigation />
         <PremiumHeroSection />
-        <TrustSection />
         <FeaturesSection />
-        <PremiumPortfolioSection />
+        <CaseStudiesSection />
         <TestimonialsSection />
+        <SelectiveSection />
         <CTASection />
         <ContactSection />
         <Footer />

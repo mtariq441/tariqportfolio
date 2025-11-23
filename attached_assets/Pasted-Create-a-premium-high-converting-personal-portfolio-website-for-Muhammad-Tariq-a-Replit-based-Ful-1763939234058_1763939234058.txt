@@ -1,0 +1,66 @@
+Create a premium, high-converting personal portfolio website for Muhammad Tariq – a Replit-based Full-Stack Engineer who builds $1M–$10M+ revenue-generating SaaS products, AI tools, membership platforms, and internal dashboards.
+
+Positioning: Elite Replit developer who ships production-ready, scalable SaaS apps insanely fast using modern stacks (Next.js, Supabase/PostgreSQL, Clerk, Stripe, Resend, Tailwind, shadcn, Three.js/GSAP for premium animations).
+
+Tone: Confident, selective, outcome-obsessed. Speak directly to 7–8 figure founders and startup teams.
+
+Hero Section (must hook in 3 seconds):
+- Massive headline: "I Ship $1M–$10M+ SaaS Products on Replit in Weeks, Not Months"
+- Subheadline: "$27M+ revenue generated | 350+ apps launched | Only 2 new clients per month"
+- Two huge buttons: "Book 15-min Call (2 spots left)" + "See $1M+ Results"
+- Dark mode background with subtle code rain or 3D globe animation
+
+Stats Bar (right under hero):
+$27M+ Client Revenue Generated | 350+ Apps Shipped | 157+ Founders Served | 2 Spots Left This Quarter
+
+"Why Founders Hire Me" Section (4–5 columns):
+1. Revenue-First Development → I build what makes money, not just what looks cool
+2. Lightning-Fast MVPs → From idea to paying users in 2–4 weeks on Replit
+3. Production-Ready Code → Scalable, secure, 99.9% uptime, bank-level security
+4. Premium UI + Animations → Three.js, GSAP, Framer Motion – feels like Apple
+5. Zero Tech Debt → Clean, documented code you can hand to any team
+
+Featured Case Studies (show only 5 best projects – big screenshots + hard numbers):
+1. Mara99 → AI-powered SaaS → 412% increase in paid signups in 75 days
+2. BHField → Medical e-commerce + membership → +$4.2M revenue
+3. Dealer Vault → Automotive dealership SaaS dashboard → Full internal tool replacement
+4. Custom AI startup dashboard → Raised $2.8M seed after demo
+5. High-ticket coaching membership → $800k → $4M/yr run rate
+
+Each case study must show:
+- Live link + big screenshot
+- Exact revenue, signup, or efficiency result
+- Tech stack (Next.js, Supabase, Clerk, Stripe, Three.js, etc.)
+
+Testimonials Section (keep the strongest 6–8 with photos and real names/companies)
+
+"Who I Work With" Section:
+I’m extremely selective and only take 2 clients per month.  
+I work exclusively with founders and teams doing $500k–$20M+/yr who are ready to 10x fast.
+
+Big CTA Section:
+"Only 2 client spots left for Q1 2026 – they will be gone this week."
+Buttons:
+→ Book Call (Calendly embed)
+→ DM me “10X” on Twitter/LinkedIn for fastest response
+
+Footer:
+contact@muhammadtariq.com  
+"Replit-Powered SaaS That Generates Millions"  
+© 2025 Muhammad Tariq – Built for founders who move fast and win big
+
+Tech & Style Requirements:
+- Built to run perfectly on Replit (HTML/CSS/JS or Next.js)
+- Dark mode, ultra-premium feel
+- Lightning fast (under 1s load)
+- Mobile-perfect
+- Subtle 3D animations or smooth scroll effects
+- Contact form + Calendly embed
+
+DO NOT include:
+- Any mention of Webflow, no-code, or Figma-to-anything
+- Generic “award-winning” or “10+ years experience”
+- Low-budget-looking projects
+- Fluff or corporate jargon
+
+Goal: When a $1M–$10M founder sees this site, they instantly think: “This is the Replit guy who will build my next million-dollar product.”

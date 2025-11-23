@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Zap } from 'lucide-react';
 
 export function CTASection() {
   return (
@@ -31,8 +31,8 @@ export function CTASection() {
           >
             <div className="glass-effect px-6 py-2 rounded-full border border-red-600/20 backdrop-blur-md w-fit mx-auto">
               <span className="text-red-400/90 font-semibold text-sm flex items-center gap-2">
-                <Sparkles className="h-4 w-4" />
-                Ready to Transform Your Vision?
+                <Zap className="h-4 w-4" />
+                Limited Availability
               </span>
             </div>
           </motion.div>
@@ -45,9 +45,9 @@ export function CTASection() {
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            <span className="text-white">LET'S BUILD YOUR </span>
+            <span className="text-white">ONLY </span>
             <motion.span
-              className="gradient-text inline-block"
+              className="premium-gradient-text inline-block"
               animate={{
                 textShadow: [
                   '0 0 20px rgba(220, 20, 60, 0.15)',
@@ -57,8 +57,10 @@ export function CTASection() {
               }}
               transition={{ duration: 3, repeat: Infinity }}
             >
-              NEXT-GEN PRODUCT
+              2 CLIENT SPOTS
             </motion.span>
+            <br />
+            <span className="text-gray-300">LEFT FOR Q1 2026</span>
           </motion.h2>
 
           <motion.p
@@ -68,7 +70,7 @@ export function CTASection() {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            Premium SaaS development with world-class design, advanced animations, and AI-powered features. Let's create something extraordinary together.
+            They will be booked this week. Get your 15-minute consultation now and let's see if we're the right fit for your $1M+ revenue goals.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -85,45 +87,23 @@ export function CTASection() {
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0"
+                className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0"
                 animate={{ x: ['-200%', '200%'] }}
                 transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
               />
               <span className="relative z-10 flex items-center gap-2">
-                Start Your Project
+                Book Your Call Now
                 <ArrowRight className="h-5 w-5" />
               </span>
             </Button>
             <Button
               size="lg"
-              variant="outline"
-              className="glass-effect border-red-600/20 text-white hover:bg-red-600/10 px-8 py-6 text-lg"
-              onClick={() => window.open('https://twitter.com', '_blank')}
+              className="border-2 border-red-500 text-red-500 hover:text-red-400 bg-transparent hover:bg-red-600/10 font-bold px-6 py-6 text-sm sm:text-base transition-all duration-300 inline-flex items-center gap-2"
+              onClick={() => window.open('https://twitter.com/muhammadtariq', '_blank')}
             >
-              Get in Touch
+              DM "10X" on Twitter
+              <ArrowRight className="h-4 w-4" />
             </Button>
-          </motion.div>
-
-          {/* Social proof */}
-          <motion.div
-            className="pt-8 space-y-4"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-          >
-            <p className="text-sm text-gray-500">Trusted by 157+ clients worldwide</p>
-            <div className="flex flex-wrap gap-2 justify-center">
-              {['Premium Quality', 'Fast Delivery', 'Expert Team', '24/7 Support'].map((item) => (
-                <motion.div
-                  key={item}
-                  className="px-3 py-1 rounded-full border border-red-600/20 bg-red-600/5 text-xs text-gray-300"
-                  whileHover={{ borderColor: 'rgb(220, 20, 60)', backgroundColor: 'rgba(220, 20, 60, 0.1)' }}
-                >
-                  {item}
-                </motion.div>
-              ))}
-            </div>
           </motion.div>
         </motion.div>
       </div>

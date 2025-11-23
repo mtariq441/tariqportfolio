@@ -1,44 +1,44 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Code2, Zap, Sparkles, Shield, TrendingUp, Database } from 'lucide-react';
+import { Code2, Zap, Sparkles, Shield, TrendingUp, Lightbulb } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const features = [
   {
-    icon: Code2,
-    title: 'Full-Stack Development',
-    description: 'Production-ready SaaS applications with modern tech stack and scalable architecture.',
-    gradient: 'from-cyan-500/20 to-cyan-500/0',
+    icon: TrendingUp,
+    title: 'Revenue-First Development',
+    description: 'I build what makes money. Every feature, every line of code is engineered for revenue, conversions, and sustainable growth.',
+    gradient: 'from-red-500/20 to-red-500/0',
   },
   {
     icon: Zap,
-    title: 'Lightning Performance',
-    description: 'Optimized for speed with GPU-accelerated animations and efficient code.',
+    title: 'Lightning-Fast MVPs',
+    description: 'From zero to paying users in 2–4 weeks on Replit. Next.js + Supabase + Clerk + Stripe. Ship fast, iterate faster.',
+    gradient: 'from-orange-500/20 to-orange-500/0',
+  },
+  {
+    icon: Code2,
+    title: 'Production-Ready Code',
+    description: 'Scalable, secure, 99.9% uptime. Bank-level security. Handoff-ready code you can give to any engineering team.',
     gradient: 'from-yellow-500/20 to-yellow-500/0',
   },
   {
     icon: Sparkles,
-    title: 'Premium Animations',
-    description: 'World-class 3D animations and smooth interactions using Three.js and GSAP.',
+    title: 'Premium UI + Animations',
+    description: 'Three.js, GSAP, Framer Motion. Premium interactions that feel like Apple. Converts visitors into customers.',
     gradient: 'from-purple-500/20 to-purple-500/0',
   },
   {
-    icon: Shield,
-    title: 'Secure & Reliable',
-    description: 'Enterprise-grade security with best practices and compliance standards.',
-    gradient: 'from-green-500/20 to-green-500/0',
-  },
-  {
-    icon: TrendingUp,
-    title: 'Growth-Focused',
-    description: 'Built for scale with analytics, automation, and user engagement tools.',
+    icon: Lightbulb,
+    title: 'Zero Tech Debt',
+    description: 'Clean, documented, organized architecture. No shortcuts. No legacy code. Built for scale from day one.',
     gradient: 'from-blue-500/20 to-blue-500/0',
   },
   {
-    icon: Database,
-    title: 'Data Excellence',
-    description: 'Advanced database design and real-time data synchronization.',
-    gradient: 'from-pink-500/20 to-pink-500/0',
+    icon: Shield,
+    title: 'Replit-Native Speed',
+    description: 'Built on Replit for founders. Deploy in seconds. Scale from prototype to $10M revenue without infrastructure headaches.',
+    gradient: 'from-green-500/20 to-green-500/0',
   },
 ];
 
@@ -65,10 +65,10 @@ export function FeaturesSection() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-5xl md:text-6xl font-black mb-6 text-white uppercase">
-            PREMIUM <span className="premium-gradient-text">SERVICES</span>
+            WHY <span className="premium-gradient-text">FOUNDERS HIRE ME</span>
           </h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            Enterprise-grade solutions designed to build world-class SaaS products with cutting-edge technology.
+            I work with 7–8 figure founders and startups scaling to $10M+ annually. Here's exactly what you get.
           </p>
         </motion.div>
 

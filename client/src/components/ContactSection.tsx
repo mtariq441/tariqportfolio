@@ -30,7 +30,7 @@ export function ContactSection() {
     e.preventDefault();
     toast({
       title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
+      description: "Thank you for reaching out. I'll review your details and get back to you within 24 hours.",
     });
     setContactFormData({ name: "", email: "", message: "" });
   };
@@ -54,11 +54,11 @@ export function ContactSection() {
             className="text-center mb-12"
           >
             <h2 className="text-4xl md:text-5xl font-black mb-4 uppercase" data-testid="heading-contact">
-              <span className="text-white">READY TO BUILD </span>
-              <span className="premium-gradient-text">YOUR SAAS MVP?</span>
+              <span className="text-white">LET'S TALK ABOUT YOUR </span>
+              <span className="premium-gradient-text">$1M+ GOALS</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Send me a message with your project details and let's create something amazing together.
+              Tell me about your project, revenue goals, and timeline. I only take founders who are serious about shipping fast and scaling hard.
             </p>
           </motion.div>
 
@@ -80,7 +80,7 @@ export function ContactSection() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="contact-name" className="block text-sm font-medium text-gray-300 mb-2">
-                      Name
+                      Full Name
                     </label>
                     <Input
                       id="contact-name"
@@ -94,7 +94,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <label htmlFor="contact-email" className="block text-sm font-medium text-gray-300 mb-2">
-                      Email
+                      Email Address
                     </label>
                     <Input
                       id="contact-email"
@@ -108,54 +108,46 @@ export function ContactSection() {
                     />
                   </div>
                 </div>
+
                 <div>
                   <label htmlFor="contact-message" className="block text-sm font-medium text-gray-300 mb-2">
-                    Message
+                    Tell me about your project & revenue goals
                   </label>
                   <Textarea
                     id="contact-message"
                     value={contactFormData.message}
                     onChange={(e) => setContactFormData({ ...contactFormData, message: e.target.value })}
-                    placeholder="Tell me about your SaaS idea, project requirements, timeline, and budget..."
-                    rows={6}
+                    placeholder="Project details, current revenue, target growth, timeline..."
                     required
+                    rows={6}
                     data-testid="input-contact-message"
-                    className="bg-white/5 border-cyan-500/15 text-white placeholder:text-gray-500 focus:border-cyan-500/30 focus:ring-cyan-500/10 resize-none"
+                    className="bg-white/5 border-red-600/15 text-white placeholder:text-gray-500 focus:border-red-600/30 focus:ring-red-600/10 resize-none"
                   />
                 </div>
-                <Button 
-                  type="submit" 
-                  className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white border-0"
-                  size="lg"
+
+                <motion.button
+                  type="submit"
+                  className="w-full relative overflow-hidden group bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-[0_0_30px_rgba(220,20,60,0.3)]"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   data-testid="button-contact-submit"
                 >
-                  <span className="flex items-center gap-2">
-                    Send Message
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0"
+                    animate={{ x: ['-200%', '200%'] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
+                  />
+                  <span className="relative z-10 flex items-center justify-center gap-2">
+                    Book Your 15-Min Call
                     <Send className="h-4 w-4" />
                   </span>
-                </Button>
+                </motion.button>
+
+                <p className="text-xs text-gray-500 text-center">
+                  I'm selective about projects. Only founders doing $500K+ annual revenue with serious 10x ambitions.
+                </p>
               </form>
             </div>
-          </motion.div>
-
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isFormInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-center mt-16"
-          >
-            <p className="text-gray-400 mb-6">Or book a consultation call directly</p>
-            <Button
-              onClick={() => window.open("https://calendly.com", "_blank")}
-              variant="outline"
-              className="glass-effect border-cyan-500/50 text-cyan-400 hover:text-cyan-300 hover:border-cyan-500/80 group"
-            >
-              <span className="flex items-center gap-2">
-                Schedule a Call
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </span>
-            </Button>
           </motion.div>
         </div>
       </div>

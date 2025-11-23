@@ -68,7 +68,7 @@ export function PremiumHeroSection() {
             <div className="flex items-center gap-2">
               <Zap className="w-4 h-4 text-red-500" />
               <span className="text-red-500 font-bold text-sm tracking-wide">
-                Trusted by 157+ Clients Worldwide
+                350+ Apps Shipped | $27M+ Revenue Generated
               </span>
             </div>
           </div>
@@ -84,7 +84,7 @@ export function PremiumHeroSection() {
             ref={titleRef}
             className="text-6xl md:text-7xl lg:text-8xl font-black leading-tight tracking-tight uppercase"
           >
-            <span className="text-white">PREMIUM </span>
+            <span className="text-white">I SHIP </span>
             <motion.span
               className="premium-gradient-text inline-block"
               animate={{
@@ -96,10 +96,10 @@ export function PremiumHeroSection() {
               }}
               transition={{ duration: 3, repeat: Infinity }}
             >
-              SAAS SOLUTIONS
+              $1M–$10M+
             </motion.span>
             <br />
-            <span className="text-gray-200">BUILT WITH EXCELLENCE</span>
+            <span className="text-gray-200">SAAS PRODUCTS ON REPLIT IN WEEKS</span>
           </h1>
         </motion.div>
 
@@ -110,8 +110,7 @@ export function PremiumHeroSection() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
         >
-          Full-stack SaaS development with cutting-edge 3D animations, advanced UI design, and AI-powered features.
-          Trusted by enterprises. Powered by innovation.
+          $27M+ client revenue | 350+ apps shipped | 157+ founders served | Only 2 new clients per month
         </motion.p>
 
         {/* Premium CTA Buttons */}
@@ -124,7 +123,7 @@ export function PremiumHeroSection() {
           <Button
             size="lg"
             className="relative overflow-hidden group bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold border-0 px-8 py-6 text-lg shadow-2xl hover:shadow-[0_0_30px_rgba(220,20,60,0.4)]"
-            onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0"
@@ -132,16 +131,16 @@ export function PremiumHeroSection() {
               transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
             />
             <span className="relative z-10 flex items-center gap-2">
-              View Portfolio
+              Book 15-min Call (2 Spots Left)
               <ArrowRight className="h-5 w-5" />
             </span>
           </Button>
           <Button
             size="lg"
             className="border-2 border-red-500 text-red-500 hover:text-red-400 bg-transparent hover:bg-red-600/10 font-bold px-6 py-6 text-sm sm:text-base transition-all duration-300 inline-flex items-center gap-2"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Schedule Consultation
+            See $1M+ Results
             <ArrowRight className="h-4 w-4" />
           </Button>
         </motion.div>
@@ -155,9 +154,9 @@ export function PremiumHeroSection() {
         >
           <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto">
             {[
-              { number: '157+', label: 'Projects Delivered' },
-              { number: '$27M+', label: 'Client Growth' },
-              { number: '10+', label: 'Years Experience' },
+              { number: '$27M+', label: 'Revenue Generated' },
+              { number: '350+', label: 'Apps Shipped' },
+              { number: '2', label: 'Spots Left Q1' },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
