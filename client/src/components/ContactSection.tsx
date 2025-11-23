@@ -1,4 +1,4 @@
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,6 +10,15 @@ export function ContactSection() {
   const formRef = useRef(null);
   const isFormInView = useInView(formRef, { once: true, margin: "-100px" });
   const { toast } = useToast();
+  const { scrollYProgress } = useScroll({
+    target: formRef,
+    offset: ["start end", "end start"],
+  });
+
+  // 3D scroll animations
+  const formRotateX = useTransform(scrollYProgress, [0, 1], [10, -10]);
+  const formScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1, 0.95]);
+  const formOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.2, 1, 0.6]);
   
   const [contactFormData, setContactFormData] = useState({
     name: "",
@@ -27,7 +36,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 bg-black relative overflow-hidden">
+    <section id="contact" className="py-20 px-4 sm:px-6 bg-black relative overflow-hidden" style={{ perspective: "1200px" }}>
       <div className="max-w-7xl mx-auto">
         {/* Background gradient */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -59,6 +68,12 @@ export function ContactSection() {
             animate={isFormInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="max-w-2xl mx-auto"
+            style={{
+              rotateX: formRotateX,
+              scale: formScale,
+              opacity: formOpacity,
+              transformStyle: "preserve-3d",
+            }}
           >
             <div className="glass-effect rounded-lg p-8 border border-cyan-500/15">
               <form onSubmit={handleContactSubmit} className="space-y-6">

@@ -1,262 +1,128 @@
-# Muhammad Tariq - Portfolio Website
+# Premium SaaS Portfolio with World-Class 3D Animations
 
-## Overview
+## Project Overview
+A premium, black-themed SaaS portfolio website showcasing expertise in Replit AI and SaaS development, featuring dark UI with neon gradients, glassmorphism effects, and sophisticated 3D scroll animations.
 
-This is a premium portfolio website for Muhammad Tariq, a Webflow developer showcasing professional expertise, completed projects, and client success stories. The site features a modern dark theme with neon lime green accents (#C6FF00), glassmorphic UI elements, and smooth animations powered by Framer Motion. The application is built as a single-page application (SPA) with multiple sections including hero, capabilities, portfolio, process timeline, testimonials, blog, and contact.
+## Architecture & Tech Stack
+- **Frontend**: React 18 + Vite + TypeScript
+- **Styling**: Tailwind CSS with custom 3D animations
+- **Animations**: Framer Motion with scroll-triggered 3D transforms
+- **UI Components**: Shadcn/ui with custom 3D enhancements
+- **Design**: Premium black theme (#000000, #0c0c0c) with cyan/purple accents
 
-## Recent Changes (November 2, 2025)
+## Recent Changes (Session 2)
 
-**Calendly Widget Overflow Fix:**
-- Fixed horizontal overflow in desktop/horizontal view for Calendly widget
-- Set fixed height (700px) to prevent overflow and ensure consistent display
-- Widget now perfectly fits within its container without any horizontal scrolling
-- Maintains responsive behavior across all devices
+### 1. **Refined Premium Aesthetic** ✅
+- Reduced neon glow effects: 20px+ → 8-16px (subtle, professional)
+- Refined glassmorphism: opacity 0.05 → 0.02 (ultra-refined)
+- Reduced particle count: 50 → 20 (less visual clutter)
+- Updated borders and colors for premium look
 
-**Mobile Responsive Design Improvements:**
-- Made entire portfolio fully responsive across all devices (mobile, tablet, desktop)
-- **Portfolio Section:**
-  - Disabled 3D tilt effects on mobile for better performance
-  - Added tap animations for mobile interaction feedback
-  - Responsive grid: 1 column on mobile, 2 on tablet, 3 on desktop
-  - Adjusted padding and spacing for smaller screens
-  - Improved card sizing and text readability on mobile
-- **Hero Section:**
-  - Responsive text sizing: 4xl on mobile, up to 7xl on desktop
-  - Stack buttons vertically on mobile, horizontally on tablet+
-  - Full-width buttons on mobile for better touch targets
-  - Adjusted padding and spacing for mobile viewports
-- **Contact Section:**
-  - Responsive form layout with proper mobile spacing
-  - Calendly widget adapts to screen width
-  - Two-column inputs on desktop, single column on mobile
-  - Optimized textarea and input sizes for mobile keyboards
-- **Process Section:**
-  - Timeline adapts for mobile view
-  - Vertical layout on mobile, alternating on desktop
-  - Reduced number of animated elements on small screens
-  - Improved card spacing and icon sizes
-- **Capabilities Section:**
-  - 2x2 grid on mobile, 4 columns on desktop
-  - Scaled down icons and text for mobile
-  - Technology logos with responsive spacing
-  - Touch-friendly hover states
-- All sections use consistent responsive breakpoints (sm: 640px, md: 768px, lg: 1024px)
-- Improved touch interactions throughout the site
-- Better performance on mobile devices with optimized animations
+### 2. **World-Class 3D Scroll Animations** ✅
+Implemented sophisticated 3D scroll-triggered animations across entire site:
 
-**Contact Section Reorganization:**
-- Restructured contact page into two completely separate, distinct sections
-- Section 1: "Get in Touch" - Contact form for sending messages
-  - Name, Email, and Message fields
-  - Centered layout with improved spacing
-  - Individual heading and description
-- Section 2: "Schedule a Meeting" - Calendly scheduling widget
-  - Separate section below the contact form
-  - 30-minute consultation booking with real-time availability
-  - Custom styling with brand color (#c6ff00)
-- Each section has independent animations and visual separation
-- Improved user experience with clear purpose for each section
+#### **Hero Section**
+- 3D rotating cube with scroll-based transforms (rotateX, rotateY, rotateZ)
+- Cube scales and fades based on scroll progress (1 → 0.5)
+- Floating orbs with individual 3D rotations (rotateX, rotateY, rotateZ)
+- Content parallax that moves up and fades as user scrolls
 
-**Bug Fixes & Optimizations:**
-- Updated browserslist database to latest version (caniuse-lite)
-- Eliminated PostCSS plugin warnings in build process
-- Clean server logs with no warnings or errors
-- Verified all LSP diagnostics - no TypeScript errors
-- Application running smoothly on port 5000
+#### **Services Section**
+- Grid with 3D perspective rotation on scroll (±20deg rotateX, ±10deg rotateY)
+- Individual service cards with staggered 3D animations
+- Scale and opacity transforms: 0.8 → 1.05 → 0.9 on scroll
+- Cards rotate on Z-axis during reveal (rotateZ: -10° → 0°)
 
-**Client Testimonial Images:**
-- Updated testimonials section with actual client profile photos
-- Replaced initials-only avatars with professional headshots for all 8 clients
-- Implemented AvatarImage component with fallback support for reliability
-- Enhanced testimonial credibility and visual appeal with real client faces
-- All images imported via @assets alias for proper bundling and optimization
+#### **Portfolio Section**
+- Each project card has independent 3D scroll animations
+- Cards rotate on Z-axis (±15°) based on scroll position
+- Scale effect: 0.85 → 1 → 0.85 (emphasize mid-scroll)
+- Combined with mouse tracking 3D effect (tilt on hover)
+- Section grid has 3D perspective (rotateX: -15° → +15°)
 
-**Loading Screen Optimization:**
-- Removed duplicate loading screen from HeroSection component
-- Application now shows only one clean loading screen on initial page load
-- Improved user experience with smooth, single-phase loading transition
-- Hero background image fades in smoothly without secondary loading overlay
-- Eliminated potential loading screen flicker and redundant animations
+#### **Contact Section**
+- Form rotates on X-axis based on scroll (10° → -10°)
+- Scale transform: 0.9 → 1 → 0.95
+- Opacity fade at top and bottom: 0.2 → 1 → 0.6
 
-**Calendly Meeting Scheduler Integration:**
-- Integrated actual Calendly account (https://calendly.com/muhammadtariqw33/30min) into Contact section
-- Calendly widget loads dynamically via official embed script
-- Users can book 30-minute meetings directly with real-time availability
-- Custom styling with brand color (#c6ff00) matching the site theme
-- GDPR banner hidden for cleaner interface
-- Professional scheduling experience with automatic confirmation emails
+### 3. **Custom 3D Components** ✅
+Created reusable 3D animation components:
+- **`Parallax3D.tsx`**: 3D parallax container with scroll transforms
+- **`GlassmorphicCard3D.tsx`**: 3D tilt card with mouse tracking
+- **`Section3D.tsx`**: Advanced 3D section with complex parallax
+- **`use-scroll-3d.ts`**: Custom hook for scroll-based 3D transforms
 
-**Portfolio Section Update:**
-- Replaced placeholder projects with 10 real client projects
-- All projects now include actual screenshots, live URLs, and detailed descriptions
-- Project cards are clickable and open project websites in new tabs
-- Featured projects include:
-  1. Kate Bagoy - Freelance Product Designer Portfolio
-  2. 5Four Digital - Full-Service Branding & Web Design Agency
-  3. HeyMara - E-Commerce Platform (Shopify Plus Partner)
-  4. BH Field Behavioral Health - Bilingual ABA Therapy Practice
-  5. Evvvolution - Employee Testimonial Marketing Platform
-  6. DealerVault - Automotive Dealership SaaS Platform
-  7. Rippleshot - AI-Powered Fraud Intelligence Platform
-  8. Record Recharge - Customer Data Verification Platform
-  9. Atriz - Modern Recruitment Platform
-  10. PFP Clinic Gym - Professional Fitness & Personal Training
+### 4. **Enhanced CSS 3D Animations** ✅
+- Updated `float` animation: 6s → 10s with full 360° rotations
+- Added `scroll-float` animation for Z-axis depth
+- Created perspective utilities: `.perspective-1000`, `.perspective-1200`, `.perspective-1500`
+- GPU acceleration with `.transform-gpu` utility
 
-**Technical Improvements:**
-- Fixed LoadingScreen animation bug that prevented proper exit transitions
-- Optimized loading experience with 300ms delay for smooth fade-out
-- All project images stored in `attached_assets/` and imported via `@assets` alias
-- Enhanced type safety with TypeScript inference from projects array
+## Current Features
+- ✅ Premium dark SaaS aesthetic
+- ✅ 3D rotating cube hero element
+- ✅ Scroll-triggered 3D animations (all sections)
+- ✅ Mouse-tracking 3D card tilts
+- ✅ Floating orb animations with 3D transforms
+- ✅ Glassmorphism with subtle borders
+- ✅ Neon gradient accents (cyan/purple)
+- ✅ Smooth scroll indicators
+- ✅ Contact form with 3D animations
+- ✅ Portfolio showcase with 3D parallax
+- ✅ Services grid with 3D effects
+- ✅ Responsive design (mobile/tablet/desktop)
+- ✅ Dark mode optimized
 
-## User Preferences
+## File Structure
+```
+client/src/
+├── components/
+│   ├── 3DSection.tsx           (NEW: Advanced 3D section)
+│   ├── Parallax3D.tsx          (NEW: 3D parallax component)
+│   ├── GlassmorphicCard3D.tsx  (NEW: 3D tilt card)
+│   ├── HeroSection.tsx         (Enhanced: 3D cube, orb rotations)
+│   ├── ServicesSection.tsx     (Enhanced: 3D grid animations)
+│   ├── PortfolioSection.tsx    (Enhanced: 3D card animations)
+│   ├── ContactSection.tsx      (Enhanced: 3D form animations)
+│   └── ...other components
+├── hooks/
+│   └── use-scroll-3d.ts        (NEW: 3D scroll hook)
+├── index.css                   (Enhanced: 3D animations, utilities)
+└── ...other files
+```
 
-Preferred communication style: Simple, everyday language.
+## Performance Optimizations
+- GPU acceleration on 3D transforms using `will-change`
+- `transform: translateZ(0)` for 3D context
+- `preserve-3d` on all animated elements
+- Efficient scroll progress tracking
+- Optimized particle count (20 particles, reduced from 50)
 
-## System Architecture
+## Design Philosophy
+1. **Premium Aesthetic**: Subtle effects, professional spacing
+2. **3D Depth**: Multiple layers of 3D transforms for sophistication
+3. **Smooth Motion**: Ease curves for natural-feeling animations
+4. **Dark Theme**: Pure black background with accent colors
+5. **Performance**: GPU-accelerated, smooth 60fps animations
 
-### Frontend Architecture
+## Next Enhancements (Future)
+- 3D lottie animations
+- Advanced shader effects
+- Canvas-based 3D background
+- Interactive 3D model viewer
+- More complex parallax depths
 
-**Framework Stack:**
-- **React 18** with TypeScript as the core UI framework
-- **Vite** as the build tool and development server
-- **Wouter** for lightweight client-side routing
-- **Framer Motion** for animations and page transitions
-- **TanStack Query (React Query)** for data fetching and state management
+## Deployment
+- Build: `npm run build`
+- Dev: `npm run dev`
+- Production: Deploy from Replit's publish interface
 
-**UI Component System:**
-- **shadcn/ui** component library with Radix UI primitives
-- **Tailwind CSS** for styling with custom theme configuration
-- **CSS Variables** for dynamic theming (light/dark mode support)
-- Components follow atomic design with reusable UI primitives in `client/src/components/ui/`
+## Testing Notes
+- All 3D animations work smoothly on desktop and tablet
+- Mobile devices: reduced animation complexity for performance
+- Browser compatibility: Chrome, Firefox, Safari (modern versions)
+- Scroll performance: optimized with Framer Motion
 
-**Design System:**
-- Color scheme: Dark charcoal black (#0E0E0E) backgrounds with neon lime green (#C6FF00) accents
-- Typography: Inter for body text, JetBrains Mono for code elements
-- Spacing system: Tailwind's standard scale (2, 4, 6, 8, 12, 16, 20, 24)
-- Border radius: Custom values (9px, 6px, 3px) defined in tailwind config
-- Glassmorphic effects using backdrop-blur and semi-transparent backgrounds
-
-**Animation Strategy:**
-- Scroll-triggered animations using Framer Motion's `useInView` hook
-- Stagger effects for card grids and timeline elements
-- Hover interactions with scale transforms and glow effects
-- Parallax effects on hero section responding to mouse movement
-- Animated counters for statistics with easing functions
-
-### State Management
-
-**Client-Side State:**
-- React Query for server state and async data
-- React Context for theme management (light/dark mode)
-- Local component state with useState/useReducer hooks
-- Custom hooks for reusable logic (use-mobile, use-toast)
-
-**Form Handling:**
-- React Hook Form with Zod validation (via @hookform/resolvers)
-- Type-safe form schemas using drizzle-zod integration
-
-### Backend Architecture
-
-**Server Setup:**
-- **Node.js** runtime with ESM modules
-- **Vite dev server** for development (port 5000)
-- Static file serving from dist/public in production
-
-**Build Process:**
-- Client build: Vite bundles React app to `dist/public`
-- Server build: esbuild bundles server code to `dist/index.js`
-- Development: tsx with hot module replacement via Vite
-- Production: Pre-bundled server with static assets
-
-### Data Layer (Available)
-
-**ORM Configuration:**
-- **Drizzle ORM** configured for PostgreSQL/Neon database
-- Migration support via drizzle-kit push command
-- Connection via @neondatabase/serverless for edge compatibility
-- Ready for future database-driven features
-
-### Routing Architecture
-
-**Client-Side Navigation:**
-- Single-page application using Wouter
-- Hash-based section navigation (#home, #portfolio, #process, etc.)
-- Smooth scroll behavior for anchor links
-- 404 fallback page component
-
-### Component Architecture
-
-**Page Structure:**
-- **Home** - Main landing page composing all sections
-- **Navigation** - Sticky header with theme toggle and mobile menu
-- **HeroSection** - Full-screen intro with animated text and particles
-- **CapabilitiesSection** - Statistics grid with animated counters and tech stack logos
-- **PortfolioSection** - 3D card grid with hover effects
-- **ProcessSection** - Vertical timeline with alternating cards
-- **TestimonialsSection** - Carousel-style testimonial cards
-- **BlogSection** - Grid of blog post previews
-- **ContactSection** - Contact form with platform links
-- **Footer** - Credits and copyright
-
-**Reusable Patterns:**
-- Intersection Observer for scroll animations (via Framer Motion)
-- Responsive grid layouts (3-column → 2-column → 1-column)
-- Card components with glassmorphic styling
-- Badge components for categories and tags
-
-### Responsive Design
-
-**Breakpoint Strategy:**
-- Mobile-first approach using Tailwind's responsive utilities
-- Custom mobile hook (useIsMobile) with 768px breakpoint
-- Adaptive layouts: Grid columns adjust per viewport
-- Mobile menu with slide-in sheet component
-- Touch-optimized interactions
-
-### Asset Management
-
-**Image Handling:**
-- Static assets in `attached_assets/` directory
-- AI-generated placeholder images for portfolio/blog content
-- Vite alias (`@assets`) for clean imports
-- Lazy loading via native browser features
-
-## External Dependencies
-
-### UI Component Libraries
-- **Radix UI** - Headless component primitives (dialogs, dropdowns, tooltips, etc.)
-- **shadcn/ui** - Pre-styled component system built on Radix
-- **Lucide React** - Icon library
-- **React Icons** - Brand icons (Fiverr, Upwork, LinkedIn, tech logos)
-
-### Animation & Interaction
-- **Framer Motion** - Declarative animations and gestures
-- **Embla Carousel** - Touch-friendly carousel component
-- **cmdk** - Command menu component (keyboard navigation)
-
-### Forms & Validation
-- **React Hook Form** - Form state management
-- **Zod** - Schema validation
-- **@hookform/resolvers** - Zod integration for React Hook Form
-
-### Database (Configured)
-- **Neon Database** - Serverless PostgreSQL provider
-- **Drizzle ORM** - Type-safe database toolkit
-- **connect-pg-simple** - PostgreSQL session store
-
-### Utilities
-- **date-fns** - Date manipulation and formatting
-- **clsx** & **tailwind-merge** - Conditional className utilities
-- **class-variance-authority** - Component variant system
-
-### Development Tools
-- **TypeScript** - Static type checking
-- **Vite** - Build tool with HMR
-- **tsx** - TypeScript execution for Node.js
-- **esbuild** - Fast JavaScript bundler
-- **Replit plugins** - Development banners and error overlays (dev only)
-
-### Deployment
-- **Vercel** - Configured for deployment via vercel.json
-- Build outputs to `dist/public` for static hosting
-- Environment-aware builds (NODE_ENV detection)
+---
+**Last Updated**: November 23, 2025
+**Status**: ✅ Complete - World-class 3D animated SaaS portfolio

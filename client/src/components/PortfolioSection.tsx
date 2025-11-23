@@ -1,4 +1,4 @@
-import { motion, useInView, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useInView, useMotionValue, useSpring, useTransform, useScroll } from "framer-motion";
 import { useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -23,6 +23,15 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
   const y = useMotionValue(0);
   const rotateX = useSpring(useTransform(y, [-100, 100], [10, -10]), { stiffness: 300, damping: 30 });
   const rotateY = useSpring(useTransform(x, [-100, 100], [-10, 10]), { stiffness: 300, damping: 30 });
+  
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ["start end", "end start"],
+  });
+  
+  const scrollRotateZ = useTransform(scrollYProgress, [0, 1], [-15, 15]);
+  const scrollScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.85, 1, 0.85]);
+  const scrollOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.3, 1, 1, 0.3]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (isMobile || !cardRef.current) return;
@@ -47,9 +56,14 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
       style={!isMobile ? { 
-        perspective: 1000,
+        perspective: 1200,
         transformStyle: "preserve-3d",
-      } : {}}
+        rotateZ: scrollRotateZ,
+        scale: scrollScale,
+        opacity: scrollOpacity,
+      } : {
+        opacity: scrollOpacity,
+      }}
       className="cursor-pointer"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
@@ -204,9 +218,18 @@ const projects = [
 export function PortfolioSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  // Section-level 3D animations
+  const sectionRotateX = useTransform(scrollYProgress, [0, 1], [-15, 15]);
+  const sectionScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1, 0.95]);
+  const sectionOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.4, 1, 1, 0.4]);
 
   return (
-    <section id="portfolio" className="py-20 px-4 sm:px-6 bg-black/50 relative overflow-hidden" ref={ref}>
+    <section id="portfolio" className="py-20 px-4 sm:px-6 bg-black/50 relative overflow-hidden" ref={ref} style={{ perspective: "1200px" }}>
       <div className="max-w-7xl mx-auto">
         {/* Background gradient */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -229,11 +252,19 @@ export function PortfolioSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 relative z-10">
+        <motion.div 
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 relative z-10"
+          style={{
+            rotateX: sectionRotateX,
+            scale: sectionScale,
+            opacity: sectionOpacity,
+            transformStyle: "preserve-3d",
+          }}
+        >
           {projects.map((project, index) => (
             <ProjectCard key={project.title} project={project} index={index} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

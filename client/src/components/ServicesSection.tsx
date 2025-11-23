@@ -1,4 +1,4 @@
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { 
@@ -50,9 +50,19 @@ const services = [
 export function ServicesSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  // 3D scroll animations
+  const rotateX = useTransform(scrollYProgress, [0, 1], [-20, 20]);
+  const rotateY = useTransform(scrollYProgress, [0, 1], [-10, 10]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1.05, 0.9]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.3, 1, 0.5]);
 
   return (
-    <section id="services" className="py-20 px-4 sm:px-6 bg-black/50 relative overflow-hidden" ref={ref}>
+    <section id="services" className="py-20 px-4 sm:px-6 bg-black/50 relative overflow-hidden" ref={ref} style={{ perspective: "1200px" }}>
       <div className="max-w-7xl mx-auto">
         {/* Background gradient */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -77,14 +87,24 @@ export function ServicesSection() {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10"
+          style={{
+            rotateX,
+            rotateY,
+            scale,
+            opacity,
+            transformStyle: "preserve-3d",
+          }}
+        >
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 30, rotateZ: -10 }}
+              animate={isInView ? { opacity: 1, y: 0, rotateZ: 0 } : {}}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
               className="group"
+              style={{ transformStyle: "preserve-3d" }}
             >
               <Card 
                 className={`relative overflow-hidden h-full border bg-gradient-to-br ${service.color} backdrop-blur-sm transition-all duration-300`}
@@ -133,7 +153,7 @@ export function ServicesSection() {
               </Card>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

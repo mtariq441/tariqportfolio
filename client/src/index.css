@@ -313,14 +313,49 @@
     transform: translateY(0px) rotateX(0deg) rotateY(0deg);
   }
   50% {
-    transform: translateY(-20px) rotateX(180deg) rotateY(180deg);
+    transform: translateY(-25px) rotateX(360deg) rotateY(360deg);
   }
 }
 
 .float-sphere {
-  animation: float 6s ease-in-out infinite;
-  perspective: 1000px;
+  animation: float 10s ease-in-out infinite;
+  perspective: 1500px;
   transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* 3D SCROLL ANIMATIONS */
+@keyframes scroll-float {
+  0%, 100% {
+    transform: translateY(0px) translateZ(0px);
+  }
+  50% {
+    transform: translateY(-30px) translateZ(50px);
+  }
+}
+
+.scroll-float {
+  animation: scroll-float 8s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+/* Enhanced perspective for 3D depth */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.perspective-1500 {
+  perspective: 1500px;
+}
+
+/* 3D Transform utilities */
+.transform-gpu {
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 /* GRADIENT TEXT */

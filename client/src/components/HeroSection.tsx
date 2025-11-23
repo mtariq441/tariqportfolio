@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const FloatingOrb = ({ delay, size }: { delay: number; size: string }) => {
   return (
@@ -11,12 +11,12 @@ const FloatingOrb = ({ delay, size }: { delay: number; size: string }) => {
         background: "radial-gradient(circle, rgba(142, 45, 226, 0.3) 0%, transparent 70%)",
       }}
       animate={{
-        y: [0, 30, 0],
-        x: [0, 20, 0],
-        opacity: [0.3, 0.6, 0.3],
+        y: [0, 40, 0],
+        x: [0, 25, 0],
+        opacity: [0.2, 0.5, 0.2],
       }}
       transition={{
-        duration: 8,
+        duration: 10,
         delay,
         repeat: Infinity,
         ease: "easeInOut",
@@ -53,23 +53,26 @@ const NeonParticle = ({ index }: { index: number }) => {
   );
 };
 
-const RotatingCube = () => {
+const RotatingCube = ({ scrollProgress }: { scrollProgress?: any }) => {
   return (
     <motion.div
-      className="relative w-48 h-48 md:w-64 md:h-64 float-sphere"
+      className="relative w-48 h-48 md:w-64 md:h-64"
       style={{
         transformStyle: "preserve-3d",
-        perspective: "1000px",
+        perspective: "1500px",
+        rotateX: scrollProgress?.rotateX || 0,
+        rotateY: scrollProgress?.rotateY || 0,
+        rotateZ: scrollProgress?.rotateZ || 0,
       }}
       animate={{
-        rotateX: [0, 360],
-        rotateY: [0, 360],
-        rotateZ: [0, 180],
+        rotateX: scrollProgress?.rotateX ? undefined : [0, 360],
+        rotateY: scrollProgress?.rotateY ? undefined : [0, 360],
+        rotateZ: scrollProgress?.rotateZ ? undefined : [0, 180],
       }}
       transition={{
-        duration: 15,
-        repeat: Infinity,
-        ease: "linear",
+        duration: scrollProgress ? undefined : 18,
+        repeat: scrollProgress ? undefined : Infinity,
+        ease: scrollProgress ? undefined : "linear",
       }}
     >
       {/* Cube faces */}
@@ -97,6 +100,20 @@ const RotatingCube = () => {
 
 export function HeroSection() {
   const [scrollY, setScrollY] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+
+  // 3D scroll effects
+  const cubeRotateX = useTransform(scrollYProgress, [0, 1], [0, 45]);
+  const cubeRotateY = useTransform(scrollYProgress, [0, 1], [0, 60]);
+  const cubeRotateZ = useTransform(scrollYProgress, [0, 1], [0, 30]);
+  const cubeScale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
+  const cubeOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.2]);
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -106,6 +123,7 @@ export function HeroSection() {
 
   return (
     <section 
+      ref={containerRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
       style={{ perspective: "1200px" }}
     >
@@ -144,10 +162,28 @@ export function HeroSection() {
         />
       </div>
 
-      {/* Floating orbs */}
-      <FloatingOrb delay={0} size="w-64 h-64" />
-      <FloatingOrb delay={2} size="w-48 h-48" />
-      <FloatingOrb delay={4} size="w-80 h-80" />
+      {/* Floating orbs with enhanced 3D */}
+      <motion.div
+        style={{
+          rotateY: useTransform(scrollYProgress, [0, 1], [-30, 30]),
+        }}
+      >
+        <FloatingOrb delay={0} size="w-64 h-64" />
+      </motion.div>
+      <motion.div
+        style={{
+          rotateX: useTransform(scrollYProgress, [0, 1], [20, -20]),
+        }}
+      >
+        <FloatingOrb delay={2} size="w-48 h-48" />
+      </motion.div>
+      <motion.div
+        style={{
+          rotateZ: useTransform(scrollYProgress, [0, 1], [-15, 15]),
+        }}
+      >
+        <FloatingOrb delay={4} size="w-80 h-80" />
+      </motion.div>
 
       {/* Particle field */}
       <div className="absolute inset-0 overflow-hidden hidden md:block">
@@ -164,13 +200,24 @@ export function HeroSection() {
         className="absolute top-1/4 left-1/2 -translate-x-1/2 hidden lg:flex"
         style={{
           y: scrollY * 0.1,
+          scale: cubeScale,
+          opacity: cubeOpacity,
+          rotateX: cubeRotateX,
+          rotateY: cubeRotateY,
+          rotateZ: cubeRotateZ,
         }}
       >
-        <RotatingCube />
+        <RotatingCube scrollProgress={{ rotateX: cubeRotateX, rotateY: cubeRotateY, rotateZ: cubeRotateZ }} />
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
+      <motion.div 
+        className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center"
+        style={{
+          y: contentY,
+          opacity: contentOpacity,
+        }}
+      >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -266,7 +313,7 @@ export function HeroSection() {
             </Button>
           </motion.div>
         </motion.div>
-      </div>
+      </motion.div>
 
       {/* Scroll indicator */}
       <motion.div
