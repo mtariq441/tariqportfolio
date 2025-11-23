@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navItems = [
   { label: "Services", href: "#services" },
@@ -96,7 +95,6 @@ export function Navigation() {
                 />
                 <span className="relative z-10">Get Started</span>
               </Button>
-              <ThemeToggle />
               <Button
                 variant="ghost"
                 size="icon"
