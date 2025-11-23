@@ -89,7 +89,7 @@ export function ContactSection() {
                       placeholder="Your name"
                       required
                       data-testid="input-contact-name"
-                      className="bg-white/5 border-red-600/15 text-white placeholder:text-gray-500 focus:border-red-600/30 focus:ring-red-600/10"
+                      className="bg-black/40 border border-red-600/40 text-white placeholder:text-gray-400 focus:border-red-500 focus:ring-red-600/20 rounded-md"
                     />
                   </div>
                   <div>
@@ -104,7 +104,7 @@ export function ContactSection() {
                       placeholder="your@email.com"
                       required
                       data-testid="input-contact-email"
-                      className="bg-white/5 border-red-600/15 text-white placeholder:text-gray-500 focus:border-red-600/30 focus:ring-red-600/10"
+                      className="bg-black/40 border border-red-600/40 text-white placeholder:text-gray-400 focus:border-red-500 focus:ring-red-600/20 rounded-md"
                     />
                   </div>
                 </div>
@@ -121,7 +121,7 @@ export function ContactSection() {
                     required
                     rows={6}
                     data-testid="input-contact-message"
-                    className="bg-white/5 border-red-600/15 text-white placeholder:text-gray-500 focus:border-red-600/30 focus:ring-red-600/10 resize-none"
+                    className="bg-black/40 border border-red-600/40 text-white placeholder:text-gray-400 focus:border-red-500 focus:ring-red-600/20 resize-none rounded-md"
                   />
                 </div>
 
