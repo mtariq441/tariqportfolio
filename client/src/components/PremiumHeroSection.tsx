@@ -82,9 +82,9 @@ export function PremiumHeroSection() {
         >
           <h1
             ref={titleRef}
-            className="text-6xl md:text-7xl lg:text-8xl font-black leading-tight tracking-tight"
+            className="text-6xl md:text-7xl lg:text-8xl font-black leading-tight tracking-tight uppercase"
           >
-            <span className="text-white">Premium </span>
+            <span className="text-white">PREMIUM </span>
             <motion.span
               className="premium-gradient-text inline-block"
               animate={{
@@ -96,10 +96,10 @@ export function PremiumHeroSection() {
               }}
               transition={{ duration: 3, repeat: Infinity }}
             >
-              SaaS Solutions
+              SAAS SOLUTIONS
             </motion.span>
             <br />
-            <span className="text-gray-200">Built with Excellence</span>
+            <span className="text-gray-200">BUILT WITH EXCELLENCE</span>
           </h1>
         </motion.div>
 

@@ -39,25 +39,25 @@ export function CTASection() {
 
           {/* Main heading with gradient */}
           <motion.h2
-            className="text-5xl md:text-6xl font-bold leading-tight"
+            className="text-5xl md:text-6xl font-bold leading-tight uppercase"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            <span className="text-white">Let's Build Your </span>
+            <span className="text-white">LET'S BUILD YOUR </span>
             <motion.span
               className="gradient-text inline-block"
               animate={{
                 textShadow: [
-                  '0 0 20px rgba(0, 212, 255, 0.1)',
-                  '0 0 40px rgba(0, 212, 255, 0.2)',
-                  '0 0 20px rgba(0, 212, 255, 0.1)',
+                  '0 0 20px rgba(220, 20, 60, 0.15)',
+                  '0 0 40px rgba(220, 20, 60, 0.25)',
+                  '0 0 20px rgba(220, 20, 60, 0.15)',
                 ],
               }}
               transition={{ duration: 3, repeat: Infinity }}
             >
-              Next-Gen Product
+              NEXT-GEN PRODUCT
             </motion.span>
           </motion.h2>
 

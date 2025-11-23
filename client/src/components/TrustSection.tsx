@@ -53,8 +53,8 @@ export function TrustSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl md:text-6xl font-black mb-6 text-white">
-            Why <span className="premium-gradient-text">Enterprise Teams</span> Choose Us
+          <h2 className="text-5xl md:text-6xl font-black mb-6 text-white uppercase">
+            WHY <span className="premium-gradient-text">ENTERPRISE TEAMS</span> CHOOSE US
           </h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             Trusted by leading companies for delivering premium SaaS solutions with exceptional quality and reliability.

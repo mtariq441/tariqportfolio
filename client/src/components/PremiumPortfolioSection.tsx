@@ -194,9 +194,9 @@ export function PremiumPortfolioSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="text-white">Featured </span>
-            <span className="gradient-text">Projects</span>
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 uppercase">
+            <span className="text-white">FEATURED </span>
+            <span className="gradient-text">PROJECTS</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Showcase of premium SaaS applications, portfolios, and web experiences built with cutting-edge technology.
