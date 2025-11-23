@@ -185,7 +185,7 @@ export function HeroSection() {
             className="inline-block"
           >
             <div className="glass-effect px-4 py-2 rounded-full border border-cyan-500/30 w-fit mx-auto">
-              <span className="gradient-text font-semibold text-sm">SaaS • AI • Webflow</span>
+              <span className="gradient-text font-semibold text-sm">SaaS • AI • Development</span>
             </div>
           </motion.div>
 
@@ -210,7 +210,7 @@ export function HeroSection() {
               }}
               transition={{ duration: 3, repeat: Infinity }}
             >
-              With Replit AI + Webflow
+              With Replit AI
             </motion.span>
           </motion.h1>
 

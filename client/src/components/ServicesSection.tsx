@@ -3,7 +3,6 @@ import { useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { 
   Code2, 
-  Palette, 
   Globe, 
   Sparkles,
   Zap,
@@ -24,13 +23,6 @@ const services = [
     description: "From ideation to launch. Full-stack development of minimum viable products with focus on speed and scalability.",
     color: "from-purple-500/20 to-purple-500/0",
     borderColor: "border-purple-500/30",
-  },
-  {
-    icon: Palette,
-    title: "Webflow Development",
-    description: "Pixel-perfect responsive websites built with Webflow. Custom animations, interactions, and premium design.",
-    color: "from-blue-500/20 to-blue-500/0",
-    borderColor: "border-blue-500/30",
   },
   {
     icon: LayoutDashboard,
