@@ -1,25 +1,28 @@
 import { Navigation } from "@/components/Navigation";
-import { HeroSection } from "@/components/HeroSection";
-import { AboutSection } from "@/components/AboutSection";
-import { ServicesSection } from "@/components/ServicesSection";
-import { TechnicalSkillsSection } from "@/components/TechnicalSkillsSection";
-import { PortfolioSection } from "@/components/PortfolioSection";
+import { WebGLBackground } from "@/components/WebGLBackground";
+import { PremiumHeroSection } from "@/components/PremiumHeroSection";
+import { FeaturesSection } from "@/components/FeaturesSection";
+import { PremiumPortfolioSection } from "@/components/PremiumPortfolioSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen" id="home">
-      <Navigation />
-      <HeroSection />
-      <AboutSection />
-      <ServicesSection />
-      <TechnicalSkillsSection />
-      <PortfolioSection />
-      <TestimonialsSection />
-      <ContactSection />
-      <Footer />
+    <div className="relative min-h-screen overflow-x-hidden bg-black" id="home">
+      {/* WebGL Background - Fixed */}
+      <WebGLBackground />
+      
+      {/* Content - Relative to WebGL bg */}
+      <div className="relative z-10">
+        <Navigation />
+        <PremiumHeroSection />
+        <FeaturesSection />
+        <PremiumPortfolioSection />
+        <TestimonialsSection />
+        <ContactSection />
+        <Footer />
+      </div>
     </div>
   );
 }
