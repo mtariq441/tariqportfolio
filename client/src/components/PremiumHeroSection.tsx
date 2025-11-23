@@ -109,20 +109,20 @@ export function PremiumHeroSection() {
         </motion.div>
 
         {/* Subheadline */}
-        <motion.div
-          className="text-xs sm:text-sm md:text-lg text-gray-300 max-w-2xl md:max-w-3xl mx-auto leading-relaxed font-light space-y-1 md:space-y-0"
+        <motion.p
+          className="text-sm sm:text-base md:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed font-light"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
         >
-          <p className="block md:inline">$27M+ client revenue</p>
+          <span className="block md:inline">$27M+ client revenue</span>
           <span className="hidden md:inline text-gray-500"> | </span>
-          <p className="block md:inline">350+ apps shipped</p>
+          <span className="block md:inline">350+ apps shipped</span>
           <span className="hidden md:inline text-gray-500"> | </span>
-          <p className="block md:inline">157+ founders served</p>
+          <span className="block md:inline">157+ founders served</span>
           <span className="hidden md:inline text-gray-500"> | </span>
-          <p className="block md:inline">Only 2 clients per month</p>
-        </motion.div>
+          <span className="block md:inline">Only 2 clients per month</span>
+        </motion.p>
 
         {/* Premium CTA Buttons */}
         <motion.div
