@@ -40,8 +40,8 @@ export function ContactSection() {
       <div className="max-w-7xl mx-auto">
         {/* Background gradient */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-red-600/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-600/10 rounded-full blur-3xl" />
         </div>
 
         <div className="relative z-10 space-y-12">
@@ -53,9 +53,9 @@ export function ContactSection() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4" data-testid="heading-contact">
-              <span className="text-white">Ready to Build </span>
-              <span className="gradient-text">Your SaaS MVP?</span>
+            <h2 className="text-4xl md:text-5xl font-black mb-4 uppercase" data-testid="heading-contact">
+              <span className="text-white">READY TO BUILD </span>
+              <span className="premium-gradient-text">YOUR SAAS MVP?</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Send me a message with your project details and let's create something amazing together.
@@ -75,7 +75,7 @@ export function ContactSection() {
               transformStyle: "preserve-3d",
             }}
           >
-            <div className="glass-effect rounded-lg p-8 border border-cyan-500/15">
+            <div className="glass-effect rounded-lg p-8 border border-red-600/15">
               <form onSubmit={handleContactSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
@@ -89,7 +89,7 @@ export function ContactSection() {
                       placeholder="Your name"
                       required
                       data-testid="input-contact-name"
-                      className="bg-white/5 border-cyan-500/15 text-white placeholder:text-gray-500 focus:border-cyan-500/30 focus:ring-cyan-500/10"
+                      className="bg-white/5 border-red-600/15 text-white placeholder:text-gray-500 focus:border-red-600/30 focus:ring-red-600/10"
                     />
                   </div>
                   <div>
@@ -104,7 +104,7 @@ export function ContactSection() {
                       placeholder="your@email.com"
                       required
                       data-testid="input-contact-email"
-                      className="bg-white/5 border-cyan-500/15 text-white placeholder:text-gray-500 focus:border-cyan-500/30 focus:ring-cyan-500/10"
+                      className="bg-white/5 border-red-600/15 text-white placeholder:text-gray-500 focus:border-red-600/30 focus:ring-red-600/10"
                     />
                   </div>
                 </div>
@@ -125,7 +125,7 @@ export function ContactSection() {
                 </div>
                 <Button 
                   type="submit" 
-                  className="w-full bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white border-0"
+                  className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white border-0"
                   size="lg"
                   data-testid="button-contact-submit"
                 >

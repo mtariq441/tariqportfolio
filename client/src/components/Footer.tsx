@@ -40,7 +40,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="border-t border-cyan-500/20 bg-gradient-to-b from-black/50 to-black backdrop-blur-md">
+    <footer className="border-t border-red-600/20 bg-gradient-to-b from-black/50 to-black backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand Column */}
@@ -63,7 +63,7 @@ export function Footer() {
                   <motion.button
                     key={social.label}
                     onClick={() => window.open(social.href, '_blank')}
-                    className="p-2 rounded-lg glass-effect border border-cyan-500/30 text-cyan-400 hover:text-cyan-300 hover:border-cyan-500/60 transition-all neon-glow"
+                    className="p-2 rounded-lg glass-effect border border-red-600/30 text-red-500 hover:text-red-400 hover:border-red-600/60 transition-all"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     data-testid={`link-${social.label.toLowerCase()}`}
@@ -82,17 +82,17 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h3 className="font-semibold text-white mb-6">Quick Links</h3>
+            <h3 className="font-black text-white mb-6 uppercase">QUICK LINKS</h3>
             <div className="space-y-3">
               {navLinks.map((link) => (
                 <motion.button
                   key={link.label}
                   onClick={() => scrollToSection(link.href)}
-                  className="block text-sm text-gray-400 hover:text-cyan-400 transition-colors group flex items-center gap-2"
+                  className="block text-sm text-gray-400 hover:text-red-500 transition-colors group flex items-center gap-2"
                   whileHover={{ x: 5 }}
                   data-testid={`footer-link-${link.label.toLowerCase()}`}
                 >
-                  <span className="w-0 group-hover:w-4 transition-all h-0.5 bg-gradient-to-r from-cyan-500 to-purple-600" />
+                  <span className="w-0 group-hover:w-4 transition-all h-0.5 bg-gradient-to-r from-red-600 to-red-500" />
                   {link.label}
                 </motion.button>
               ))}
@@ -106,11 +106,11 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="font-semibold text-white mb-6">Contact</h3>
+            <h3 className="font-black text-white mb-6 uppercase">CONTACT</h3>
             <div className="space-y-3">
               <a 
                 href="mailto:contact@muhammadtariq.com"
-                className="flex items-center gap-2 text-sm text-gray-400 hover:text-cyan-400 transition-colors"
+                className="flex items-center gap-2 text-sm text-gray-400 hover:text-red-500 transition-colors"
                 data-testid="link-email"
               >
                 <Mail className="h-4 w-4" />
@@ -121,7 +121,7 @@ export function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent mb-8" />
+        <div className="h-px bg-gradient-to-r from-transparent via-red-600/20 to-transparent mb-8" />
 
         {/* Bottom Section */}
         <motion.div

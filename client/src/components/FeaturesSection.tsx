@@ -84,21 +84,21 @@ export function FeaturesSection() {
                 whileHover={{ y: -8, scale: 1.02 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 20 }}
               >
-                <Card className="relative overflow-hidden h-full border-[#00d4ff]/15 bg-gradient-to-br from-white/3 to-white/0 backdrop-blur-sm hover:border-[#00d4ff]/40 transition-all duration-300 shadow-lg hover:shadow-[0_0_30px_rgba(0,212,255,0.1)]">
+                <Card className="relative overflow-hidden h-full border-red-600/15 bg-gradient-to-br from-white/3 to-white/0 backdrop-blur-sm hover:border-red-600/40 transition-all duration-300 shadow-lg hover:shadow-[0_0_30px_rgba(220,20,60,0.1)]">
                   <CardContent className="p-8 relative z-10">
                     <motion.div
-                      className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-6 border border-[#00d4ff]/30`}
+                      className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-6 border border-red-600/30`}
                       whileHover={{ scale: 1.15, rotate: 5 }}
                       transition={{ type: 'spring', stiffness: 400, damping: 20 }}
                     >
-                      <feature.icon className="w-7 h-7 text-[#00d4ff]" />
+                      <feature.icon className="w-7 h-7 text-red-500" />
                     </motion.div>
 
                     <h3 className="text-lg font-bold text-white mb-3">{feature.title}</h3>
                     <p className="text-gray-300 leading-relaxed text-sm">{feature.description}</p>
 
                     <motion.div
-                      className="mt-4 text-[#00d4ff] text-sm font-bold opacity-0 group-hover:opacity-100 inline-flex items-center gap-1"
+                      className="mt-4 text-red-500 text-sm font-bold opacity-0 group-hover:opacity-100 inline-flex items-center gap-1"
                       initial={{ opacity: 0 }}
                       whileHover={{ opacity: 1 }}
                     >

@@ -110,11 +110,12 @@ export function TestimonialsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 sm:mb-12 md:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4" data-testid="heading-testimonials">
-            Testimonials
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-3 sm:mb-4 uppercase" data-testid="heading-testimonials">
+            <span className="text-white">CLIENT </span>
+            <span className="premium-gradient-text">TESTIMONIALS</span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-            What clients say about working with me
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-4">
+            What industry leaders say about working with me
           </p>
         </motion.div>
 
@@ -150,7 +151,7 @@ export function TestimonialsSection() {
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: i * 0.1 }}
                           >
-                            <Star className="h-5 w-5 fill-primary text-primary" />
+                            <Star className="h-5 w-5 fill-red-500 text-red-500" />
                           </motion.div>
                         ))}
                       </div>
@@ -160,9 +161,9 @@ export function TestimonialsSection() {
                       </p>
                       
                       <div className="flex items-center gap-4">
-                        <Avatar className="h-14 w-14 border-2 border-primary">
+                        <Avatar className="h-14 w-14 border-2 border-red-600">
                           <AvatarImage src={testimonial.image} alt={testimonial.name} />
-                          <AvatarFallback className="bg-primary text-primary-foreground font-semibold">
+                          <AvatarFallback className="bg-red-600 text-white font-semibold">
                             {testimonial.initials}
                           </AvatarFallback>
                         </Avatar>
