@@ -8,7 +8,7 @@ const FloatingOrb = ({ delay, size }: { delay: number; size: string }) => {
     <motion.div
       className={`absolute ${size} rounded-full blur-3xl`}
       style={{
-        background: "radial-gradient(circle, rgba(142, 45, 226, 0.3) 0%, transparent 70%)",
+        background: "radial-gradient(circle, rgba(220, 20, 60, 0.3) 0%, transparent 70%)",
       }}
       animate={{
         y: [0, 40, 0],
@@ -36,8 +36,8 @@ const NeonParticle = ({ index }: { index: number }) => {
       style={{
         left: `${randomLeft}%`,
         top: `${randomTop}%`,
-        background: "linear-gradient(135deg, #00d4ff, #8e2de2)",
-        boxShadow: "0 0 4px rgba(0, 212, 255, 0.2)",
+        background: "linear-gradient(135deg, #dc143c, #c41e3a)",
+        boxShadow: "0 0 4px rgba(220, 20, 60, 0.2)",
       }}
       animate={{
         y: [0, -500, 0],
@@ -77,16 +77,16 @@ const RotatingCube = ({ scrollProgress }: { scrollProgress?: any }) => {
     >
       {/* Cube faces */}
       {[
-        { transform: "translateZ(96px)", bg: "from-purple-500/30" },
-        { transform: "translateZ(-96px) rotateY(180deg)", bg: "from-blue-500/30" },
-        { transform: "rotateY(90deg) translateZ(96px)", bg: "from-cyan-500/30" },
-        { transform: "rotateY(-90deg) translateZ(96px)", bg: "from-purple-500/20" },
-        { transform: "rotateX(90deg) translateZ(96px)", bg: "from-blue-500/20" },
-        { transform: "rotateX(-90deg) translateZ(96px)", bg: "from-cyan-500/20" },
+        { transform: "translateZ(96px)", bg: "from-red-600/30" },
+        { transform: "translateZ(-96px) rotateY(180deg)", bg: "from-red-500/30" },
+        { transform: "rotateY(90deg) translateZ(96px)", bg: "from-red-600/30" },
+        { transform: "rotateY(-90deg) translateZ(96px)", bg: "from-red-500/20" },
+        { transform: "rotateX(90deg) translateZ(96px)", bg: "from-red-600/20" },
+        { transform: "rotateX(-90deg) translateZ(96px)", bg: "from-red-500/20" },
       ].map((face, i) => (
         <div
           key={i}
-          className="absolute w-48 h-48 md:w-64 md:h-64 border-2 border-cyan-400/30"
+          className="absolute w-48 h-48 md:w-64 md:h-64 border-2 border-red-600/30"
           style={{
             backfaceVisibility: "hidden",
             transform: face.transform,

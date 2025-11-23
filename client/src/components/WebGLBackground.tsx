@@ -52,8 +52,13 @@ export function WebGLBackground() {
         positions[i + 1] = (Math.random() - 0.5) * 200;
         positions[i + 2] = (Math.random() - 0.5) * 200;
 
-        const hue = Math.random() < 0.5 ? 0.75 : 0.95; // Cyan or Purple
-        const color = new THREE.Color().setHSL(hue, 1, 0.5);
+        // Red or Dark Red particles
+        const redVariations = [
+          new THREE.Color(0xdc143c), // Crimson Red
+          new THREE.Color(0xc41e3a), // Deep Red
+          new THREE.Color(0xff1744), // Hot Pink Red
+        ];
+        const color = redVariations[Math.floor(Math.random() * redVariations.length)];
         colors[i] = color.r;
         colors[i + 1] = color.g;
         colors[i + 2] = color.b;
@@ -74,12 +79,12 @@ export function WebGLBackground() {
       particlesRef.current = particles;
       scene.add(particles);
 
-      // Add soft neon glow lights
-      const light1 = new THREE.PointLight(0x00d4ff, 1, 100);
+      // Add soft neon glow lights - Red theme
+      const light1 = new THREE.PointLight(0xdc143c, 1, 100);
       light1.position.set(30, 30, 20);
       scene.add(light1);
 
-      const light2 = new THREE.PointLight(0x8e2de2, 1, 100);
+      const light2 = new THREE.PointLight(0xc41e3a, 1, 100);
       light2.position.set(-30, -30, 20);
       scene.add(light2);
 

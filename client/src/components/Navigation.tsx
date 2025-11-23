@@ -120,14 +120,14 @@ export function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="fixed top-[73px] left-0 right-0 z-40 glass-effect-premium border-b border-[#00d4ff]/20 md:hidden"
+            className="fixed top-[73px] left-0 right-0 z-40 glass-effect-premium border-b border-red-600/20 md:hidden"
           >
             <div className="px-6 py-4 space-y-2">
               {navItems.map((item) => (
                 <button
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left py-3 text-sm font-semibold text-gray-300 hover:text-[#00d4ff] hover:bg-[#00d4ff]/5 rounded-lg transition-all px-3"
+                  className="block w-full text-left py-3 text-sm font-semibold text-gray-300 hover:text-red-500 hover:bg-red-600/5 rounded-lg transition-all px-3"
                   data-testid={`nav-mobile-${item.label.toLowerCase()}`}
                 >
                   {item.label}

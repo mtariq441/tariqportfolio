@@ -12,38 +12,38 @@ import {
 const services = [
   {
     icon: Code2,
-    title: "AI App Development",
-    description: "Build intelligent SaaS applications with Replit AI integration, automation, and cutting-edge backend architecture.",
-    color: "from-cyan-500/20 to-cyan-500/0",
-    borderColor: "border-cyan-500/30",
+    title: "Full-Stack Development",
+    description: "Enterprise SaaS applications with React, Node.js, TypeScript, and cutting-edge backend architecture.",
+    color: "from-red-600/20 to-red-600/0",
+    borderColor: "border-red-600/30",
   },
   {
     icon: Globe,
     title: "SaaS MVP Launch",
-    description: "From ideation to launch. Full-stack development of minimum viable products with focus on speed and scalability.",
-    color: "from-purple-500/20 to-purple-500/0",
-    borderColor: "border-purple-500/30",
+    description: "From ideation to launch. Full-stack development with focus on speed, scalability, and premium design.",
+    color: "from-red-500/20 to-red-500/0",
+    borderColor: "border-red-500/30",
   },
   {
     icon: LayoutDashboard,
-    title: "SaaS Dashboards",
-    description: "Interactive data visualization dashboards with real-time analytics, charts, and user-friendly interfaces.",
-    color: "from-cyan-500/20 to-purple-500/20",
-    borderColor: "border-cyan-500/30",
+    title: "Advanced UI Design",
+    description: "Premium interfaces with glassmorphism, 3D animations, and world-class user experience design.",
+    color: "from-red-600/20 to-red-500/20",
+    borderColor: "border-red-600/30",
   },
   {
     icon: Zap,
-    title: "Performance Optimization",
-    description: "Lightning-fast load times, Core Web Vitals optimization, and SEO-ready architecture for maximum visibility.",
-    color: "from-yellow-500/20 to-orange-500/0",
-    borderColor: "border-yellow-500/30",
+    title: "Performance & Optimization",
+    description: "Lightning-fast load times, Core Web Vitals mastery, and SEO-ready architecture for maximum impact.",
+    color: "from-red-500/20 to-red-600/0",
+    borderColor: "border-red-500/30",
   },
   {
     icon: Sparkles,
-    title: "UI/UX Design",
-    description: "Beautiful, intuitive interfaces with glassmorphism design, smooth animations, and premium aesthetics.",
-    color: "from-pink-500/20 to-rose-500/0",
-    borderColor: "border-pink-500/30",
+    title: "3D Animations & Effects",
+    description: "Cutting-edge WebGL animations, scroll effects, and premium visual experiences with Three.js.",
+    color: "from-red-600/20 to-red-700/0",
+    borderColor: "border-red-600/30",
   },
 ];
 
@@ -66,8 +66,8 @@ export function ServicesSection() {
       <div className="max-w-7xl mx-auto">
         {/* Background gradient */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
+          <div className="absolute top-0 left-0 w-96 h-96 bg-red-600/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-red-600/10 rounded-full blur-3xl" />
         </div>
 
         {/* Header */}
