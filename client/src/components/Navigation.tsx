@@ -43,18 +43,15 @@ export function Navigation() {
       >
         <div className="max-w-7xl mx-auto px-6 py-5">
           <div className="flex items-center justify-between">
-            {/* Logo - Replit Inspired */}
+            {/* Logo - MT */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="cursor-pointer flex items-center gap-2"
+              className="cursor-pointer"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
-              <div className="w-8 h-8 rounded-md bg-gradient-to-br from-red-600 to-red-700 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">⚡</span>
-              </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-red-500 via-red-600 to-red-500 bg-clip-text text-transparent">
-                Muhammad Tariq
+              <span className="text-2xl font-black bg-gradient-to-r from-red-500 via-red-600 to-red-500 bg-clip-text text-transparent uppercase tracking-tight">
+                MT
               </span>
             </motion.div>
 
