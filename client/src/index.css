@@ -92,6 +92,12 @@
   --tracking-normal: 0em;
   --spacing: 0.25rem;
 
+  /* SaaS Specific Colors */
+  --neon-blue: 180 100% 50%;
+  --electric-purple: 270 100% 50%;
+  --dark-bg: 0 0% 0%;
+  --dark-bg-secondary: 0 0% 3%;
+
   /* Automatically computed borders - intensity can be controlled by the user by the --opaque-button-border-intensity setting */
 
   /* Fallback for older browsers */
@@ -133,68 +139,68 @@
   --elevate-1: rgba(255,255,255, .04);
   --elevate-2: rgba(255,255,255, .09);
 
-  --background: 0 0% 5%;
+  --background: 0 0% 2%;
 
-  --foreground: 0 0% 92%;
+  --foreground: 0 0% 98%;
 
-  --border: 0 0% 15%;
+  --border: 270 100% 35%;
 
-  --card: 0 0% 7%;
+  --card: 0 0% 5%;
 
-  --card-foreground: 0 0% 92%;
+  --card-foreground: 0 0% 98%;
 
-  --card-border: 0 0% 12%;
+  --card-border: 270 100% 35%;
 
-  --sidebar: 0 0% 9%;
+  --sidebar: 0 0% 4%;
 
-  --sidebar-foreground: 0 0% 92%;
+  --sidebar-foreground: 0 0% 98%;
 
-  --sidebar-border: 0 0% 14%;
+  --sidebar-border: 270 100% 40%;
 
-  --sidebar-primary: 217 91% 60%;
+  --sidebar-primary: 180 100% 50%;
 
   --sidebar-primary-foreground: 0 0% 100%;
 
-  --sidebar-accent: 217 20% 15%;
+  --sidebar-accent: 270 100% 40%;
 
-  --sidebar-accent-foreground: 0 0% 92%;
+  --sidebar-accent-foreground: 0 0% 98%;
 
-  --sidebar-ring: 217 91% 60%;
+  --sidebar-ring: 180 100% 50%;
 
-  --popover: 0 0% 11%;
+  --popover: 0 0% 8%;
 
-  --popover-foreground: 0 0% 92%;
+  --popover-foreground: 0 0% 98%;
 
-  --popover-border: 0 0% 16%;
+  --popover-border: 270 100% 35%;
 
-  --primary: 217 91% 65%;
+  --primary: 180 100% 50%;
 
-  --primary-foreground: 0 0% 100%;
+  --primary-foreground: 0 0% 0%;
 
-  --secondary: 0 0% 14%;
+  --secondary: 0 0% 12%;
 
-  --secondary-foreground: 0 0% 92%;
+  --secondary-foreground: 0 0% 98%;
 
-  --muted: 82 8% 13%;
+  --muted: 270 30% 15%;
 
-  --muted-foreground: 0 0% 68%;
+  --muted-foreground: 0 0% 72%;
 
-  --accent: 82 18% 15%;
+  --accent: 270 100% 45%;
 
-  --accent-foreground: 0 0% 92%;
+  --accent-foreground: 0 0% 98%;
 
-  --destructive: 0 84% 30%;
+  --destructive: 0 84% 50%;
 
   --destructive-foreground: 0 0% 98%;
 
   /* Used as the border around inputs. Dark mode: Should be a border that is light enough to have high contrast when rendered on a --card background. More contrast than standard --border */
-  --input: 0 0% 30%;
-  --ring: 217 91% 60%;
-  --chart-1: 217 91% 65%;
-  --chart-2: 45 95% 60%;
-  --chart-3: 180 85% 55%;
-  --chart-4: 280 75% 62%;
-  --chart-5: 15 80% 58%;
+  --input: 270 100% 35%;
+  --ring: 180 100% 50%;
+  --chart-1: 180 100% 50%;
+  --chart-2: 270 100% 50%;
+  --chart-3: 45 100% 55%;
+  --chart-4: 280 100% 60%;
+  --chart-5: 15 100% 60%;
 
   --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
   --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
@@ -204,6 +210,12 @@
   --shadow-lg: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 4px 6px -1px hsl(0 0% 0% / 0.00);
   --shadow-xl: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 8px 10px -1px hsl(0 0% 0% / 0.00);
   --shadow-2xl: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
+
+  /* SaaS Specific Colors */
+  --neon-blue: 180 100% 50%;
+  --electric-purple: 270 100% 50%;
+  --dark-bg: 0 0% 0%;
+  --dark-bg-secondary: 0 0% 3%;
 
   /* Fallback for older browsers */
   --sidebar-primary-border: hsl(var(--sidebar-primary));
@@ -227,7 +239,7 @@
 
   /* Fallback for older browsers */
   --accent-border: hsl(var(--accent));
-  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-interaction)) / alpha);
 
   /* Fallback for older browsers */
   --destructive-border: hsl(var(--destructive));
@@ -248,6 +260,83 @@
     text-transform: uppercase;
     letter-spacing: 0.02em;
   }
+}
+
+/* GLASSMORPHISM EFFECTS */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass-effect {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(180, 240, 255, 0.1);
+}
+
+/* NEON GLOW EFFECTS */
+.neon-glow {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3), 0 0 40px rgba(142, 45, 226, 0.2);
+}
+
+.dark .neon-glow {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.4), 0 0 40px rgba(142, 45, 226, 0.3);
+}
+
+.neon-border {
+  border: 2px solid transparent;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.02)),
+    linear-gradient(90deg, #8e2de2, #00d4ff, #8e2de2);
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+}
+
+.dark .neon-border {
+  border: 2px solid transparent;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    linear-gradient(90deg, #8e2de2, #00d4ff, #8e2de2);
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+}
+
+/* SMOOTH TRANSITIONS */
+.smooth-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 3D SPHERE ANIMATION */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotateX(180deg) rotateY(180deg);
+  }
+}
+
+.float-sphere {
+  animation: float 6s ease-in-out infinite;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* GRADIENT TEXT */
+.gradient-text {
+  background: linear-gradient(135deg, #00d4ff 0%, #8e2de2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* PARALLAX SCROLL */
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /**

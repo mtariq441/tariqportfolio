@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Briefcase } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "Portfolio", href: "#portfolio" },
   { label: "Services", href: "#services" },
-  { label: "Testimonials", href: "#testimonials" },
+  { label: "Portfolio", href: "#portfolio" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -38,8 +37,8 @@ export function Navigation() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-background/80 backdrop-blur-md border-b border-border shadow-sm"
-            : "bg-transparent"
+            ? "glass-effect border-b border-cyan-500/20"
+            : "bg-black/30 backdrop-blur-sm border-b border-cyan-500/10"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 py-4">
@@ -47,12 +46,10 @@ export function Navigation() {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="flex items-center gap-2"
+              className="cursor-pointer text-2xl font-bold"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
-              <div className="text-2xl font-bold">
-                <span className="text-foreground">MT</span>
-                <span className="text-primary">.</span>
-              </div>
+              <span className="gradient-text">MT.</span>
             </motion.div>
 
             <div className="hidden md:flex items-center gap-8">
@@ -63,31 +60,22 @@ export function Navigation() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-sm font-medium text-gray-400 hover:text-cyan-400 transition-colors relative group"
                   data-testid={`nav-${item.label.toLowerCase()}`}
                 >
                   {item.label}
+                  <motion.div
+                    className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-cyan-500 to-purple-600"
+                    initial={{ width: 0 }}
+                    whileHover={{ width: "100%" }}
+                    transition={{ duration: 0.3 }}
+                  />
                 </motion.button>
               ))}
             </div>
 
             <div className="flex items-center gap-4">
-              <motion.div
-                className="hidden md:block"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
-              >
-                <Button
-                  size="sm"
-                  onClick={() => window.open("https://contra.com/muhammad_tariq_bb4x9zai?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=muhammad_tariq_bb4x9zai", "_blank")}
-                  className="gap-2"
-                  data-testid="button-nav-hire"
-                >
-                  <Briefcase className="h-4 w-4" />
-                  For Hire
-                </Button>
-              </motion.div>
+              <ThemeToggle />
               <Button
                 variant="ghost"
                 size="icon"
@@ -112,29 +100,19 @@ export function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="fixed top-[73px] left-0 right-0 z-40 bg-background/95 backdrop-blur-md border-b border-border md:hidden"
+            className="fixed top-[73px] left-0 right-0 z-40 glass-effect border-b border-cyan-500/20 md:hidden"
           >
             <div className="px-6 py-4 space-y-2">
               {navItems.map((item) => (
                 <button
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  className="block w-full text-left py-2 text-sm font-medium text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10 rounded-lg transition-colors px-2"
                   data-testid={`nav-mobile-${item.label.toLowerCase()}`}
                 >
                   {item.label}
                 </button>
               ))}
-              <div className="pt-2">
-                <Button
-                  onClick={() => window.open("https://contra.com/muhammad_tariq_bb4x9zai?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=muhammad_tariq_bb4x9zai", "_blank")}
-                  className="w-full gap-2"
-                  data-testid="button-nav-hire-mobile"
-                >
-                  <Briefcase className="h-4 w-4" />
-                  For Hire
-                </Button>
-              </div>
             </div>
           </motion.div>
         )}

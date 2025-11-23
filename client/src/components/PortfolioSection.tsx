@@ -207,19 +207,26 @@ export function PortfolioSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="portfolio" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6" ref={ref}>
+    <section id="portfolio" className="py-20 px-4 sm:px-6 bg-black/50 relative overflow-hidden" ref={ref}>
       <div className="max-w-7xl mx-auto">
+        {/* Background gradient */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10 sm:mb-12 md:mb-16"
+          className="text-center mb-16 relative z-10"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4" data-testid="heading-portfolio">
-            Portfolio
+          <h2 className="text-4xl md:text-5xl font-bold mb-4" data-testid="heading-portfolio">
+            <span className="text-white">Showcase </span>
+            <span className="gradient-text">Portfolio</span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-            A selection of development and design projects showcasing my technical and creative capabilities
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            A selection of premium development and design projects showcasing my technical expertise and creative vision
           </p>
         </motion.div>
 
@@ -243,7 +250,7 @@ export function PortfolioSection() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 relative z-10">
           {projects.map((project, index) => (
             <ProjectCard key={project.title} project={project} index={index} />
           ))}
