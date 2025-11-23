@@ -138,13 +138,11 @@ export function PremiumHeroSection() {
           </Button>
           <Button
             size="lg"
-            className="glass-effect-premium border border-red-600/40 text-red-400 hover:bg-red-600/10 hover:border-red-600/60 font-bold px-8 py-6 text-lg transition-all duration-300"
+            className="border-2 border-red-500 text-red-500 hover:text-red-400 bg-transparent hover:bg-red-600/10 font-bold px-6 py-6 text-sm sm:text-base transition-all duration-300 inline-flex items-center gap-2"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            <span className="flex items-center gap-2">
-              Schedule Consultation
-              <ArrowRight className="h-5 w-5" />
-            </span>
+            Schedule Consultation
+            <ArrowRight className="h-4 w-4" />
           </Button>
         </motion.div>
 
