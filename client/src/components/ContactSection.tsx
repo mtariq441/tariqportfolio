@@ -60,7 +60,7 @@ export function ContactSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="max-w-2xl mx-auto"
           >
-            <div className="glass-effect rounded-lg p-8 border border-cyan-500/30 neon-glow">
+            <div className="glass-effect rounded-lg p-8 border border-cyan-500/15">
               <form onSubmit={handleContactSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
@@ -74,7 +74,7 @@ export function ContactSection() {
                       placeholder="Your name"
                       required
                       data-testid="input-contact-name"
-                      className="bg-black/50 border-cyan-500/30 text-white placeholder:text-gray-500 focus:border-cyan-500/60 focus:ring-cyan-500/20"
+                      className="bg-white/5 border-cyan-500/15 text-white placeholder:text-gray-500 focus:border-cyan-500/30 focus:ring-cyan-500/10"
                     />
                   </div>
                   <div>
@@ -89,7 +89,7 @@ export function ContactSection() {
                       placeholder="your@email.com"
                       required
                       data-testid="input-contact-email"
-                      className="bg-black/50 border-cyan-500/30 text-white placeholder:text-gray-500 focus:border-cyan-500/60 focus:ring-cyan-500/20"
+                      className="bg-white/5 border-cyan-500/15 text-white placeholder:text-gray-500 focus:border-cyan-500/30 focus:ring-cyan-500/10"
                     />
                   </div>
                 </div>
@@ -105,12 +105,12 @@ export function ContactSection() {
                     rows={6}
                     required
                     data-testid="input-contact-message"
-                    className="bg-black/50 border-cyan-500/30 text-white placeholder:text-gray-500 focus:border-cyan-500/60 focus:ring-cyan-500/20 resize-none"
+                    className="bg-white/5 border-cyan-500/15 text-white placeholder:text-gray-500 focus:border-cyan-500/30 focus:ring-cyan-500/10 resize-none"
                   />
                 </div>
                 <Button 
                   type="submit" 
-                  className="w-full bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white border-0 neon-glow"
+                  className="w-full bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white border-0"
                   size="lg"
                   data-testid="button-contact-submit"
                 >

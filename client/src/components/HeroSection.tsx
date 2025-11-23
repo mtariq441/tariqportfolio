@@ -28,26 +28,26 @@ const FloatingOrb = ({ delay, size }: { delay: number; size: string }) => {
 const NeonParticle = ({ index }: { index: number }) => {
   const randomLeft = Math.random() * 100;
   const randomTop = Math.random() * 100;
-  const duration = 20 + Math.random() * 10;
+  const duration = 25 + Math.random() * 15;
 
   return (
     <motion.div
-      className="absolute w-1 h-1 rounded-full"
+      className="absolute w-0.5 h-0.5 rounded-full"
       style={{
         left: `${randomLeft}%`,
         top: `${randomTop}%`,
         background: "linear-gradient(135deg, #00d4ff, #8e2de2)",
-        boxShadow: "0 0 10px rgba(0, 212, 255, 0.5)",
+        boxShadow: "0 0 4px rgba(0, 212, 255, 0.2)",
       }}
       animate={{
         y: [0, -500, 0],
-        opacity: [0, 1, 0],
+        opacity: [0, 0.6, 0],
       }}
       transition={{
         duration,
         repeat: Infinity,
         ease: "linear",
-        delay: index * 0.5,
+        delay: index * 0.8,
       }}
     />
   );
@@ -151,7 +151,7 @@ export function HeroSection() {
 
       {/* Particle field */}
       <div className="absolute inset-0 overflow-hidden hidden md:block">
-        {Array.from({ length: 50 }).map((_, i) => (
+        {Array.from({ length: 20 }).map((_, i) => (
           <NeonParticle key={i} index={i} />
         ))}
       </div>
@@ -184,8 +184,8 @@ export function HeroSection() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="inline-block"
           >
-            <div className="glass-effect px-4 py-2 rounded-full border border-cyan-500/30 w-fit mx-auto">
-              <span className="gradient-text font-semibold text-sm">SaaS • AI • Development</span>
+            <div className="glass-effect px-4 py-2 rounded-full border border-cyan-500/20 w-fit mx-auto">
+              <span className="text-cyan-400/90 font-semibold text-sm">SaaS • AI • Development</span>
             </div>
           </motion.div>
 
@@ -203,9 +203,9 @@ export function HeroSection() {
               className="gradient-text"
               animate={{
                 textShadow: [
-                  "0 0 20px rgba(0, 212, 255, 0.3), 0 0 40px rgba(142, 45, 226, 0.2)",
-                  "0 0 30px rgba(0, 212, 255, 0.5), 0 0 60px rgba(142, 45, 226, 0.3)",
-                  "0 0 20px rgba(0, 212, 255, 0.3), 0 0 40px rgba(142, 45, 226, 0.2)",
+                  "0 0 8px rgba(0, 212, 255, 0.1), 0 0 16px rgba(142, 45, 226, 0.08)",
+                  "0 0 12px rgba(0, 212, 255, 0.15), 0 0 24px rgba(142, 45, 226, 0.12)",
+                  "0 0 8px rgba(0, 212, 255, 0.1), 0 0 16px rgba(142, 45, 226, 0.08)",
                 ]
               }}
               transition={{ duration: 3, repeat: Infinity }}
@@ -234,7 +234,7 @@ export function HeroSection() {
           >
             <Button
               size="lg"
-              className="relative overflow-hidden group bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white border-0 neon-glow"
+              className="relative overflow-hidden group bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white border-0"
               data-testid="button-get-quote"
               onClick={() => {
                 document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
@@ -253,7 +253,7 @@ export function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="glass-effect border-cyan-500/50 text-white hover:text-white hover:bg-cyan-500/10 group"
+              className="glass-effect border-cyan-500/20 text-white hover:text-white hover:bg-cyan-500/5 group"
               data-testid="button-view-work"
               onClick={() => {
                 document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
@@ -274,11 +274,11 @@ export function HeroSection() {
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <div className="w-6 h-10 border-2 border-cyan-500/50 rounded-full p-1 flex justify-center">
+        <div className="w-6 h-10 border-2 border-cyan-500/20 rounded-full p-1 flex justify-center">
           <motion.div
             animate={{ y: [0, 16, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-1.5 h-1.5 bg-cyan-500 rounded-full"
+            className="w-1.5 h-1.5 bg-cyan-500/60 rounded-full"
           />
         </div>
       </motion.div>

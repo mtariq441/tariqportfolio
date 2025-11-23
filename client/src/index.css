@@ -264,24 +264,24 @@
 
 /* GLASSMORPHISM EFFECTS */
 .glass-effect {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .dark .glass-effect {
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(180, 240, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(180, 240, 255, 0.06);
 }
 
-/* NEON GLOW EFFECTS */
+/* NEON GLOW EFFECTS - SUBTLE */
 .neon-glow {
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3), 0 0 40px rgba(142, 45, 226, 0.2);
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.1), 0 0 16px rgba(142, 45, 226, 0.08);
 }
 
 .dark .neon-glow {
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.4), 0 0 40px rgba(142, 45, 226, 0.3);
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.15), 0 0 16px rgba(142, 45, 226, 0.1);
 }
 
 .neon-border {

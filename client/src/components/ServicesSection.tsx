@@ -87,7 +87,8 @@ export function ServicesSection() {
               className="group"
             >
               <Card 
-                className={`relative overflow-hidden h-full border ${service.borderColor} bg-gradient-to-br ${service.color} backdrop-blur-sm transition-all duration-300 hover:border-cyan-500/60 neon-glow`}
+                className={`relative overflow-hidden h-full border bg-gradient-to-br ${service.color} backdrop-blur-sm transition-all duration-300`}
+                style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}
                 data-testid={`card-service-${index}`}
               >
                 {/* Animated gradient on hover */}
@@ -102,8 +103,8 @@ export function ServicesSection() {
                     transition={{ duration: 0.3 }}
                     className="mb-4"
                   >
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/30 to-purple-500/30 flex items-center justify-center border border-cyan-500/30 group-hover:border-cyan-500/60 transition-colors">
-                      <service.icon className="w-6 h-6 text-cyan-400" />
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center border border-cyan-500/15 group-hover:border-cyan-500/25 transition-colors">
+                      <service.icon className="w-6 h-6 text-cyan-300" />
                     </div>
                   </motion.div>
 
