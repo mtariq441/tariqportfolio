@@ -49,7 +49,7 @@ Transformed a portfolio into an **enterprise-grade, premium SaaS landing page** 
 - Dual CTA buttons:
   - Primary: Red gradient "View Portfolio"
   - Secondary: Glass effect "Schedule Consultation"
-- Scroll indicator with premium styling
+- Trust statistics display (157+ Projects, $27M+ Growth, 10+ Years)
 - Enterprise messaging focused on trust
 
 ### 6. **Trust Section**

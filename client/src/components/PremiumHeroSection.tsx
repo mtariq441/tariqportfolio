@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, ChevronDown, Zap } from 'lucide-react';
+import { ArrowRight, Zap } from 'lucide-react';
 
 export function PremiumHeroSection() {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -171,18 +171,6 @@ export function PremiumHeroSection() {
             ))}
           </div>
         </motion.div>
-      </motion.div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2.5, repeat: Infinity }}
-      >
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-xs text-gray-400 font-semibold">SCROLL TO EXPLORE</span>
-          <ChevronDown className="w-5 h-5 text-[#00d4ff]" />
-        </div>
       </motion.div>
     </section>
   );
