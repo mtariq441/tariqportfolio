@@ -64,11 +64,11 @@ export function PremiumHeroSection() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="inline-block"
         >
-          <div className="glass-effect-premium px-6 py-3 rounded-full border border-red-600/40 w-fit mx-auto backdrop-blur-xl hover:border-red-600/60 transition-all duration-300">
-            <div className="flex items-center gap-2">
-              <Zap className="w-4 h-4 text-red-500" />
-              <span className="text-red-500 font-bold text-sm tracking-wide">
-                350+ Apps Shipped | $27M+ Revenue Generated
+          <div className="glass-effect-premium px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-red-600/40 w-fit mx-auto backdrop-blur-xl hover:border-red-600/60 transition-all duration-300">
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3">
+              <Zap className="w-4 h-4 text-red-500 flex-shrink-0" />
+              <span className="text-red-500 font-bold text-xs sm:text-sm tracking-wide text-center sm:text-left whitespace-nowrap">
+                350+ Apps | $27M+ Revenue
               </span>
             </div>
           </div>
@@ -82,11 +82,11 @@ export function PremiumHeroSection() {
         >
           <h1
             ref={titleRef}
-            className="text-6xl md:text-7xl lg:text-8xl font-black leading-tight tracking-tight uppercase"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight tracking-tight uppercase"
           >
-            <span className="text-white">I SHIP </span>
+            <span className="block text-white mb-2">I SHIP</span>
             <motion.span
-              className="premium-gradient-text inline-block"
+              className="premium-gradient-text block mb-2"
               animate={{
                 textShadow: [
                   '0 0 20px rgba(220, 20, 60, 0.15)',
@@ -98,20 +98,31 @@ export function PremiumHeroSection() {
             >
               $1M–$10M+
             </motion.span>
-            <br />
-            <span className="text-gray-200">SAAS PRODUCTS ON REPLIT IN WEEKS</span>
+            <span className="block text-gray-200 leading-tight">
+              SAAS PRODUCTS
+            </span>
+            <span className="block text-gray-200 leading-tight">
+              ON REPLIT IN
+            </span>
+            <span className="block text-gray-200">WEEKS</span>
           </h1>
         </motion.div>
 
         {/* Subheadline */}
-        <motion.p
-          className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light"
+        <motion.div
+          className="text-xs sm:text-sm md:text-lg text-gray-300 max-w-2xl md:max-w-3xl mx-auto leading-relaxed font-light space-y-1 md:space-y-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
         >
-          $27M+ client revenue | 350+ apps shipped | 157+ founders served | Only 2 new clients per month
-        </motion.p>
+          <p className="block md:inline">$27M+ client revenue</p>
+          <span className="hidden md:inline text-gray-500"> | </span>
+          <p className="block md:inline">350+ apps shipped</p>
+          <span className="hidden md:inline text-gray-500"> | </span>
+          <p className="block md:inline">157+ founders served</p>
+          <span className="hidden md:inline text-gray-500"> | </span>
+          <p className="block md:inline">Only 2 clients per month</p>
+        </motion.div>
 
         {/* Premium CTA Buttons */}
         <motion.div
