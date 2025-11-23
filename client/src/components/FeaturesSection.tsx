@@ -47,7 +47,7 @@ export function FeaturesSection() {
   const isInView = useInView(containerRef, { once: true, margin: '-100px' });
 
   return (
-    <section id="features" ref={containerRef} className="relative py-32 px-6 z-10 overflow-hidden">
+    <section id="features" ref={containerRef} className="relative py-32 px-6 z-10 overflow-hidden" style={{ position: 'relative' }}>
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           className="absolute top-0 left-0 w-96 h-96 rounded-full blur-3xl opacity-10"

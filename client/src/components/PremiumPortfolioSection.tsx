@@ -118,6 +118,7 @@ function ProjectCard({
         transformStyle: 'preserve-3d',
         scale: scrollScale,
         opacity: scrollOpacity,
+        position: 'relative',
       }}
       className="cursor-pointer"
       onMouseMove={handleMouseMove}
@@ -176,7 +177,7 @@ export function PremiumPortfolioSection() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="portfolio" ref={ref} className="relative py-32 px-6 z-10 overflow-hidden">
+    <section id="portfolio" ref={ref} className="relative py-32 px-6 z-10 overflow-hidden" style={{ position: 'relative' }}>
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           className="absolute bottom-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-10"

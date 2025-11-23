@@ -4,6 +4,7 @@ import { PremiumHeroSection } from "@/components/PremiumHeroSection";
 import { FeaturesSection } from "@/components/FeaturesSection";
 import { PremiumPortfolioSection } from "@/components/PremiumPortfolioSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { CTASection } from "@/components/CTASection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 
@@ -20,6 +21,7 @@ export default function Home() {
         <FeaturesSection />
         <PremiumPortfolioSection />
         <TestimonialsSection />
+        <CTASection />
         <ContactSection />
         <Footer />
       </div>
