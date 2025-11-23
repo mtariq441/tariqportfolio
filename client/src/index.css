@@ -284,6 +284,20 @@
   border: 1px solid rgba(0, 212, 255, 0.2);
 }
 
+.glass-effect-premium {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.05);
+}
+
+.glass-effect-premium:hover {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.1);
+}
+
 /* GRADIENT TEXT */
 .gradient-text {
   background: linear-gradient(135deg, #00d4ff, #8e2de2);
@@ -291,6 +305,29 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-weight: 700;
+}
+
+/* PREMIUM GRADIENT TEXT - Replit Brand */
+.premium-gradient-text {
+  background: linear-gradient(135deg, #00d4ff, #0099cc, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 900;
+  background-size: 300% 300%;
+  animation: gradient-shift 6s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* NEON GLOW EFFECTS - SUBTLE */

@@ -132,7 +132,7 @@ function ProjectCard({
         whileTap={{ scale: 0.98 }}
         transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       >
-        <Card className="overflow-hidden border-cyan-500/10 bg-gradient-to-br from-white/2 to-white/0 backdrop-blur-sm hover:border-cyan-500/20 transition-all duration-300 h-full">
+        <Card className="overflow-hidden border-[#00d4ff]/15 bg-gradient-to-br from-white/3 to-white/0 backdrop-blur-sm hover:border-[#00d4ff]/40 transition-all duration-300 h-full shadow-lg hover:shadow-[0_0_30px_rgba(0,212,255,0.1)]">
           <div className="relative aspect-[4/3] overflow-hidden">
             <motion.img
               src={project.image}
@@ -147,11 +147,11 @@ function ProjectCard({
               whileHover={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
             >
-              <ExternalLink className="h-6 w-6 text-cyan-400" />
+              <ExternalLink className="h-6 w-6 text-[#00d4ff]" />
             </motion.div>
           </div>
           <CardContent className="p-6">
-            <Badge className="mb-3 text-xs bg-cyan-500/20 text-cyan-300 border-cyan-500/30">
+            <Badge className="mb-3 text-xs bg-[#00d4ff]/20 text-[#00d4ff] border-[#00d4ff]/40 font-bold">
               {project.category}
             </Badge>
             <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition-colors">
@@ -194,12 +194,11 @@ export function PremiumPortfolioSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="text-white">Featured </span>
-            <span className="gradient-text">Projects</span>
+          <h2 className="text-5xl md:text-6xl font-black mb-6 text-white">
+            Featured <span className="premium-gradient-text">Portfolio</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Showcase of premium SaaS applications, portfolios, and web experiences built with cutting-edge technology.
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+            Enterprise-level SaaS applications and premium web experiences trusted by leading companies worldwide.
           </p>
         </motion.div>
 

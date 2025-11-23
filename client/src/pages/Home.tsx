@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { WebGLBackground } from "@/components/WebGLBackground";
 import { PremiumHeroSection } from "@/components/PremiumHeroSection";
+import { TrustSection } from "@/components/TrustSection";
 import { FeaturesSection } from "@/components/FeaturesSection";
 import { PremiumPortfolioSection } from "@/components/PremiumPortfolioSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
@@ -18,6 +19,7 @@ export default function Home() {
       <div className="relative z-10">
         <Navigation />
         <PremiumHeroSection />
+        <TrustSection />
         <FeaturesSection />
         <PremiumPortfolioSection />
         <TestimonialsSection />

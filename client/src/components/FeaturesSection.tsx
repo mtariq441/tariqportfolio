@@ -47,13 +47,13 @@ export function FeaturesSection() {
   const isInView = useInView(containerRef, { once: true, margin: '-100px' });
 
   return (
-    <section id="features" ref={containerRef} className="relative py-32 px-6 z-10 overflow-hidden" style={{ position: 'relative' }}>
+    <section id="services" ref={containerRef} className="relative py-32 px-6 z-10 overflow-hidden" style={{ position: 'relative' }}>
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-0 left-0 w-96 h-96 rounded-full blur-3xl opacity-10"
-          style={{ background: 'linear-gradient(135deg, #8e2de2, #00d4ff)' }}
+          className="absolute bottom-0 left-0 w-96 h-96 rounded-full blur-3xl opacity-10"
+          style={{ background: 'linear-gradient(135deg, #00d4ff, #0099cc)' }}
           animate={{ x: [0, 50, 0], y: [0, -50, 0] }}
-          transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
+          transition={{ duration: 25, repeat: Infinity, ease: 'easeInOut' }}
         />
       </div>
 
@@ -64,12 +64,11 @@ export function FeaturesSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="text-white">Why Choose </span>
-            <span className="gradient-text">My Services</span>
+          <h2 className="text-5xl md:text-6xl font-black mb-6 text-white">
+            Premium <span className="premium-gradient-text">Services</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Comprehensive solutions designed to build premium SaaS products that users love.
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+            Enterprise-grade solutions designed to build world-class SaaS products with cutting-edge technology.
           </p>
         </motion.div>
 
@@ -85,27 +84,21 @@ export function FeaturesSection() {
                 whileHover={{ y: -8, scale: 1.02 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 20 }}
               >
-                <Card className="relative overflow-hidden h-full border-cyan-500/10 bg-gradient-to-br from-white/2 to-white/0 backdrop-blur-sm hover:border-cyan-500/20 transition-all duration-300">
-                  {/* Gradient border effect on hover */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 via-cyan-500/0 to-purple-500/0 opacity-0 group-hover:opacity-20"
-                    whileHover={{ opacity: 0.2 }}
-                  />
-
+                <Card className="relative overflow-hidden h-full border-[#00d4ff]/15 bg-gradient-to-br from-white/3 to-white/0 backdrop-blur-sm hover:border-[#00d4ff]/40 transition-all duration-300 shadow-lg hover:shadow-[0_0_30px_rgba(0,212,255,0.1)]">
                   <CardContent className="p-8 relative z-10">
                     <motion.div
-                      className={`w-14 h-14 rounded-lg bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-6 border border-cyan-500/20`}
-                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-6 border border-[#00d4ff]/30`}
+                      whileHover={{ scale: 1.15, rotate: 5 }}
                       transition={{ type: 'spring', stiffness: 400, damping: 20 }}
                     >
-                      <feature.icon className="w-7 h-7 text-cyan-400" />
+                      <feature.icon className="w-7 h-7 text-[#00d4ff]" />
                     </motion.div>
 
-                    <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-                    <p className="text-gray-400 leading-relaxed">{feature.description}</p>
+                    <h3 className="text-lg font-bold text-white mb-3">{feature.title}</h3>
+                    <p className="text-gray-300 leading-relaxed text-sm">{feature.description}</p>
 
                     <motion.div
-                      className="mt-4 text-cyan-400 text-sm font-medium opacity-0 group-hover:opacity-100"
+                      className="mt-4 text-[#00d4ff] text-sm font-bold opacity-0 group-hover:opacity-100 inline-flex items-center gap-1"
                       initial={{ opacity: 0 }}
                       whileHover={{ opacity: 1 }}
                     >

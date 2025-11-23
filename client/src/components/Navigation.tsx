@@ -7,6 +7,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 const navItems = [
   { label: "Services", href: "#services" },
   { label: "Portfolio", href: "#portfolio" },
+  { label: "Testimonials", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -37,35 +38,42 @@ export function Navigation() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "glass-effect border-b border-cyan-500/20"
-            : "bg-black/30 backdrop-blur-sm border-b border-cyan-500/10"
+            ? "glass-effect-premium border-b border-[#00d4ff]/30"
+            : "bg-black/20 backdrop-blur-xl border-b border-[#00d4ff]/10"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="max-w-7xl mx-auto px-6 py-5">
           <div className="flex items-center justify-between">
+            {/* Logo - Replit Inspired */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="cursor-pointer text-2xl font-bold"
+              className="cursor-pointer flex items-center gap-2"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
-              <span className="gradient-text">MT.</span>
+              <div className="w-8 h-8 rounded-md bg-gradient-to-br from-[#00d4ff] to-[#00d4ff]/60 flex items-center justify-center">
+                <span className="text-black font-bold text-sm">⚡</span>
+              </div>
+              <span className="text-xl font-bold bg-gradient-to-r from-[#00d4ff] via-blue-400 to-[#00d4ff] bg-clip-text text-transparent">
+                Muhammad Tariq
+              </span>
             </motion.div>
 
+            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
               {navItems.map((item, index) => (
                 <motion.button
                   key={item.label}
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ delay: index * 0.08 }}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-sm font-medium text-gray-400 hover:text-cyan-400 transition-colors relative group"
+                  className="text-sm font-semibold text-gray-300 hover:text-[#00d4ff] transition-all duration-300 relative group"
                   data-testid={`nav-${item.label.toLowerCase()}`}
                 >
                   {item.label}
                   <motion.div
-                    className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-cyan-500 to-purple-600"
+                    className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-[#00d4ff] to-blue-500"
                     initial={{ width: 0 }}
                     whileHover={{ width: "100%" }}
                     transition={{ duration: 0.3 }}
@@ -74,7 +82,20 @@ export function Navigation() {
               ))}
             </div>
 
+            {/* Right Actions */}
             <div className="flex items-center gap-4">
+              <Button
+                size="sm"
+                className="hidden sm:inline-flex relative overflow-hidden group bg-gradient-to-r from-[#00d4ff] to-blue-500 hover:from-[#00d4ff] hover:to-blue-600 text-black font-semibold border-0 px-5"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0"
+                  animate={{ x: ['-200%', '200%'] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
+                />
+                <span className="relative z-10">Get Started</span>
+              </Button>
               <ThemeToggle />
               <Button
                 variant="ghost"
@@ -94,20 +115,21 @@ export function Navigation() {
         </div>
       </nav>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="fixed top-[73px] left-0 right-0 z-40 glass-effect border-b border-cyan-500/20 md:hidden"
+            className="fixed top-[73px] left-0 right-0 z-40 glass-effect-premium border-b border-[#00d4ff]/20 md:hidden"
           >
             <div className="px-6 py-4 space-y-2">
               {navItems.map((item) => (
                 <button
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left py-2 text-sm font-medium text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10 rounded-lg transition-colors px-2"
+                  className="block w-full text-left py-3 text-sm font-semibold text-gray-300 hover:text-[#00d4ff] hover:bg-[#00d4ff]/5 rounded-lg transition-all px-3"
                   data-testid={`nav-mobile-${item.label.toLowerCase()}`}
                 >
                   {item.label}
