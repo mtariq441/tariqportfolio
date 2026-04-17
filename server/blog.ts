@@ -1,4 +1,7 @@
 import { ssrPage } from "./ssrShared.js";
+import { POSTS2 } from "./blogPosts2.js";
+import { POSTS3 } from "./blogPosts3.js";
+import { POSTS4 } from "./blogPosts4.js";
 
 const SITE = "https://tariqservices.site";
 const FIVERR = "https://www.fiverr.com/tariq_webflow";
@@ -368,6 +371,8 @@ export const POSTS: BlogPost[] = [
   },
 ];
 
+const ALL_POSTS: BlogPost[] = [...POSTS, ...POSTS2, ...POSTS3, ...POSTS4];
+
 function tocFromBody(body: string): string {
   const matches = [...body.matchAll(/<h2 id="([^"]+)">([^<]+)<\/h2>/g)];
   if (matches.length < 2) return '';
@@ -380,7 +385,7 @@ function tocFromBody(body: string): string {
 }
 
 function relatedPosts(currentSlug: string): string {
-  const others = POSTS.filter(p => p.slug !== currentSlug).slice(0, 2);
+  const others = ALL_POSTS.filter(p => p.slug !== currentSlug).slice(0, 2);
   if (!others.length) return '';
   const cards = others.map(p => `
     <a class="bc" href="/blog/${p.slug}" style="padding:1.25rem 1.5rem">
@@ -419,7 +424,7 @@ function shareButtons(title: string, slug: string): string {
 }
 
 function blogIndexHtml(): string {
-  const [featured, ...rest] = POSTS;
+  const [featured, ...rest] = ALL_POSTS;
 
   const featuredCard = `
 <a class="bc featured" href="/blog/${featured.slug}">
@@ -469,7 +474,7 @@ function blogIndexHtml(): string {
     <div class="hero-stats">
       <div class="s"><span class="sv">350+</span><span class="sl">Apps Built</span></div>
       <div class="s"><span class="sv">$27M+</span><span class="sl">Revenue Generated</span></div>
-      <div class="s"><span class="sv">5</span><span class="sl">Articles</span></div>
+      <div class="s"><span class="sv">100+</span><span class="sl">Articles</span></div>
       <div class="s"><span class="sv">157+</span><span class="sl">Founders Served</span></div>
     </div>
   </div>
@@ -550,7 +555,7 @@ export function getBlogIndexHtml(): string {
 }
 
 export function getBlogPostHtml(slug: string): string | null {
-  const post = POSTS.find(p => p.slug === slug);
+  const post = ALL_POSTS.find(p => p.slug === slug);
   if (!post) return null;
   return blogPostHtml(post);
 }
