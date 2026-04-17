@@ -102,3 +102,15 @@ id = "QNmKdpE076hin9hZJqcDu"
 uri = "file://client/public/covers/addressfully.png"
 type = "image"
 title = "addressfully address saas cover"
+
+[[generated]]
+id = "S4URj5rvQZB53ZJ7Io07L"
+uri = "file://client/public/favicon.png"
+type = "image"
+title = "MT favicon blue neon"
+
+[[generated]]
+id = "lA9BQvgdNmEeVE_TYBR5s"
+uri = "file://client/public/og-image.png"
+type = "image"
+title = "MT OG social preview card"
