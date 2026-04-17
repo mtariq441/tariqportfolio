@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
+  { label: "About", href: "#services" },
   { label: "Services", href: "#services" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Testimonials", href: "#testimonials" },
-  { label: "Contact", href: "#contact" },
 ];
 
 export function Navigation() {
@@ -35,27 +34,26 @@ export function Navigation() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? "glass-effect-premium border-b border-red-600/30"
-            : "bg-black/20 backdrop-blur-xl border-b border-red-600/10"
-        }`}
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+        style={{
+          background: isScrolled ? "rgba(55,0,255,0.97)" : "rgba(55,0,255,0.9)",
+          backdropFilter: "blur(20px)",
+          borderBottom: isScrolled ? "1px solid rgba(204,255,0,0.15)" : "none",
+        }}
       >
-        <div className="max-w-7xl mx-auto px-6 py-5">
+        <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            {/* Logo - MT */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               className="cursor-pointer"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
-              <span className="text-2xl font-black bg-gradient-to-r from-red-500 via-red-600 to-red-500 bg-clip-text text-transparent uppercase tracking-tight">
+              <span className="text-2xl font-black text-white uppercase tracking-tight">
                 MT
               </span>
             </motion.div>
 
-            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
               {navItems.map((item, index) => (
                 <motion.button
@@ -64,72 +62,66 @@ export function Navigation() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.08 }}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-sm font-semibold text-gray-300 hover:text-red-500 transition-all duration-300 relative group"
-                  data-testid={`nav-${item.label.toLowerCase()}`}
+                  className="text-sm font-semibold text-white/80 hover:text-white transition-all duration-200 uppercase tracking-wide"
                 >
                   {item.label}
-                  <motion.div
-                    className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-red-600 to-red-500"
-                    initial={{ width: 0 }}
-                    whileHover={{ width: "100%" }}
-                    transition={{ duration: 0.3 }}
-                  />
                 </motion.button>
               ))}
             </div>
 
-            {/* Right Actions */}
             <div className="flex items-center gap-4">
-              <Button
-                size="sm"
-                className="hidden sm:inline-flex relative overflow-hidden group bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-semibold border-0 px-5"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              <motion.button
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                className="hidden sm:flex items-center gap-2 font-black text-sm uppercase tracking-wide px-5 py-2 rounded-full transition-all duration-200 hover:scale-105 hover:brightness-110"
+                style={{ background: "#CCFF00", color: "#3700FF" }}
+                onClick={() =>
+                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+                }
               >
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0"
-                  animate={{ x: ['-200%', '200%'] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
-                />
-                <span className="relative z-10">Get Started</span>
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="md:hidden"
+                Start a Project
+              </motion.button>
+
+              <button
+                className="md:hidden text-white p-1"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                data-testid="button-mobile-menu"
               >
-                {isMobileMenuOpen ? (
-                  <X className="h-5 w-5" />
-                ) : (
-                  <Menu className="h-5 w-5" />
-                )}
-              </Button>
+                {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="fixed top-[73px] left-0 right-0 z-40 glass-effect-premium border-b border-red-600/20 md:hidden"
+            className="fixed top-[65px] left-0 right-0 z-40 md:hidden"
+            style={{ background: "#3700FF", borderBottom: "1px solid rgba(204,255,0,0.2)" }}
           >
-            <div className="px-6 py-4 space-y-2">
+            <div className="px-6 py-4 space-y-1">
               {navItems.map((item) => (
                 <button
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left py-3 text-sm font-semibold text-gray-300 hover:text-red-500 hover:bg-red-600/5 rounded-lg transition-all px-3"
-                  data-testid={`nav-mobile-${item.label.toLowerCase()}`}
+                  className="block w-full text-left py-3 text-sm font-bold text-white hover:text-[#CCFF00] uppercase tracking-wide transition-colors px-3"
                 >
                   {item.label}
                 </button>
               ))}
+              <button
+                onClick={() => {
+                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                  setIsMobileMenuOpen(false);
+                }}
+                className="block w-full text-center py-3 rounded-full font-black text-sm uppercase mt-4"
+                style={{ background: "#CCFF00", color: "#3700FF" }}
+              >
+                Start a Project
+              </button>
             </div>
           </motion.div>
         )}
