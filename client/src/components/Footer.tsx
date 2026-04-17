@@ -1,4 +1,4 @@
-import { Linkedin, Twitter, Mail } from "lucide-react";
+import { Linkedin, Twitter, Mail, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function Footer() {
@@ -15,34 +15,191 @@ export function Footer() {
     { label: "Contact", href: "#contact" },
   ];
 
+  const stats = [
+    { value: "$27M+", label: "Revenue Generated" },
+    { value: "350+", label: "Apps Shipped" },
+    { value: "157+", label: "Founders Served" },
+  ];
+
   const scrollToSection = (href: string) => {
     const id = href.replace("#", "");
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <footer style={{ background: "#0a0a14" }}>
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+    <footer className="relative" style={{ background: "#0a0a14" }}>
+      <div className="absolute inset-0 dot-grid-dark pointer-events-none" />
+
+      {/* Top CTA strip */}
+      <div className="relative border-b" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+        <div className="max-w-7xl mx-auto px-6 py-16 md:py-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
           <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <p
+              className="text-xs font-black uppercase tracking-[0.3em] mb-4 flex items-center gap-2"
+              style={{ color: "#CCFF00" }}
+            >
+              <motion.span
+                className="w-2 h-2 rounded-full inline-block"
+                style={{ background: "#CCFF00" }}
+                animate={{ opacity: [1, 0.3, 1] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              />
+              Currently Accepting 2 Clients
+            </p>
+            <h2
+              className="text-5xl sm:text-6xl md:text-7xl xl:text-8xl font-black uppercase leading-none tracking-tight text-white"
+            >
+              LET&apos;S BUILD
+              <br />
+              <span style={{ color: "#CCFF00" }}>TOGETHER</span>
+            </h2>
+          </motion.div>
+
+          <motion.button
+            className="flex items-center gap-3 font-black text-sm uppercase tracking-widest px-9 py-5 rounded-full flex-shrink-0"
+            style={{ background: "#CCFF00", color: "#3700FF" }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            whileHover={{ scale: 1.06, boxShadow: "0 0 40px rgba(204,255,0,0.45)" }}
+            whileTap={{ scale: 0.97 }}
+            onClick={() => scrollToSection("#contact")}
+          >
+            Start a Project
+            <ArrowUpRight className="h-5 w-5" />
+          </motion.button>
+        </div>
+      </div>
+
+      {/* Main footer content */}
+      <div className="relative max-w-7xl mx-auto px-6 pt-16 pb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-14">
+
+          {/* Brand + bio + stats — spans 2 cols on lg */}
+          <motion.div
+            className="lg:col-span-2"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div
-              className="text-3xl font-black mb-1 inline-block"
-              style={{ color: "#CCFF00" }}
-            >
-              MT
+            <div className="flex items-center gap-4 mb-6">
+              <div
+                className="w-14 h-14 rounded-2xl flex items-center justify-center font-black text-2xl flex-shrink-0"
+                style={{ background: "#CCFF00", color: "#3700FF" }}
+              >
+                MT
+              </div>
+              <div>
+                <div className="text-white font-black text-lg leading-tight">Muhammad Tariq</div>
+                <div className="text-xs uppercase tracking-widest mt-0.5" style={{ color: "rgba(255,255,255,0.35)" }}>
+                  SaaS Engineer &amp; Builder
+                </div>
+              </div>
             </div>
-            <div className="text-white font-black text-sm uppercase tracking-widest mb-4">
-              Muhammad Tariq
-            </div>
-            <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.4)" }}>
-              Replit-powered SaaS that generates millions. Founder, engineer, revenue-focused builder.
+
+            <p className="text-sm leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.4)", maxWidth: "420px" }}>
+              Replit-powered SaaS that generates millions. 350+ production apps shipped for founders who demand real revenue, not prototypes.
             </p>
-            <div className="flex gap-3">
+
+            {/* Inline stats */}
+            <div className="flex flex-wrap gap-8">
+              {stats.map((stat, i) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 * i, duration: 0.5 }}
+                >
+                  <div className="text-2xl font-black" style={{ color: "#CCFF00" }}>
+                    {stat.value}
+                  </div>
+                  <div className="text-xs uppercase tracking-widest mt-0.5" style={{ color: "rgba(255,255,255,0.3)" }}>
+                    {stat.label}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Navigation */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <h3
+              className="font-black uppercase text-xs tracking-[0.25em] mb-7"
+              style={{ color: "rgba(255,255,255,0.5)" }}
+            >
+              Navigation
+            </h3>
+            <div className="space-y-5">
+              {navLinks.map((link) => (
+                <motion.button
+                  key={link.label}
+                  onClick={() => scrollToSection(link.href)}
+                  className="flex items-center gap-0 group w-full text-left"
+                  whileHover={{ x: 6 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                >
+                  <span
+                    className="h-px mr-0 group-hover:mr-3 w-0 group-hover:w-5 transition-all duration-200 flex-shrink-0"
+                    style={{ background: "#CCFF00" }}
+                  />
+                  <span
+                    className="text-sm font-semibold transition-colors duration-200 group-hover:text-[#CCFF00]"
+                    style={{ color: "rgba(255,255,255,0.45)" }}
+                  >
+                    {link.label}
+                  </span>
+                </motion.button>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Contact */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <h3
+              className="font-black uppercase text-xs tracking-[0.25em] mb-7"
+              style={{ color: "rgba(255,255,255,0.5)" }}
+            >
+              Get In Touch
+            </h3>
+            <div className="space-y-4 mb-8">
+              <a
+                href="mailto:contact@muhammadtariq.com"
+                className="block text-sm font-medium transition-colors duration-200 hover:text-[#CCFF00] break-all"
+                style={{ color: "rgba(255,255,255,0.45)" }}
+              >
+                contact@muhammadtariq.com
+              </a>
+              <a
+                href="https://twitter.com/muhammadtariq"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-sm font-medium transition-colors duration-200 hover:text-[#CCFF00]"
+                style={{ color: "rgba(255,255,255,0.45)" }}
+              >
+                @muhammadtariq
+              </a>
+            </div>
+
+            {/* Social icons */}
+            <div className="flex gap-2">
               {socialLinks.map((social) => {
                 const Icon = social.icon;
                 return (
@@ -55,11 +212,11 @@ export function Footer() {
                         window.open(social.href, "_blank");
                       }
                     }}
-                    className="p-2 rounded-lg transition-all"
-                    style={{ background: "rgba(204,255,0,0.1)", color: "#CCFF00" }}
-                    whileHover={{ scale: 1.15 }}
-                    whileTap={{ scale: 0.95 }}
-                    data-testid={`link-${social.label.toLowerCase()}`}
+                    className="w-10 h-10 rounded-xl flex items-center justify-center transition-all"
+                    style={{ background: "rgba(204,255,0,0.08)", color: "#CCFF00" }}
+                    whileHover={{ scale: 1.15, background: "rgba(204,255,0,0.18)" } as any}
+                    whileTap={{ scale: 0.92 }}
+                    aria-label={social.label}
                   >
                     <Icon className="h-4 w-4" />
                   </motion.button>
@@ -67,89 +224,23 @@ export function Footer() {
               })}
             </div>
           </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <h3 className="font-black text-white mb-6 uppercase text-sm tracking-widest">Navigation</h3>
-            <div className="space-y-3">
-              {navLinks.map((link) => (
-                <motion.button
-                  key={link.label}
-                  onClick={() => scrollToSection(link.href)}
-                  className="block text-sm font-medium transition-colors hover:text-[#CCFF00]"
-                  style={{ color: "rgba(255,255,255,0.45)" }}
-                  whileHover={{ x: 5 }}
-                  data-testid={`footer-link-${link.label.toLowerCase()}`}
-                >
-                  {link.label}
-                </motion.button>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h3 className="font-black text-white mb-6 uppercase text-sm tracking-widest">Contact</h3>
-            <div className="space-y-3">
-              <div>
-                <p className="text-xs font-black mb-1 uppercase" style={{ color: "rgba(255,255,255,0.3)" }}>
-                  Email
-                </p>
-                <a
-                  href="mailto:contact@muhammadtariq.com"
-                  className="text-sm transition-colors"
-                  style={{ color: "rgba(255,255,255,0.6)" }}
-                  data-testid="footer-email"
-                >
-                  contact@muhammadtariq.com
-                </a>
-              </div>
-              <div>
-                <p className="text-xs font-black mb-1 uppercase" style={{ color: "rgba(255,255,255,0.3)" }}>
-                  Twitter
-                </p>
-                <a
-                  href="https://twitter.com/muhammadtariq"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm transition-colors"
-                  style={{ color: "rgba(255,255,255,0.6)" }}
-                  data-testid="footer-twitter"
-                >
-                  @muhammadtariq
-                </a>
-              </div>
-            </div>
-          </motion.div>
         </div>
 
+        {/* Divider */}
         <div
           className="h-px mb-8"
-          style={{ background: "rgba(204,255,0,0.1)" }}
+          style={{ background: "linear-gradient(to right, rgba(204,255,0,0.25), rgba(204,255,0,0.06), transparent)" }}
         />
 
-        <motion.div
-          className="flex flex-col md:flex-row justify-between items-center gap-4"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <p className="text-sm font-bold" style={{ color: "#CCFF00" }}>
-            Replit-Powered SaaS That Generates Millions
+        {/* Bottom bar */}
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-3">
+          <p className="text-xs" style={{ color: "rgba(255,255,255,0.2)" }}>
+            © 2026 Muhammad Tariq. Built on Replit. All rights reserved.
           </p>
-          <p className="text-xs" style={{ color: "rgba(255,255,255,0.25)" }}>
-            © 2025 Muhammad Tariq. Built for founders who move fast and win big.
+          <p className="text-xs font-black uppercase tracking-[0.2em]" style={{ color: "#CCFF00" }}>
+            Replit-Powered SaaS
           </p>
-        </motion.div>
+        </div>
       </div>
     </footer>
   );
