@@ -119,25 +119,6 @@ export function CTASection() {
         </motion.div>
       </div>
 
-      {/* Bottom diagonal marquee */}
-      <div className="absolute bottom-0 left-0 right-0 overflow-hidden py-3" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
-        <div className="marquee-track-reverse">
-          {[...Array(8)].map((_, i) => (
-            <span
-              key={i}
-              className="text-xs font-black uppercase tracking-[0.25em] px-10 whitespace-nowrap"
-              style={{ color: "rgba(255,255,255,0.18)" }}
-            >
-              Book Now
-              <span className="mx-5" style={{ color: "rgba(204,255,0,0.4)" }}>✦</span>
-              Only 2 Spots Left
-              <span className="mx-5" style={{ color: "rgba(204,255,0,0.4)" }}>✦</span>
-              Ships in Weeks
-              <span className="mx-5" style={{ color: "rgba(204,255,0,0.4)" }}>✦</span>
-            </span>
-          ))}
-        </div>
-      </div>
     </section>
   );
 }
