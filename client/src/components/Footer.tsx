@@ -1,10 +1,14 @@
 import { Linkedin, Twitter, Mail, ArrowUpRight } from "lucide-react";
+import { SiFiverr } from "react-icons/si";
 import { motion } from "framer-motion";
+
+const FIVERR_URL = "https://www.fiverr.com/s/2K2Pjj4";
 
 export function Footer() {
   const socialLinks = [
     { icon: Twitter, href: "https://twitter.com/muhammadtariq", label: "Twitter" },
     { icon: Linkedin, href: "https://www.linkedin.com/in/muhammad-tariq-webflow/", label: "LinkedIn" },
+    { icon: SiFiverr, href: FIVERR_URL, label: "Fiverr" },
     { icon: Mail, href: "mailto:contact@muhammadtariq.com", label: "Email" },
   ];
 
@@ -60,20 +64,39 @@ export function Footer() {
             </h2>
           </motion.div>
 
-          <motion.button
-            className="flex items-center gap-3 font-black text-sm uppercase tracking-widest px-9 py-5 rounded-full flex-shrink-0"
-            style={{ background: "#CCFF00", color: "#3700FF" }}
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            whileHover={{ scale: 1.06, boxShadow: "0 0 40px rgba(204,255,0,0.45)" }}
-            whileTap={{ scale: 0.97 }}
-            onClick={() => scrollToSection("#contact")}
-          >
-            Start a Project
-            <ArrowUpRight className="h-5 w-5" />
-          </motion.button>
+          <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">
+            <motion.button
+              className="flex items-center gap-3 font-black text-sm uppercase tracking-widest px-9 py-5 rounded-full"
+              style={{ background: "#CCFF00", color: "#3700FF" }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              whileHover={{ scale: 1.06, boxShadow: "0 0 40px rgba(204,255,0,0.45)" }}
+              whileTap={{ scale: 0.97 }}
+              onClick={() => scrollToSection("#contact")}
+            >
+              Start a Project
+              <ArrowUpRight className="h-5 w-5" />
+            </motion.button>
+
+            <motion.a
+              href={FIVERR_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 font-black text-sm uppercase tracking-widest px-9 py-5 rounded-full border-2"
+              style={{ borderColor: "rgba(204,255,0,0.3)", color: "#CCFF00" }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              whileHover={{ scale: 1.06, background: "rgba(204,255,0,0.08)" } as any}
+              whileTap={{ scale: 0.97 }}
+            >
+              <SiFiverr className="h-5 w-5" />
+              Hire on Fiverr
+            </motion.a>
+          </div>
         </div>
       </div>
 
@@ -194,7 +217,17 @@ export function Footer() {
                 className="block text-sm font-medium transition-colors duration-200 hover:text-[#CCFF00]"
                 style={{ color: "rgba(255,255,255,0.45)" }}
               >
-                @muhammadtariq
+                @muhammadtariq on Twitter
+              </a>
+              <a
+                href={FIVERR_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm font-black transition-all duration-200 hover:opacity-80"
+                style={{ color: "#CCFF00" }}
+              >
+                <SiFiverr className="h-4 w-4 flex-shrink-0" />
+                Hire me on Fiverr
               </a>
             </div>
 

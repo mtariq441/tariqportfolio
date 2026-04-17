@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { SiFiverr } from "react-icons/si";
 
 export function PremiumHeroSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -149,27 +150,46 @@ export function PremiumHeroSection() {
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <motion.button
-                  className="flex items-center justify-center gap-2 font-black text-sm uppercase tracking-wide px-8 py-4 rounded-full"
-                  style={{ background: "#CCFF00", color: "#3700FF" }}
-                  whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(204,255,0,0.5)" }}
+              <div className="flex flex-col gap-4">
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <motion.button
+                    className="flex items-center justify-center gap-2 font-black text-sm uppercase tracking-wide px-8 py-4 rounded-full"
+                    style={{ background: "#CCFF00", color: "#3700FF" }}
+                    whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(204,255,0,0.5)" }}
+                    whileTap={{ scale: 0.97 }}
+                    onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                  >
+                    Book a Call
+                    <ArrowRight className="h-4 w-4" />
+                  </motion.button>
+                  <motion.button
+                    className="flex items-center justify-center gap-2 font-bold text-sm uppercase tracking-wide px-8 py-4 rounded-full border-2 text-white"
+                    style={{ borderColor: "rgba(255,255,255,0.25)" }}
+                    whileHover={{ borderColor: "rgba(255,255,255,0.6)", scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    onClick={() => document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })}
+                  >
+                    See Results
+                    <ArrowUpRight className="h-4 w-4" />
+                  </motion.button>
+                </div>
+
+                {/* Fiverr badge */}
+                <motion.a
+                  href="https://www.fiverr.com/s/2K2Pjj4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 self-start px-5 py-2.5 rounded-full transition-all hover:opacity-90"
+                  style={{ background: "rgba(29,191,110,0.12)", border: "1px solid rgba(29,191,110,0.3)" }}
+                  whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.97 }}
-                  onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                 >
-                  Book a Call
-                  <ArrowRight className="h-4 w-4" />
-                </motion.button>
-                <motion.button
-                  className="flex items-center justify-center gap-2 font-bold text-sm uppercase tracking-wide px-8 py-4 rounded-full border-2 text-white"
-                  style={{ borderColor: "rgba(255,255,255,0.25)" }}
-                  whileHover={{ borderColor: "rgba(255,255,255,0.6)", scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  onClick={() => document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })}
-                >
-                  See Results
-                  <ArrowUpRight className="h-4 w-4" />
-                </motion.button>
+                  <SiFiverr className="h-4 w-4 flex-shrink-0" style={{ color: "#1DBF6E" }} />
+                  <span className="text-xs font-black uppercase tracking-wide" style={{ color: "#1DBF6E" }}>
+                    Also available on Fiverr
+                  </span>
+                  <ArrowUpRight className="h-3.5 w-3.5" style={{ color: "rgba(29,191,110,0.6)" }} />
+                </motion.a>
               </div>
             </motion.div>
           </motion.div>
