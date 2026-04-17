@@ -213,6 +213,65 @@ body {
 .text-brand-blue { color: var(--brand-blue); }
 .text-brand-neon { color: var(--brand-neon); }
 
+/* ===================== SHINE ANIMATION ===================== */
+@keyframes shine {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.shine-text {
+  background: linear-gradient(90deg, #CCFF00 0%, #fff 40%, #CCFF00 60%, #AADD00 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shine 3s linear infinite;
+}
+
+/* ===================== GRADIENT BORDER ===================== */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #CCFF00, rgba(204,255,0,0.1), #3700FF);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ===================== SPOTLIGHT HOVER ===================== */
+.spotlight {
+  position: relative;
+  overflow: hidden;
+}
+.spotlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(600px circle at var(--x, 50%) var(--y, 50%), rgba(204,255,0,0.08), transparent 40%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.spotlight:hover::after {
+  opacity: 1;
+}
+
+/* ===================== NEON GLOW TEXT ===================== */
+.text-neon-glow {
+  text-shadow: 0 0 20px rgba(204,255,0,0.5), 0 0 40px rgba(204,255,0,0.2);
+}
+
+.text-blue-glow {
+  text-shadow: 0 0 20px rgba(55,0,255,0.5), 0 0 40px rgba(55,0,255,0.2);
+}
+
 /* ===================== SCROLLBAR ===================== */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: #0a0a14; }
@@ -221,3 +280,6 @@ body {
 
 /* ===================== SELECTION ===================== */
 ::selection { background: var(--brand-blue); color: white; }
+
+/* ===================== INPUT PLACEHOLDER ===================== */
+::placeholder { color: rgba(255,255,255,0.25) !important; }

@@ -124,6 +124,31 @@ export function PremiumHeroSection() {
                 $27M+ in growth shipping on Replit.
               </p>
 
+              {/* Social proof avatars */}
+              <div className="flex items-center gap-4">
+                <div className="flex -space-x-2">
+                  {["MN", "DU", "KM", "KB", "JS"].map((initials, i) => (
+                    <div
+                      key={i}
+                      className="w-9 h-9 rounded-full border-2 flex items-center justify-center text-[10px] font-black flex-shrink-0"
+                      style={{ background: "#CCFF00", color: "#3700FF", borderColor: "#3700FF", zIndex: 5 - i }}
+                    >
+                      {initials}
+                    </div>
+                  ))}
+                </div>
+                <div>
+                  <div className="flex gap-0.5 mb-0.5">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <span key={i} style={{ color: "#CCFF00" }}>★</span>
+                    ))}
+                  </div>
+                  <p className="text-xs font-bold" style={{ color: "rgba(255,255,255,0.5)" }}>
+                    Trusted by 157+ founders
+                  </p>
+                </div>
+              </div>
+
               <div className="flex flex-col sm:flex-row gap-4">
                 <motion.button
                   className="flex items-center justify-center gap-2 font-black text-sm uppercase tracking-wide px-8 py-4 rounded-full"
