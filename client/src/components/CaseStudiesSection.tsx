@@ -210,6 +210,17 @@ const caseStudies = [
     link: "https://www.aams-sa.com/",
     highlight: false,
   },
+  {
+    name: "5Four Digital",
+    category: "Agency Work",
+    result: "Digital Agency",
+    metric: "54",
+    period: "Live",
+    description: "Full-service digital agency delivering strategy, design, and development for ambitious brands.",
+    tech: "Agency · Branding · Web",
+    link: "https://www.5fourdigital.com/",
+    highlight: false,
+  },
 ];
 
 export function CaseStudiesSection() {
