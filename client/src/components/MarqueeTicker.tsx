@@ -1,19 +1,21 @@
 const items = [
   "SAAS DEVELOPMENT",
-  "FULL STACK",
+  "FULL STACK ENGINEERING",
   "NEXT.JS",
   "SUPABASE",
-  "STRIPE",
-  "AI INTEGRATION",
+  "STRIPE INTEGRATION",
+  "AI FEATURES",
   "REPLIT NATIVE",
-  "MVP IN WEEKS",
+  "MVP IN 2 WEEKS",
   "CLERK AUTH",
-  "REVENUE GROWTH",
+  "REVENUE-FIRST CODE",
+  "PRODUCTION-READY",
+  "ZERO TECH DEBT",
 ];
 
-export function MarqueeTicker() {
-  const doubled = [...items, ...items];
+const doubled = [...items, ...items];
 
+export function MarqueeTicker() {
   return (
     <div
       className="overflow-hidden py-4 relative z-10"
@@ -23,11 +25,14 @@ export function MarqueeTicker() {
         {doubled.map((item, i) => (
           <span
             key={i}
-            className="flex items-center gap-4 whitespace-nowrap px-6 font-black text-sm uppercase tracking-widest"
+            className="flex items-center gap-5 whitespace-nowrap px-5 font-black text-xs uppercase tracking-[0.2em]"
             style={{ color: "#3700FF" }}
           >
             {item}
-            <span className="w-2 h-2 rounded-full inline-block" style={{ background: "#3700FF" }} />
+            <span
+              className="w-1.5 h-1.5 rounded-full inline-block flex-shrink-0"
+              style={{ background: "rgba(55,0,255,0.4)" }}
+            />
           </span>
         ))}
       </div>

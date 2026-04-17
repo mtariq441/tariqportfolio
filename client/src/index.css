@@ -33,11 +33,6 @@
   --ring: 235 100% 50%;
   --input: 0 0% 88%;
   --radius: 0.5rem;
-  --chart-1: 235 100% 50%;
-  --chart-2: 75 100% 50%;
-  --chart-3: 200 80% 50%;
-  --chart-4: 280 80% 50%;
-  --chart-5: 340 80% 50%;
 }
 
 .dark {
@@ -70,26 +65,18 @@ body {
   overflow-x: hidden;
 }
 
-/* ===================== AGENCY DESIGN SYSTEM ===================== */
-
-/* Brand colors */
+/* ===================== BRAND TOKENS ===================== */
 :root {
   --brand-blue: #3700FF;
   --brand-blue-dark: #2800CC;
   --brand-neon: #CCFF00;
   --brand-neon-dark: #AADD00;
+  --brand-dark: #0a0a14;
 }
 
-/* Utility classes */
-.bg-brand-blue { background-color: var(--brand-blue); }
-.bg-brand-neon { background-color: var(--brand-neon); }
-.text-brand-blue { color: var(--brand-blue); }
-.text-brand-neon { color: var(--brand-neon); }
-.border-brand-blue { border-color: var(--brand-blue); }
-.border-brand-neon { border-color: var(--brand-neon); }
-
-/* Neon gradient text */
-.neon-gradient-text {
+/* ===================== TEXT UTILITIES ===================== */
+.neon-gradient-text,
+.premium-gradient-text {
   background: linear-gradient(135deg, #CCFF00, #AADD00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -103,14 +90,35 @@ body {
   background-clip: text;
 }
 
-/* Legacy compatibility */
-.premium-gradient-text {
-  background: linear-gradient(135deg, #CCFF00, #AADD00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.text-outline-white {
+  -webkit-text-stroke: 2px white;
+  color: transparent;
 }
 
+.text-outline-blue {
+  -webkit-text-stroke: 2px #3700FF;
+  color: transparent;
+}
+
+/* ===================== BACKGROUND PATTERNS ===================== */
+.dot-grid-white {
+  background-image: radial-gradient(circle, rgba(55,0,255,0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.dot-grid-dark {
+  background-image: radial-gradient(circle, rgba(204,255,0,0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.line-grid-blue {
+  background-image:
+    linear-gradient(rgba(204,255,0,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(204,255,0,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ===================== GLASS EFFECTS ===================== */
 .glass-effect {
   background: rgba(55, 0, 255, 0.1);
   backdrop-filter: blur(20px);
@@ -129,33 +137,87 @@ body {
   to { transform: translateX(-50%); }
 }
 
+@keyframes marquee-reverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
 .marquee-track {
-  animation: marquee 20s linear infinite;
+  animation: marquee 18s linear infinite;
   display: flex;
   width: max-content;
 }
 
-.marquee-track:hover {
+.marquee-track-slow {
+  animation: marquee 35s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+.marquee-track-reverse {
+  animation: marquee-reverse 25s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+.marquee-track:hover,
+.marquee-track-slow:hover,
+.marquee-track-reverse:hover {
   animation-play-state: paused;
 }
 
-/* ===================== SCROLLBAR ===================== */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #0a0a1e;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--brand-blue);
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--brand-neon);
+/* ===================== ANIMATIONS ===================== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-16px); }
 }
 
-/* ===================== SELECTION ===================== */
-::selection {
-  background: var(--brand-blue);
-  color: white;
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
 }
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(204,255,0,0.3), 0 0 60px rgba(204,255,0,0.1); }
+  50% { box-shadow: 0 0 40px rgba(204,255,0,0.7), 0 0 100px rgba(204,255,0,0.3); }
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes border-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.float-anim { animation: float 5s ease-in-out infinite; }
+.float-slow-anim { animation: float-slow 7s ease-in-out infinite; }
+.pulse-glow-anim { animation: pulse-glow 2.5s ease-in-out infinite; }
+
+/* ===================== CLIP PATHS ===================== */
+.clip-diagonal-down {
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  padding-bottom: 6rem;
+}
+
+.clip-diagonal-up {
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+  padding-top: 6rem;
+}
+
+/* ===================== UTILITY ===================== */
+.bg-brand-blue { background-color: var(--brand-blue); }
+.bg-brand-neon { background-color: var(--brand-neon); }
+.text-brand-blue { color: var(--brand-blue); }
+.text-brand-neon { color: var(--brand-neon); }
+
+/* ===================== SCROLLBAR ===================== */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0a0a14; }
+::-webkit-scrollbar-thumb { background: var(--brand-blue); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--brand-neon); }
+
+/* ===================== SELECTION ===================== */
+::selection { background: var(--brand-blue); color: white; }

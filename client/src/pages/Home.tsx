@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { PremiumHeroSection } from "@/components/PremiumHeroSection";
 import { MarqueeTicker } from "@/components/MarqueeTicker";
+import { StatsSection } from "@/components/StatsSection";
 import { FeaturesSection } from "@/components/FeaturesSection";
 import { CaseStudiesSection } from "@/components/CaseStudiesSection";
 import { SelectiveSection } from "@/components/SelectiveSection";
@@ -15,6 +16,7 @@ export default function Home() {
       <Navigation />
       <PremiumHeroSection />
       <MarqueeTicker />
+      <StatsSection />
       <FeaturesSection />
       <CaseStudiesSection />
       <SelectiveSection />
