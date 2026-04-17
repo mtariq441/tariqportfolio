@@ -1,49 +1,81 @@
 import express from 'express';
-import { createServer as createViteServer } from 'vite';
 import path from 'path';
-import fs from 'fs';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const isProd = process.env.NODE_ENV === 'production';
 
 const SEO_STATIC = ['/robots.txt', '/sitemap.xml'];
 
-const startDevServer = async () => {
+async function startServer() {
   const app = express();
 
-  const vite = await createViteServer({
-    server: {
-      middlewareMode: true,
-      allowedHosts: true,
-    },
-    appType: 'spa',
-    configFile: './vite.config.ts',
-  });
+  if (isProd) {
+    const distPublic = path.resolve(__dirname, 'public');
 
-  app.use((req, res, next) => {
-    if (SEO_STATIC.includes(req.path)) {
-      return next();
-    }
-    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
-    next();
-  });
+    app.use((req, res, next) => {
+      if (SEO_STATIC.includes(req.path)) return next();
+      res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
+      next();
+    });
 
-  app.get('/robots.txt', (req, res) => {
-    const filePath = path.resolve('./client/public/robots.txt');
-    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-    res.setHeader('Cache-Control', 'public, max-age=86400');
-    res.sendFile(filePath);
-  });
+    app.get('/robots.txt', (_req, res) => {
+      res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+      res.setHeader('Cache-Control', 'public, max-age=86400');
+      res.sendFile(path.join(distPublic, 'robots.txt'));
+    });
 
-  app.get('/sitemap.xml', (req, res) => {
-    const filePath = path.resolve('./client/public/sitemap.xml');
-    res.setHeader('Content-Type', 'application/xml; charset=utf-8');
-    res.setHeader('Cache-Control', 'public, max-age=3600');
-    res.sendFile(filePath);
-  });
+    app.get('/sitemap.xml', (_req, res) => {
+      res.setHeader('Content-Type', 'application/xml; charset=utf-8');
+      res.setHeader('Cache-Control', 'public, max-age=3600');
+      res.sendFile(path.join(distPublic, 'sitemap.xml'));
+    });
 
-  app.use(vite.middlewares);
+    app.use(
+      express.static(distPublic, {
+        maxAge: '1y',
+        etag: true,
+        index: false,
+      }),
+    );
+
+    app.get('*', (_req, res) => {
+      res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
+      res.sendFile(path.join(distPublic, 'index.html'));
+    });
+  } else {
+    const { createServer: createViteServer } = await import('vite');
+
+    const vite = await createViteServer({
+      server: { middlewareMode: true, allowedHosts: true },
+      appType: 'spa',
+      configFile: './vite.config.ts',
+    });
+
+    app.use((req, res, next) => {
+      if (SEO_STATIC.includes(req.path)) return next();
+      res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
+      next();
+    });
+
+    app.get('/robots.txt', (_req, res) => {
+      res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+      res.setHeader('Cache-Control', 'public, max-age=86400');
+      res.sendFile(path.resolve('./client/public/robots.txt'));
+    });
+
+    app.get('/sitemap.xml', (_req, res) => {
+      res.setHeader('Content-Type', 'application/xml; charset=utf-8');
+      res.setHeader('Cache-Control', 'public, max-age=3600');
+      res.sendFile(path.resolve('./client/public/sitemap.xml'));
+    });
+
+    app.use(vite.middlewares);
+  }
 
   app.listen(5000, '0.0.0.0', () => {
-    console.log('Dev server running on http://0.0.0.0:5000');
+    console.log(`Server running on http://0.0.0.0:5000 [${isProd ? 'production' : 'development'}]`);
   });
-};
+}
 
-startDevServer();
+startServer();
