@@ -126,7 +126,7 @@ export function ContactSection() {
               </div>
 
               <a
-                href="https://www.fiverr.com/s/2K2Pjj4"
+                href="https://www.fiverr.com/tariq_webflow"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 p-4 rounded-2xl transition-all hover:opacity-90 group"
@@ -138,7 +138,7 @@ export function ContactSection() {
                     Hire me on Fiverr
                   </span>
                   <p className="text-xs mt-0.5 truncate" style={{ color: "rgba(29,191,110,0.6)" }}>
-                    fiverr.com/s/2K2Pjj4
+                    fiverr.com/tariq_webflow
                   </p>
                 </div>
                 <ArrowRight className="w-4 h-4 flex-shrink-0 group-hover:translate-x-1 transition-transform" style={{ color: "#1DBF6E" }} />

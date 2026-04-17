@@ -176,7 +176,7 @@ export function PremiumHeroSection() {
 
                 {/* Fiverr badge */}
                 <motion.a
-                  href="https://www.fiverr.com/s/2K2Pjj4"
+                  href="https://www.fiverr.com/tariq_webflow"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 self-start px-5 py-2.5 rounded-full transition-all hover:opacity-90"

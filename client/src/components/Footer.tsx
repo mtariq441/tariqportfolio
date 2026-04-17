@@ -2,7 +2,7 @@ import { Linkedin, Twitter, Mail, ArrowUpRight } from "lucide-react";
 import { SiFiverr } from "react-icons/si";
 import { motion } from "framer-motion";
 
-const FIVERR_URL = "https://www.fiverr.com/s/2K2Pjj4";
+const FIVERR_URL = "https://www.fiverr.com/tariq_webflow";
 
 export function Footer() {
   const socialLinks = [
