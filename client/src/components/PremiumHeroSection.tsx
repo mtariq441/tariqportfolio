@@ -7,120 +7,71 @@ export function PremiumHeroSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] });
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   return (
     <section
       ref={sectionRef}
       className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-[65px]"
-      style={{ background: "#3700FF", position: "relative" }}
+      style={{ background: "#3700FF" }}
     >
       {/* Animated grid */}
-      <motion.div
-        className="absolute inset-0 line-grid-blue"
-        style={{ y: bgY }}
-      />
+      <motion.div className="absolute inset-0 line-grid-blue" style={{ y: bgY }} />
 
-      {/* Radial glows */}
+      {/* Radial glows — reduced on mobile */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute -top-40 -right-40 w-[800px] h-[800px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(204,255,0,0.15) 0%, transparent 60%)" }}
-          animate={{ scale: [1, 1.2, 1] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        <div
+          className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full hidden sm:block"
+          style={{ background: "radial-gradient(circle, rgba(204,255,0,0.12) 0%, transparent 60%)" }}
         />
-        <motion.div
-          className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 60%)" }}
-          animate={{ scale: [1, 1.15, 1] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+        <div
+          className="absolute -bottom-40 -left-40 w-[400px] h-[400px] rounded-full hidden sm:block"
+          style={{ background: "radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%)" }}
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 w-full">
-        <div className="grid lg:grid-cols-[1fr_380px] xl:grid-cols-[1fr_440px] gap-10 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 w-full">
+        <div className="grid lg:grid-cols-[1fr_380px] xl:grid-cols-[1fr_440px] gap-8 lg:gap-10 items-center">
 
           {/* Left: Main copy */}
-          <motion.div style={{ y: textY }} className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
 
             {/* Eyebrow */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
+              transition={{ duration: 0.5 }}
               className="flex items-center gap-3"
             >
-              <motion.span
-                className="inline-flex items-center gap-2 font-black text-xs uppercase tracking-[0.25em] px-4 py-2 rounded-full"
+              <span
+                className="inline-flex items-center gap-2 font-black text-xs uppercase tracking-[0.2em] px-4 py-2 rounded-full"
                 style={{ background: "#CCFF00", color: "#3700FF" }}
-                animate={{ boxShadow: ["0 0 0px rgba(204,255,0,0)", "0 0 20px rgba(204,255,0,0.6)", "0 0 0px rgba(204,255,0,0)"] }}
-                transition={{ duration: 3, repeat: Infinity }}
               >
                 <span className="w-2 h-2 rounded-full bg-current animate-pulse" />
                 Available — 2 Spots This Month
-              </motion.span>
+              </span>
             </motion.div>
 
-            {/* Huge headline */}
-            <div className="space-y-0">
-              <motion.div
-                initial={{ opacity: 0, x: -40 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="overflow-hidden"
-              >
-                <h1 className="text-[clamp(3.5rem,10vw,8rem)] font-black leading-[0.88] tracking-[-0.03em] uppercase text-white">
-                  I SHIP
-                </h1>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: -40 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="overflow-hidden"
-              >
-                <h1
-                  className="text-[clamp(3.5rem,10vw,8rem)] font-black leading-[0.88] tracking-[-0.03em] uppercase"
-                  style={{ color: "#CCFF00" }}
-                >
-                  $1M–$10M+
-                </h1>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: -40 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="overflow-hidden"
-              >
-                <h1 className="text-[clamp(3.5rem,10vw,8rem)] font-black leading-[0.88] tracking-[-0.03em] uppercase text-white">
-                  SAAS ON
-                </h1>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: -40 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.5, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="overflow-hidden"
-              >
-                <h1
-                  className="text-[clamp(3.5rem,10vw,8rem)] font-black leading-[0.88] tracking-[-0.03em] uppercase text-outline-white"
-                >
-                  REPLIT
-                </h1>
-              </motion.div>
-            </div>
+            {/* ── Single H1 (SEO: one h1 per page) ── */}
+            <motion.h1
+              className="text-[clamp(3rem,9vw,7.5rem)] font-black leading-[0.88] tracking-[-0.03em] uppercase"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <span className="block text-white">I SHIP</span>
+              <span className="block" style={{ color: "#CCFF00" }}>$1M–$10M+</span>
+              <span className="block text-white">SAAS ON</span>
+              <span className="block text-outline-white">REPLIT</span>
+            </motion.h1>
 
             {/* Sub copy + CTAs */}
             <motion.div
-              className="space-y-6 pt-2"
-              initial={{ opacity: 0, y: 20 }}
+              className="space-y-5 sm:space-y-6"
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7, duration: 0.8 }}
+              transition={{ delay: 0.25, duration: 0.6 }}
             >
-              <p className="text-base md:text-lg text-white/60 max-w-md leading-relaxed">
+              <p className="text-base sm:text-lg text-white/60 max-w-md leading-relaxed">
                 Muhammad Tariq — where speed meets precision. Join founders who've unlocked
                 $27M+ in growth shipping on Replit.
               </p>
@@ -151,13 +102,14 @@ export function PremiumHeroSection() {
               </div>
 
               <div className="flex flex-col gap-4">
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <motion.button
                     className="flex items-center justify-center gap-2 font-black text-sm uppercase tracking-wide px-8 py-4 rounded-full"
                     style={{ background: "#CCFF00", color: "#3700FF" }}
                     whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(204,255,0,0.5)" }}
                     whileTap={{ scale: 0.97 }}
                     onClick={() => window.open("https://www.fiverr.com/tariq_webflow", "_blank")}
+                    aria-label="Contact Muhammad Tariq on Fiverr"
                   >
                     DM on Fiverr
                     <ArrowRight className="h-4 w-4" />
@@ -168,6 +120,7 @@ export function PremiumHeroSection() {
                     whileHover={{ borderColor: "rgba(255,255,255,0.6)", scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
                     onClick={() => document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })}
+                    aria-label="View portfolio"
                   >
                     See Results
                     <ArrowUpRight className="h-4 w-4" />
@@ -175,74 +128,71 @@ export function PremiumHeroSection() {
                 </div>
 
                 {/* Fiverr badge */}
-                <motion.a
+                <a
                   href="https://www.fiverr.com/tariq_webflow"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 self-start px-5 py-2.5 rounded-full transition-all hover:opacity-90"
                   style={{ background: "rgba(29,191,110,0.12)", border: "1px solid rgba(29,191,110,0.3)" }}
-                  whileHover={{ scale: 1.04 }}
-                  whileTap={{ scale: 0.97 }}
+                  aria-label="View Muhammad Tariq's Fiverr profile"
                 >
                   <SiFiverr className="h-4 w-4 flex-shrink-0" style={{ color: "#1DBF6E" }} />
                   <span className="text-xs font-black uppercase tracking-wide" style={{ color: "#1DBF6E" }}>
                     Also available on Fiverr
                   </span>
                   <ArrowUpRight className="h-3.5 w-3.5" style={{ color: "rgba(29,191,110,0.6)" }} />
-                </motion.a>
+                </a>
               </div>
             </motion.div>
-          </motion.div>
+          </div>
 
-          {/* Right: floating card */}
+          {/* Right: floating card — hidden on small mobile, shown tablet+ */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="block"
+            transition={{ delay: 0.3, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="hidden sm:block"
           >
             <motion.div
               className="relative"
-              animate={{ y: [0, -18, 0] }}
+              animate={{ y: [0, -14, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             >
               {/* Main card */}
               <div
-                className="rounded-3xl p-7 relative overflow-hidden"
+                className="rounded-3xl p-6 sm:p-7 relative overflow-hidden"
                 style={{
                   background: "rgba(255,255,255,0.07)",
                   border: "1px solid rgba(204,255,0,0.25)",
                   backdropFilter: "blur(20px)",
                 }}
               >
-                {/* Card grid bg */}
                 <div className="absolute inset-0 dot-grid-dark opacity-40" />
 
-                <div className="relative z-10 space-y-6">
+                <div className="relative z-10 space-y-5 sm:space-y-6">
                   {/* Identity */}
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-3 sm:gap-4">
                     <div
-                      className="w-16 h-16 rounded-2xl flex items-center justify-center font-black text-xl flex-shrink-0 pulse-glow-anim"
+                      className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center font-black text-xl flex-shrink-0"
                       style={{ background: "#CCFF00", color: "#3700FF" }}
                     >
                       MT
                     </div>
                     <div>
-                      <div className="font-black text-white text-base">Muhammad Tariq</div>
+                      <div className="font-black text-white text-sm sm:text-base">Muhammad Tariq</div>
                       <div className="text-white/50 text-xs uppercase tracking-widest">Full Stack Builder</div>
                     </div>
                     <div className="ml-auto">
-                      <span className="text-xs font-black uppercase px-2 py-1 rounded-full" style={{ background: "rgba(204,255,0,0.2)", color: "#CCFF00" }}>
+                      <span className="text-xs font-black uppercase px-2 py-1 rounded-full whitespace-nowrap" style={{ background: "rgba(204,255,0,0.2)", color: "#CCFF00" }}>
                         Online
                       </span>
                     </div>
                   </div>
 
-                  {/* Divider */}
                   <div style={{ height: "1px", background: "rgba(204,255,0,0.15)" }} />
 
                   {/* Stats grid */}
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-2 gap-2 sm:gap-3">
                     {[
                       { value: "$27M+", label: "Revenue Generated" },
                       { value: "350+", label: "Apps Shipped" },
@@ -251,10 +201,10 @@ export function PremiumHeroSection() {
                     ].map((s) => (
                       <div
                         key={s.label}
-                        className="rounded-2xl p-4"
+                        className="rounded-2xl p-3 sm:p-4"
                         style={{ background: "rgba(204,255,0,0.1)" }}
                       >
-                        <div className="font-black text-xl" style={{ color: "#CCFF00" }}>
+                        <div className="font-black text-lg sm:text-xl" style={{ color: "#CCFF00" }}>
                           {s.value}
                         </div>
                         <div className="text-white/50 text-xs mt-0.5">{s.label}</div>
@@ -264,14 +214,14 @@ export function PremiumHeroSection() {
 
                   {/* Tech stack */}
                   <div>
-                    <div className="text-xs font-black uppercase tracking-widest text-white/40 mb-3">
+                    <div className="text-xs font-black uppercase tracking-widest text-white/40 mb-2 sm:mb-3">
                       Tech Stack
                     </div>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
                       {["Next.js", "Supabase", "Clerk", "Stripe", "Replit"].map((t) => (
                         <span
                           key={t}
-                          className="text-xs font-bold px-3 py-1 rounded-full"
+                          className="text-xs font-bold px-2.5 sm:px-3 py-1 rounded-full"
                           style={{ background: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.7)" }}
                         >
                           {t}
@@ -281,35 +231,49 @@ export function PremiumHeroSection() {
                   </div>
 
                   {/* CTA */}
-                  <motion.button
-                    className="w-full py-3 rounded-2xl font-black text-sm uppercase tracking-wide"
+                  <button
+                    className="w-full py-3 rounded-2xl font-black text-sm uppercase tracking-wide transition-transform hover:scale-[1.02] active:scale-[0.98]"
                     style={{ background: "#CCFF00", color: "#3700FF" }}
-                    whileHover={{ scale: 1.03, boxShadow: "0 0 20px rgba(204,255,0,0.4)" }}
-                    whileTap={{ scale: 0.97 }}
                     onClick={() => window.open("https://www.fiverr.com/tariq_webflow", "_blank")}
+                    aria-label="Hire Muhammad Tariq on Fiverr"
                   >
                     DM on Fiverr →
-                  </motion.button>
+                  </button>
                 </div>
               </div>
 
               {/* Floating badge */}
-              <motion.div
-                className="absolute -top-5 -right-5 rounded-2xl px-4 py-2 shadow-xl"
+              <div
+                className="absolute -top-4 -right-4 rounded-2xl px-3 py-1.5 shadow-xl"
                 style={{ background: "#CCFF00" }}
-                animate={{ rotate: [0, 4, 0, -4, 0] }}
-                transition={{ duration: 5, repeat: Infinity }}
               >
                 <div className="font-black text-xs uppercase leading-tight" style={{ color: "#3700FF" }}>
                   🚀 Shipping Fast
                 </div>
-              </motion.div>
+              </div>
             </motion.div>
           </motion.div>
+
         </div>
 
+        {/* Mobile-only compact stats strip */}
+        <div className="sm:hidden mt-8 grid grid-cols-3 gap-3">
+          {[
+            { value: "$27M+", label: "Revenue" },
+            { value: "350+", label: "Apps" },
+            { value: "157+", label: "Founders" },
+          ].map((s) => (
+            <div
+              key={s.label}
+              className="rounded-2xl p-3 text-center"
+              style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(204,255,0,0.2)" }}
+            >
+              <div className="font-black text-base" style={{ color: "#CCFF00" }}>{s.value}</div>
+              <div className="text-white/50 text-xs mt-0.5">{s.label}</div>
+            </div>
+          ))}
+        </div>
       </div>
-
     </section>
   );
 }
