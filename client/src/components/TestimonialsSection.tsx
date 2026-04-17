@@ -97,7 +97,6 @@ export function TestimonialsSection() {
         >
           <h2 className="text-4xl md:text-6xl font-black uppercase leading-tight" style={{ color: "#0a0a0a" }}>
             WHAT{" "}
-            <br className="hidden md:block" />
             THEY&apos;RE{" "}
             <span style={{ color: "#3700FF" }}>SAYING</span>
           </h2>
