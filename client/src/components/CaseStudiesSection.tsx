@@ -36,7 +36,7 @@ const caseStudies = [
     period: "Adoption",
     description: "Full dealership management dashboard replacing legacy systems.",
     tech: "Next.js · Supabase · Real-time Sync",
-    link: "#",
+    link: "",
     highlight: false,
   },
   {
@@ -47,7 +47,7 @@ const caseStudies = [
     period: "Revenue Growth",
     description: "High-ticket coaching platform scaled from $800K to $4M annual revenue.",
     tech: "Next.js · Stripe · Memberstack · Sendgrid",
-    link: "#",
+    link: "",
     highlight: false,
   },
 
@@ -310,7 +310,10 @@ export function CaseStudiesSection() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: Math.min(index * 0.07, 0.5) }}
               whileHover={{ y: -6 }}
-              className="rounded-2xl overflow-hidden border-2 cursor-pointer group flex flex-col"
+              onClick={() => {
+                if (study.link) window.open(study.link, "_blank", "noopener,noreferrer");
+              }}
+              className={`rounded-2xl overflow-hidden border-2 group flex flex-col ${study.link ? "cursor-pointer" : "cursor-default"}`}
               style={{ borderColor: study.highlight ? "#3700FF" : "#f0f0f0" }}
             >
               {/* Card header */}
@@ -359,7 +362,7 @@ export function CaseStudiesSection() {
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
                   style={{ background: "rgba(55,0,255,0.85)" }}
                 >
-                  {study.link !== "#" && (
+                  {study.link && (
                     <span className="flex items-center gap-2 font-black text-xs uppercase tracking-widest text-white">
                       View Site <ExternalLink className="w-3.5 h-3.5" />
                     </span>
@@ -373,7 +376,7 @@ export function CaseStudiesSection() {
                   <h3 className="text-lg font-black uppercase" style={{ color: "#0a0a0a" }}>
                     {study.name}
                   </h3>
-                  {study.link !== "#" && (
+                  {study.link && (
                     <a
                       href={study.link}
                       target="_blank"
