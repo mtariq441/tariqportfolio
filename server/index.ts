@@ -73,8 +73,9 @@ async function startServer() {
     app.use(vite.middlewares);
   }
 
-  app.listen(5000, '0.0.0.0', () => {
-    console.log(`Server running on http://0.0.0.0:5000 [${isProd ? 'production' : 'development'}]`);
+  const port = parseInt(process.env.PORT || '5000', 10);
+  app.listen(port, '0.0.0.0', () => {
+    console.log(`Server running on http://0.0.0.0:${port} [${isProd ? 'production' : 'development'}]`);
   });
 }
 
