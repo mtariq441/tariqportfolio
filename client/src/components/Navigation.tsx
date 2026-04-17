@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 
+const FIVERR = "https://www.fiverr.com/tariq_webflow";
+
 const navItems = [
   { label: "Services", href: "#services" },
   { label: "Portfolio", href: "#portfolio" },
@@ -97,7 +99,7 @@ export function Navigation() {
                 className="hidden sm:flex items-center gap-2 font-black text-xs uppercase tracking-widest px-5 py-2.5 rounded-full transition-all duration-200 hover:scale-105"
                 style={{ background: "#CCFF00", color: "#3700FF" }}
                 whileHover={{ boxShadow: "0 0 24px rgba(204,255,0,0.5)" }}
-                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() => window.open(FIVERR, "_blank")}
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
                 Start a Project
@@ -143,7 +145,7 @@ export function Navigation() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
                 onClick={() => {
-                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                  window.open(FIVERR, "_blank");
                   setIsMobileMenuOpen(false);
                 }}
                 className="w-full py-3 rounded-full font-black text-sm uppercase mt-4 tracking-widest"

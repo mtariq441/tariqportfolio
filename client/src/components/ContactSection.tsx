@@ -2,22 +2,16 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Zap, DollarSign, Lock, ArrowRight } from "lucide-react";
 import { SiFiverr } from "react-icons/si";
-import { useToast } from "@/hooks/use-toast";
 
 export function ContactSection() {
   const formRef = useRef(null);
   const isFormInView = useInView(formRef, { once: true, margin: "-100px" });
-  const { toast } = useToast();
 
   const [contactFormData, setContactFormData] = useState({ name: "", email: "", message: "", budget: "" });
 
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "I'll review your details and get back to you within 24 hours.",
-    });
-    setContactFormData({ name: "", email: "", message: "", budget: "" });
+    window.open("https://www.fiverr.com/tariq_webflow", "_blank");
   };
 
   const perks = [
@@ -54,25 +48,25 @@ export function ContactSection() {
             transition={{ duration: 0.7 }}
           >
             <p className="text-xs font-black uppercase tracking-[0.3em] mb-5" style={{ color: "#CCFF00" }}>
-              ✦ Limited Spots Open
+              ✦ Fiverr Only — No Exceptions
             </p>
             <h2 className="text-4xl md:text-6xl font-black uppercase leading-tight mb-6 text-white">
-              LET&apos;S BUILD
+              DM ME ON
               <br />
-              YOUR{" "}
               <span
                 className="relative inline-block px-3 py-1 rounded-xl"
-                style={{ background: "#CCFF00", color: "#3700FF" }}
+                style={{ background: "#1DBF6E", color: "white" }}
               >
-                $1M+
+                FIVERR
               </span>
               <br />
-              PRODUCT
+              TO START
             </h2>
 
             <p className="text-lg leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.5)" }}>
-              I only work with founders serious about shipping fast and scaling hard.
-              Tell me your goals — I'll tell you how to get there.
+              I exclusively accept all projects through Fiverr — no emails,
+              no DMs elsewhere. Click below, send me a message, and let's build
+              your $1M+ product fast.
             </p>
 
             {/* Perks */}
@@ -102,47 +96,19 @@ export function ContactSection() {
 
             {/* Social links */}
             <div className="space-y-3">
-              <div
-                className="flex items-center gap-3 p-4 rounded-2xl"
-                style={{ background: "rgba(204,255,0,0.07)", border: "1px solid rgba(204,255,0,0.15)" }}
-              >
-                <motion.span
-                  className="w-2.5 h-2.5 rounded-full flex-shrink-0"
-                  style={{ background: "#CCFF00" }}
-                  animate={{ opacity: [1, 0.3, 1] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                />
-                <span className="text-sm font-black" style={{ color: "#CCFF00" }}>
-                  DM me on{" "}
-                  <a
-                    href="https://twitter.com/muhammadtariq"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline underline-offset-2 hover:opacity-80 transition-opacity"
-                  >
-                    @muhammadtariq
-                  </a>
-                </span>
-              </div>
-
-              <a
+              <motion.a
                 href="https://www.fiverr.com/tariq_webflow"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 p-4 rounded-2xl transition-all hover:opacity-90 group"
-                style={{ background: "rgba(30,191,100,0.1)", border: "1px solid rgba(30,191,100,0.25)" }}
+                className="flex items-center justify-center gap-3 p-5 rounded-2xl transition-all w-full font-black text-base uppercase tracking-wide"
+                style={{ background: "#1DBF6E", color: "white" }}
+                whileHover={{ scale: 1.03, boxShadow: "0 0 30px rgba(29,191,110,0.4)" } as any}
+                whileTap={{ scale: 0.97 }}
               >
-                <SiFiverr className="w-5 h-5 flex-shrink-0" style={{ color: "#1DBF6E" }} />
-                <div className="flex-1 min-w-0">
-                  <span className="text-sm font-black" style={{ color: "#1DBF6E" }}>
-                    Hire me on Fiverr
-                  </span>
-                  <p className="text-xs mt-0.5 truncate" style={{ color: "rgba(29,191,110,0.6)" }}>
-                    fiverr.com/tariq_webflow
-                  </p>
-                </div>
-                <ArrowRight className="w-4 h-4 flex-shrink-0 group-hover:translate-x-1 transition-transform" style={{ color: "#1DBF6E" }} />
-              </a>
+                <SiFiverr className="w-6 h-6 flex-shrink-0" />
+                DM Me on Fiverr
+                <ArrowRight className="w-5 h-5 flex-shrink-0" />
+              </motion.a>
             </div>
           </motion.div>
 
@@ -255,12 +221,12 @@ export function ContactSection() {
                   whileTap={{ scale: 0.98 }}
                   data-testid="button-contact-submit"
                 >
-                  Book Your 15-Min Call
-                  <ArrowRight className="h-4 w-4" />
+                  <SiFiverr className="h-4 w-4" />
+                  Open Fiverr &amp; Send Message
                 </motion.button>
 
                 <p className="text-xs text-center" style={{ color: "rgba(255,255,255,0.25)" }}>
-                  Only founders doing $500K+ annual revenue with serious 10x ambitions.
+                  All projects accepted exclusively via Fiverr — fiverr.com/tariq_webflow
                 </p>
               </form>
             </div>

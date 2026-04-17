@@ -76,7 +76,7 @@ export function SelectiveSection() {
               style={{ background: "#CCFF00", color: "#3700FF" }}
               whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(204,255,0,0.4)" }}
               whileTap={{ scale: 0.98 }}
-              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() => window.open("https://www.fiverr.com/tariq_webflow", "_blank")}
             >
               Apply for a Spot
               <ArrowRight className="w-4 h-4" />

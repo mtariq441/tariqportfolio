@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { SiFiverr } from "react-icons/si";
+
+const FIVERR = "https://www.fiverr.com/tariq_webflow";
 
 export function CTASection() {
   return (
@@ -84,8 +87,8 @@ export function CTASection() {
             viewport={{ once: true }}
             transition={{ delay: 0.35 }}
           >
-            They will be booked this week. Get your 15-minute consultation now —
-            let's see if we're the right fit for your $1M+ revenue goals.
+            I only accept projects through Fiverr. DM me there and let's build
+            your $1M+ revenue product — fast.
           </motion.p>
 
           <motion.div
@@ -95,26 +98,30 @@ export function CTASection() {
             viewport={{ once: true }}
             transition={{ delay: 0.45 }}
           >
-            <motion.button
+            <motion.a
+              href={FIVERR}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 font-black text-sm uppercase tracking-wide px-10 py-5 rounded-full"
               style={{ background: "#CCFF00", color: "#3700FF" }}
               whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(204,255,0,0.5)" }}
               whileTap={{ scale: 0.97 }}
-              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             >
-              Book Your Call Now
-              <ArrowRight className="h-5 w-5" />
-            </motion.button>
-            <motion.button
+              <SiFiverr className="h-5 w-5" />
+              DM Me on Fiverr
+            </motion.a>
+            <motion.a
+              href={FIVERR}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 font-bold text-sm uppercase tracking-wide px-10 py-5 rounded-full border-2 text-white transition-all"
               style={{ borderColor: "rgba(255,255,255,0.25)" }}
-              whileHover={{ borderColor: "rgba(255,255,255,0.6)", scale: 1.03 }}
+              whileHover={{ borderColor: "rgba(204,255,0,0.6)", scale: 1.03 } as any}
               whileTap={{ scale: 0.97 }}
-              onClick={() => window.open("https://twitter.com/muhammadtariq", "_blank")}
             >
-              DM &quot;10X&quot; on Twitter
+              View Fiverr Profile
               <ArrowRight className="h-4 w-4" />
-            </motion.button>
+            </motion.a>
           </motion.div>
         </motion.div>
       </div>

@@ -74,9 +74,9 @@ export function Footer() {
               transition={{ delay: 0.2, duration: 0.5 }}
               whileHover={{ scale: 1.06, boxShadow: "0 0 40px rgba(204,255,0,0.45)" }}
               whileTap={{ scale: 0.97 }}
-              onClick={() => scrollToSection("#contact")}
+              onClick={() => window.open(FIVERR_URL, "_blank")}
             >
-              Start a Project
+              DM on Fiverr
               <ArrowUpRight className="h-5 w-5" />
             </motion.button>
 

@@ -157,9 +157,9 @@ export function PremiumHeroSection() {
                     style={{ background: "#CCFF00", color: "#3700FF" }}
                     whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(204,255,0,0.5)" }}
                     whileTap={{ scale: 0.97 }}
-                    onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                    onClick={() => window.open("https://www.fiverr.com/tariq_webflow", "_blank")}
                   >
-                    Book a Call
+                    DM on Fiverr
                     <ArrowRight className="h-4 w-4" />
                   </motion.button>
                   <motion.button
@@ -286,9 +286,9 @@ export function PremiumHeroSection() {
                     style={{ background: "#CCFF00", color: "#3700FF" }}
                     whileHover={{ scale: 1.03, boxShadow: "0 0 20px rgba(204,255,0,0.4)" }}
                     whileTap={{ scale: 0.97 }}
-                    onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                    onClick={() => window.open("https://www.fiverr.com/tariq_webflow", "_blank")}
                   >
-                    Book Your Spot →
+                    DM on Fiverr →
                   </motion.button>
                 </div>
               </div>
