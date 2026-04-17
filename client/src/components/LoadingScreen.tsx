@@ -2,13 +2,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export function LoadingScreen() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [shouldRender, setShouldRender] = useState(true);
-  const [count, setCount] = useState(0);
+  const skipParam = new URLSearchParams(window.location.search).get("preview");
+  const alreadySeen = skipParam || sessionStorage.getItem("mt_loaded");
+  const [isLoading, setIsLoading] = useState(!alreadySeen);
+  const [shouldRender, setShouldRender] = useState(!alreadySeen);
+  const [count, setCount] = useState(alreadySeen ? 100 : 0);
 
   useEffect(() => {
-    const duration = 2400;
-    const interval = 20;
+    if (alreadySeen) return;
+
+    const duration = 1200;
+    const interval = 16;
     const steps = duration / interval;
     let current = 0;
 
@@ -20,8 +24,11 @@ export function LoadingScreen() {
       if (current >= steps) clearInterval(counter);
     }, interval);
 
-    const loadTimer = setTimeout(() => setIsLoading(false), 2600);
-    const renderTimer = setTimeout(() => setShouldRender(false), 3200);
+    const loadTimer = setTimeout(() => {
+      setIsLoading(false);
+      sessionStorage.setItem("mt_loaded", "1");
+    }, 1300);
+    const renderTimer = setTimeout(() => setShouldRender(false), 1900);
 
     return () => {
       clearInterval(counter);
