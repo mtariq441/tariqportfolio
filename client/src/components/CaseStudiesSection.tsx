@@ -28,29 +28,6 @@ const caseStudies = [
     link: "https://bhfield.com",
     highlight: false,
   },
-  {
-    name: "Dealer Vault",
-    category: "Client Projects",
-    result: "Complete Internal Tool Replacement",
-    metric: "100%",
-    period: "Adoption",
-    description: "Full dealership management dashboard replacing legacy systems.",
-    tech: "Next.js · Supabase · Real-time Sync",
-    link: "",
-    highlight: false,
-  },
-  {
-    name: "Coaching Membership",
-    category: "Client Projects",
-    result: "$800K to $4M/year",
-    metric: "5x",
-    period: "Revenue Growth",
-    description: "High-ticket coaching platform scaled from $800K to $4M annual revenue.",
-    tech: "Next.js · Stripe · Memberstack · Sendgrid",
-    link: "",
-    highlight: false,
-  },
-
   // --- Recent Client Projects ---
   {
     name: "CoachNow",
