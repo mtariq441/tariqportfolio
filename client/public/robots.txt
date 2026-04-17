@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://muhammadtariq.com/sitemap.xml
+Sitemap: https://tariqservices.site/sitemap.xml
