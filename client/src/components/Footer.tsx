@@ -57,7 +57,7 @@ export function Footer() {
                     }}
                     className="p-2 rounded-lg transition-all"
                     style={{ background: "rgba(204,255,0,0.1)", color: "#CCFF00" }}
-                    whileHover={{ scale: 1.15, background: "rgba(204,255,0,0.2)" } as any}
+                    whileHover={{ scale: 1.15 }}
                     whileTap={{ scale: 0.95 }}
                     data-testid={`link-${social.label.toLowerCase()}`}
                   >
@@ -80,9 +80,9 @@ export function Footer() {
                 <motion.button
                   key={link.label}
                   onClick={() => scrollToSection(link.href)}
-                  className="block text-sm font-medium transition-colors"
+                  className="block text-sm font-medium transition-colors hover:text-[#CCFF00]"
                   style={{ color: "rgba(255,255,255,0.45)" }}
-                  whileHover={{ x: 5, color: "#CCFF00" } as any}
+                  whileHover={{ x: 5 }}
                   data-testid={`footer-link-${link.label.toLowerCase()}`}
                 >
                   {link.label}

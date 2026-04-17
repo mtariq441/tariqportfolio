@@ -73,7 +73,7 @@ export function CTASection() {
                 2 CLIENT
               </span>
               <br />
-              <span className="text-outline-white">SPOTS</span> LEFT
+              <span style={{ color: "#CCFF00" }}>SPOTS</span> LEFT
             </h2>
           </motion.div>
 

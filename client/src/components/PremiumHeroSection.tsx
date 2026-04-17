@@ -2,8 +2,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
-const words = ["SAAS", "APPS", "TOOLS", "MVPs"];
-
 export function PremiumHeroSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] });
@@ -14,7 +12,7 @@ export function PremiumHeroSection() {
     <section
       ref={sectionRef}
       className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-[65px]"
-      style={{ background: "#3700FF" }}
+      style={{ background: "#3700FF", position: "relative" }}
     >
       {/* Animated grid */}
       <motion.div
@@ -265,32 +263,33 @@ export function PremiumHeroSection() {
           </motion.div>
         </div>
 
-        {/* Horizontal marquee bottom strip */}
-        <motion.div
-          className="absolute bottom-0 left-0 right-0 overflow-hidden py-3"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-        >
-          <div className="marquee-track-slow">
-            {[...Array(10)].map((_, i) => (
-              <span
-                key={i}
-                className="text-xs font-bold uppercase tracking-[0.2em] px-8 whitespace-nowrap"
-                style={{ color: "rgba(255,255,255,0.25)" }}
-              >
-                $27M+ Revenue Generated
-                <span className="mx-6" style={{ color: "rgba(204,255,0,0.4)" }}>✦</span>
-                350+ Apps Shipped
-                <span className="mx-6" style={{ color: "rgba(204,255,0,0.4)" }}>✦</span>
-                157+ Founders Served
-                <span className="mx-6" style={{ color: "rgba(204,255,0,0.4)" }}>✦</span>
-              </span>
-            ))}
-          </div>
-        </motion.div>
       </div>
+
+      {/* Horizontal marquee bottom strip — full-width, direct child of section */}
+      <motion.div
+        className="absolute bottom-0 left-0 right-0 overflow-hidden py-3"
+        style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
+      >
+        <div className="marquee-track-slow">
+          {[...Array(10)].map((_, i) => (
+            <span
+              key={i}
+              className="text-xs font-bold uppercase tracking-[0.2em] px-8 whitespace-nowrap"
+              style={{ color: "rgba(255,255,255,0.25)" }}
+            >
+              $27M+ Revenue Generated
+              <span className="mx-6" style={{ color: "rgba(204,255,0,0.4)" }}>✦</span>
+              350+ Apps Shipped
+              <span className="mx-6" style={{ color: "rgba(204,255,0,0.4)" }}>✦</span>
+              157+ Founders Served
+              <span className="mx-6" style={{ color: "rgba(204,255,0,0.4)" }}>✦</span>
+            </span>
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 }
