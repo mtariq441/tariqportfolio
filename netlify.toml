@@ -2,6 +2,13 @@
   command = "npm run build"
   publish = "dist/public"
 
+# www → non-www (301 permanent redirect — must come first)
+[[redirects]]
+  from = "https://www.tariqservices.site/*"
+  to = "https://tariqservices.site/:splat"
+  status = 301
+  force = true
+
 # SPA fallback — all routes serve index.html
 [[redirects]]
   from = "/*"
