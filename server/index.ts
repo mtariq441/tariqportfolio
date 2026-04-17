@@ -1,17 +1,28 @@
-import { createServer } from 'vite';
+import express from 'express';
+import { createServer as createViteServer } from 'vite';
 
 const startDevServer = async () => {
-  const server = await createServer({
+  const app = express();
+
+  const vite = await createViteServer({
     server: {
-      port: 5000,
-      host: '0.0.0.0',
+      middlewareMode: true,
       allowedHosts: true,
     },
+    appType: 'spa',
     configFile: './vite.config.ts',
   });
 
-  await server.listen();
-  console.log('Vite dev server running on port 5000');
+  app.use((req, res, next) => {
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
+    next();
+  });
+
+  app.use(vite.middlewares);
+
+  app.listen(5000, '0.0.0.0', () => {
+    console.log('Dev server running on http://0.0.0.0:5000');
+  });
 };
 
 startDevServer();
