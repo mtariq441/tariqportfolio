@@ -8,6 +8,7 @@ import { SelectiveSection } from "@/components/SelectiveSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { CTASection } from "@/components/CTASection";
 import { ContactSection } from "@/components/ContactSection";
+import { BlogPreview } from "@/components/BlogPreview";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <CaseStudiesSection />
       <SelectiveSection />
       <TestimonialsSection />
+      <BlogPreview />
       <CTASection />
       <ContactSection />
       <Footer />

@@ -10,6 +10,8 @@ const SEO_STATIC = ['/robots.txt', '/sitemap.xml'];
 async function startServer() {
   const app = express();
 
+  const { getBlogIndexHtml, getBlogPostHtml } = await import('./blog.js');
+
   if (isProd) {
     const distPublic = path.resolve(__dirname, 'public');
 
@@ -31,6 +33,21 @@ async function startServer() {
       res.sendFile(path.join(distPublic, 'sitemap.xml'));
     });
 
+    // SSR Blog routes
+    app.get('/blog', (_req, res) => {
+      res.setHeader('Content-Type', 'text/html; charset=utf-8');
+      res.setHeader('Cache-Control', 'public, max-age=3600');
+      res.send(getBlogIndexHtml());
+    });
+
+    app.get('/blog/:slug', (req, res) => {
+      const html = getBlogPostHtml(req.params.slug);
+      if (!html) { res.status(404).end(); return; }
+      res.setHeader('Content-Type', 'text/html; charset=utf-8');
+      res.setHeader('Cache-Control', 'public, max-age=3600');
+      res.send(html);
+    });
+
     app.use(
       express.static(distPublic, {
         maxAge: '1y',
@@ -43,6 +60,7 @@ async function startServer() {
       res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
       res.sendFile(path.join(distPublic, 'index.html'));
     });
+
   } else {
     const { createServer: createViteServer } = await import('vite');
 
@@ -68,6 +86,19 @@ async function startServer() {
       res.setHeader('Content-Type', 'application/xml; charset=utf-8');
       res.setHeader('Cache-Control', 'public, max-age=3600');
       res.sendFile(path.resolve('./client/public/sitemap.xml'));
+    });
+
+    // SSR Blog routes (dev)
+    app.get('/blog', (_req, res) => {
+      res.setHeader('Content-Type', 'text/html; charset=utf-8');
+      res.send(getBlogIndexHtml());
+    });
+
+    app.get('/blog/:slug', (req, res) => {
+      const html = getBlogPostHtml(req.params.slug);
+      if (!html) { res.status(404).end(); return; }
+      res.setHeader('Content-Type', 'text/html; charset=utf-8');
+      res.send(html);
     });
 
     app.use(vite.middlewares);

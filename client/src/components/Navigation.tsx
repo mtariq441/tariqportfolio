@@ -8,6 +8,7 @@ const navItems = [
   { label: "Services", href: "#services" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Testimonials", href: "#testimonials" },
+  { label: "Blog", href: "/blog", external: true },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -75,20 +76,37 @@ export function Navigation() {
             {/* Desktop nav */}
             <div className="hidden md:flex items-center gap-8">
               {navItems.map((item, index) => (
-                <motion.button
-                  key={item.label}
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.08 }}
-                  onClick={() => scrollToSection(item.href)}
-                  className="relative text-sm font-semibold text-white/70 hover:text-white transition-colors duration-200 uppercase tracking-wide group py-1"
-                >
-                  {item.label}
-                  <span
-                    className="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-300 rounded-full"
-                    style={{ background: "#CCFF00" }}
-                  />
-                </motion.button>
+                item.external ? (
+                  <motion.a
+                    key={item.label}
+                    href={item.href}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.08 }}
+                    className="relative text-sm font-semibold text-white/70 hover:text-white transition-colors duration-200 uppercase tracking-wide group py-1 no-underline"
+                  >
+                    {item.label}
+                    <span
+                      className="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-300 rounded-full"
+                      style={{ background: "#CCFF00" }}
+                    />
+                  </motion.a>
+                ) : (
+                  <motion.button
+                    key={item.label}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.08 }}
+                    onClick={() => scrollToSection(item.href)}
+                    className="relative text-sm font-semibold text-white/70 hover:text-white transition-colors duration-200 uppercase tracking-wide group py-1"
+                  >
+                    {item.label}
+                    <span
+                      className="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-300 rounded-full"
+                      style={{ background: "#CCFF00" }}
+                    />
+                  </motion.button>
+                )
               ))}
             </div>
 
@@ -128,17 +146,32 @@ export function Navigation() {
           >
             <div className="px-6 py-6 space-y-1">
               {navItems.map((item, i) => (
-                <motion.button
-                  key={item.label}
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.05 }}
-                  onClick={() => scrollToSection(item.href)}
-                  className="flex items-center gap-3 w-full text-left py-3 text-sm font-bold text-white/70 hover:text-[#CCFF00] uppercase tracking-wide transition-colors px-3 rounded-xl hover:bg-white/5"
-                >
-                  <span className="w-1 h-4 rounded-full" style={{ background: "#CCFF00" }} />
-                  {item.label}
-                </motion.button>
+                item.external ? (
+                  <motion.a
+                    key={item.label}
+                    href={item.href}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.05 }}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="flex items-center gap-3 w-full text-left py-3 text-sm font-bold text-white/70 hover:text-[#CCFF00] uppercase tracking-wide transition-colors px-3 rounded-xl hover:bg-white/5 no-underline"
+                  >
+                    <span className="w-1 h-4 rounded-full" style={{ background: "#CCFF00" }} />
+                    {item.label}
+                  </motion.a>
+                ) : (
+                  <motion.button
+                    key={item.label}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.05 }}
+                    onClick={() => scrollToSection(item.href)}
+                    className="flex items-center gap-3 w-full text-left py-3 text-sm font-bold text-white/70 hover:text-[#CCFF00] uppercase tracking-wide transition-colors px-3 rounded-xl hover:bg-white/5"
+                  >
+                    <span className="w-1 h-4 rounded-full" style={{ background: "#CCFF00" }} />
+                    {item.label}
+                  </motion.button>
+                )
               ))}
               <motion.button
                 initial={{ opacity: 0, y: 10 }}
