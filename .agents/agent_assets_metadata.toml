@@ -1,0 +1,104 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "Jm3RjksxIKkj1fknYyB4D"
+uri = "file://client/public/covers/mara99.png"
+type = "image"
+title = "mara99 analytics platform cover"
+
+[[generated]]
+id = "qcd5E1SWHEX3NSRAsfcIi"
+uri = "file://client/public/covers/bhfield.png"
+type = "image"
+title = "bhfield medical ecommerce cover"
+
+[[generated]]
+id = "o-ICXHR0DfPazLu-zMcvp"
+uri = "file://client/public/covers/coachnow.png"
+type = "image"
+title = "coachnow sports coaching cover"
+
+[[generated]]
+id = "o9ooEvV9z8cZerdNc34Fo"
+uri = "file://client/public/covers/resumeio.png"
+type = "image"
+title = "resumeio resume builder cover"
+
+[[generated]]
+id = "XxTNXh7oxQbJDy89P-tJ_"
+uri = "file://client/public/covers/engagecrm.png"
+type = "image"
+title = "engage crm platform cover"
+
+[[generated]]
+id = "Skr6edzYHziY6axFRg6v6"
+uri = "file://client/public/covers/purelysolutions.png"
+type = "image"
+title = "purely solutions consulting cover"
+
+[[generated]]
+id = "x6GmoTKWk_IWBj1QTh5Oz"
+uri = "file://client/public/covers/pandora.png"
+type = "image"
+title = "pandora greece jewelry ecommerce cover"
+
+[[generated]]
+id = "P9OkESsvU5TWYJX8uZuUS"
+uri = "file://client/public/covers/autospark.png"
+type = "image"
+title = "autospark ai automotive cover"
+
+[[generated]]
+id = "r7ikUKgFVFCFlG_Fz_cM4"
+uri = "file://client/public/covers/yoursmile.png"
+type = "image"
+title = "your smile dental platform cover"
+
+[[generated]]
+id = "uC9GZKA0XiXTht-6uAMx_"
+uri = "file://client/public/covers/cdlcdigital.png"
+type = "image"
+title = "cdlc digital agency cover"
+
+[[generated]]
+id = "PKfvBmBR-wxciLFB9KEi-"
+uri = "file://client/public/covers/livechatgbl.png"
+type = "image"
+title = "livechat gbl saas cover"
+
+[[generated]]
+id = "MVyE1iJt3Z554KUhroTJF"
+uri = "file://client/public/covers/closeknit.png"
+type = "image"
+title = "close knit hosiery ecommerce cover"
+
+[[generated]]
+id = "mlVhAB48l_QnXH1gnDjZM"
+uri = "file://client/public/covers/chatpandas.png"
+type = "image"
+title = "chat pandas support agency cover"
+
+[[generated]]
+id = "dWsjtHaNlGNxU_VfOGqB4"
+uri = "file://client/public/covers/devpandas.png"
+type = "image"
+title = "dev pandas dev agency cover"
+
+[[generated]]
+id = "ifxQVr99dUEO2FiVGNKh0"
+uri = "file://client/public/covers/aams.png"
+type = "image"
+title = "aams sa enterprise platform cover"
+
+[[generated]]
+id = "RYLFMGQ6yEik79FwbtGx2"
+uri = "file://client/public/covers/5fourdigital.png"
+type = "image"
+title = "5four digital agency cover"
+
+[[generated]]
+id = "QNmKdpE076hin9hZJqcDu"
+uri = "file://client/public/covers/addressfully.png"
+type = "image"
+title = "addressfully address saas cover"

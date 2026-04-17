@@ -16,6 +16,7 @@ const caseStudies = [
     tech: "Next.js · Supabase · Clerk · Stripe · Three.js",
     link: "https://mara99.com",
     highlight: true,
+    cover: "/covers/mara99.png",
   },
   {
     name: "BHField",
@@ -27,6 +28,7 @@ const caseStudies = [
     tech: "Next.js · PostgreSQL · Stripe · Resend",
     link: "https://bhfield.com",
     highlight: false,
+    cover: "/covers/bhfield.png",
   },
   // --- Recent Client Projects ---
   {
@@ -39,6 +41,7 @@ const caseStudies = [
     tech: "SaaS · Membership · Video",
     link: "https://coachnow.com/",
     highlight: true,
+    cover: "/covers/coachnow.png",
   },
   {
     name: "Resume.io",
@@ -50,6 +53,7 @@ const caseStudies = [
     tech: "SaaS · Templates · PDF Export",
     link: "https://resume.io/",
     highlight: false,
+    cover: "/covers/resumeio.png",
   },
   {
     name: "Engage CRM",
@@ -61,6 +65,7 @@ const caseStudies = [
     tech: "CRM · SaaS · Dashboard",
     link: "https://www.engagecrm.co.uk/",
     highlight: false,
+    cover: "/covers/engagecrm.png",
   },
 
   // --- Personal Projects ---
@@ -74,6 +79,7 @@ const caseStudies = [
     tech: "Webflow · CMS · Animations",
     link: "https://www.purelysolutions.ca/",
     highlight: false,
+    cover: "/covers/purelysolutions.png",
   },
   {
     name: "Pandora Greece",
@@ -85,6 +91,7 @@ const caseStudies = [
     tech: "E-commerce · UX · Localization",
     link: "https://www.pandora.gr/",
     highlight: true,
+    cover: "/covers/pandora.png",
   },
   {
     name: "AutoSpark AI",
@@ -96,6 +103,7 @@ const caseStudies = [
     tech: "AI · Next.js · SaaS · Automation",
     link: "https://www.autospark.ai/",
     highlight: false,
+    cover: "/covers/autospark.png",
   },
   {
     name: "Your Smile",
@@ -107,6 +115,7 @@ const caseStudies = [
     tech: "Webflow · CMS · Booking",
     link: "https://your-smile.webflow.io/",
     highlight: false,
+    cover: "/covers/yoursmile.png",
   },
   {
     name: "CDLC Digital",
@@ -118,6 +127,7 @@ const caseStudies = [
     tech: "Web · CMS · Lead Gen",
     link: "https://www.cdlcdigital.com/",
     highlight: false,
+    cover: "/covers/cdlcdigital.png",
   },
   {
     name: "Addressfully",
@@ -129,6 +139,7 @@ const caseStudies = [
     tech: "Webflow · SaaS · API",
     link: "https://addressfully-brankmak.webflow.io/",
     highlight: false,
+    cover: "/covers/addressfully.png",
   },
 
   // --- Agency Work ---
@@ -142,6 +153,7 @@ const caseStudies = [
     tech: "SaaS · Real-time · Support",
     link: "https://www.livechatgbl.com/",
     highlight: true,
+    cover: "/covers/livechatgbl.png",
   },
   {
     name: "Close Knit Hosiery",
@@ -153,6 +165,7 @@ const caseStudies = [
     tech: "E-commerce · Shopify · Branding",
     link: "https://closeknithosiery.com",
     highlight: false,
+    cover: "/covers/closeknit.png",
   },
   {
     name: "Chat Pandas",
@@ -164,6 +177,7 @@ const caseStudies = [
     tech: "Agency · Live Chat · SaaS",
     link: "https://www.chatpandas.com/",
     highlight: false,
+    cover: "/covers/chatpandas.png",
   },
   {
     name: "Dev Pandas",
@@ -175,6 +189,7 @@ const caseStudies = [
     tech: "Agency · Web Dev · Branding",
     link: "https://www.devpandas.co/",
     highlight: false,
+    cover: "/covers/devpandas.png",
   },
   {
     name: "AAMS SA",
@@ -186,6 +201,7 @@ const caseStudies = [
     tech: "Enterprise · Web · RTL",
     link: "https://www.aams-sa.com/",
     highlight: false,
+    cover: "/covers/aams.png",
   },
   {
     name: "5Four Digital",
@@ -197,6 +213,7 @@ const caseStudies = [
     tech: "Agency · Branding · Web",
     link: "https://www.5fourdigital.com/",
     highlight: false,
+    cover: "/covers/5fourdigital.png",
   },
 ];
 
@@ -290,58 +307,48 @@ export function CaseStudiesSection() {
               onClick={() => {
                 if (study.link) window.open(study.link, "_blank", "noopener,noreferrer");
               }}
-              className={`rounded-2xl overflow-hidden border-2 group flex flex-col ${study.link ? "cursor-pointer" : "cursor-default"}`}
-              style={{ borderColor: study.highlight ? "#3700FF" : "#f0f0f0" }}
+              className={`rounded-2xl overflow-hidden group flex flex-col ${study.link ? "cursor-pointer" : "cursor-default"}`}
+              style={{
+                border: study.highlight ? "2px solid #3700FF" : "2px solid #f0f0f0",
+                boxShadow: study.highlight ? "0 8px 40px rgba(55,0,255,0.12)" : "none",
+              }}
             >
-              {/* Card header */}
-              <div
-                className="h-36 flex items-center justify-center relative overflow-hidden"
-                style={{ background: study.highlight ? "#3700FF" : "#f8f8f8" }}
-              >
-                {/* Background pattern */}
-                <div
-                  className="absolute inset-0 opacity-10"
-                  style={{
-                    backgroundImage: study.highlight
-                      ? "radial-gradient(circle at 70% 50%, rgba(204,255,0,0.4) 0%, transparent 60%)"
-                      : "radial-gradient(circle at 70% 50%, rgba(55,0,255,0.15) 0%, transparent 60%)",
-                  }}
+              {/* Card cover image */}
+              <div className="relative h-44 overflow-hidden" style={{ background: "#0a0a14" }}>
+                <img
+                  src={study.cover}
+                  alt={`${study.name} cover`}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
                 />
-
-                <div className="text-center relative z-10">
-                  <div
-                    className="text-4xl font-black mb-1"
-                    style={{ color: study.highlight ? "#CCFF00" : "#3700FF" }}
-                  >
-                    {study.metric}
-                  </div>
-                  <div
-                    className="text-xs font-bold uppercase tracking-widest"
-                    style={{ color: study.highlight ? "rgba(255,255,255,0.6)" : "#999" }}
-                  >
-                    {study.period}
-                  </div>
-                </div>
 
                 {/* Category badge */}
                 <div
-                  className="absolute top-3 right-3 rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-wide"
+                  className="absolute top-3 left-3 rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-wide backdrop-blur-sm"
                   style={{
-                    background: study.highlight ? "#CCFF00" : "#3700FF",
+                    background: study.highlight ? "#CCFF00" : "rgba(55,0,255,0.85)",
                     color: study.highlight ? "#3700FF" : "white",
                   }}
                 >
                   {study.category}
                 </div>
 
+                {/* Metric badge */}
+                <div
+                  className="absolute top-3 right-3 rounded-full px-3 py-1 text-[11px] font-black backdrop-blur-sm"
+                  style={{ background: "rgba(0,0,0,0.6)", color: "#CCFF00" }}
+                >
+                  {study.period === "Live" ? "● Live" : study.period}
+                </div>
+
                 {/* Hover overlay */}
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
-                  style={{ background: "rgba(55,0,255,0.85)" }}
+                  style={{ background: "rgba(55,0,255,0.88)" }}
                 >
                   {study.link && (
-                    <span className="flex items-center gap-2 font-black text-xs uppercase tracking-widest text-white">
-                      View Site <ExternalLink className="w-3.5 h-3.5" />
+                    <span className="flex items-center gap-2 font-black text-sm uppercase tracking-widest text-white">
+                      View Site <ExternalLink className="w-4 h-4" />
                     </span>
                   )}
                 </div>
@@ -366,6 +373,19 @@ export function CaseStudiesSection() {
                     </a>
                   )}
                 </div>
+
+                {/* Result pill */}
+                {study.result && study.metric && (
+                  <div className="mb-3">
+                    <span
+                      className="inline-flex items-center gap-1.5 text-[11px] font-black uppercase tracking-wide px-3 py-1 rounded-full"
+                      style={{ background: "rgba(55,0,255,0.07)", color: "#3700FF" }}
+                    >
+                      <span style={{ color: "#CCFF00", fontSize: "9px" }}>●</span>
+                      {study.result}
+                    </span>
+                  </div>
+                )}
 
                 <p className="text-sm text-gray-500 mb-3 leading-relaxed flex-1">
                   {study.description}
