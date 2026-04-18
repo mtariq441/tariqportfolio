@@ -523,32 +523,58 @@ function blogPostHtml(post: BlogPost): string {
 </aside>`;
 
   const isoDate = parsePostDate(post.date);
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": post.title,
-    "description": post.description,
-    "datePublished": isoDate,
-    "dateModified": isoDate,
-    "url": `${SITE}/blog/${post.slug}`,
-    "image": `${SITE}/og-image.png`,
-    "author": {
-      "@type": "Person",
-      "@id": `${SITE}/#person`,
-      "name": "Muhammad Tariq",
-      "url": SITE,
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.description,
+      "datePublished": isoDate,
+      "dateModified": isoDate,
+      "url": `${SITE}/blog/${post.slug}`,
+      "image": `${SITE}/og-image.png`,
+      "author": {
+        "@type": "Person",
+        "@id": `${SITE}/#person`,
+        "name": "Muhammad Tariq",
+        "url": SITE,
+      },
+      "publisher": {
+        "@type": "Person",
+        "@id": `${SITE}/#person`,
+        "name": "Muhammad Tariq",
+        "url": SITE,
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `${SITE}/blog/${post.slug}`,
+      },
     },
-    "publisher": {
-      "@type": "Person",
-      "@id": `${SITE}/#person`,
-      "name": "Muhammad Tariq",
-      "url": SITE,
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": SITE,
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": `${SITE}/blog`,
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": post.title,
+          "item": `${SITE}/blog/${post.slug}`,
+        },
+      ],
     },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `${SITE}/blog/${post.slug}`,
-    },
-  };
+  ];
 
   return ssrPage({
     title: `${post.title} | Muhammad Tariq`,
