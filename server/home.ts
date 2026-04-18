@@ -419,3 +419,7 @@ export function getHomeHtml(isProd: boolean): string {
 export function clearHomeCache(): void {
   cachedHomeHtml = null;
 }
+
+export function getHomeCacheStatus(): { home: boolean } {
+  return { home: cachedHomeHtml !== null };
+}

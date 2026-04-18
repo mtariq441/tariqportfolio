@@ -678,6 +678,17 @@ export function getBlogPostHtml(slug: string): string | null {
   return html;
 }
 
+export function getBlogCacheStatus(): { blogIndex: boolean; blogPosts: Record<string, boolean> } {
+  const blogPosts: Record<string, boolean> = {};
+  for (const post of ALL_POSTS) {
+    blogPosts[post.slug] = cachedBlogPostHtmlMap.has(post.slug);
+  }
+  return {
+    blogIndex: cachedBlogIndexHtml !== null,
+    blogPosts,
+  };
+}
+
 export function clearBlogCaches(): void {
   cachedBlogIndexHtml = null;
   cachedBlogPostHtmlMap.clear();
