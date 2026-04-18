@@ -15,6 +15,7 @@ export const POSTS4: BlogPost[] = [
     tag: "Technical",
     date: "November 29, 2025",
     readTime: "6 min read",
+    ogImage: "https://picsum.photos/id/78/1200/630",
     body: `<div class="article-body">
 <p>Moving from single-user to multi-user is the moment a SaaS product becomes a real business. Instead of charging one person $49/month, you charge a team $199–499/month. Here's how to design and build team features correctly.</p>
 <h2 id="data-model">The Organization Data Model</h2>
@@ -39,6 +40,7 @@ ${cta("Build Multi-User Features Into Your SaaS")}
     tag: "Technical",
     date: "November 27, 2025",
     readTime: "6 min read",
+    ogImage: "https://picsum.photos/id/79/1200/630",
     body: `<div class="article-body">
 <p>Getting users to subscribe is the easy part. Managing every possible subscription state change — upgrade, downgrade, pause, reactivation, cancellation — is where most SaaS developers get stuck. Here's a complete implementation guide.</p>
 <h2 id="upgrade">Plan Upgrades</h2>
@@ -70,6 +72,7 @@ ${cta("Build Complete Subscription Management")}
     tag: "Business",
     date: "November 25, 2025",
     readTime: "6 min read",
+    ogImage: "https://picsum.photos/id/80/1200/630",
     body: `<div class="article-body">
 <p>Product Hunt launches have generated hundreds of paying customers for SaaS products I've built. But a PH launch without preparation generates almost nothing. Here's the complete playbook for a launch that actually works.</p>
 <h2 id="before-launch">2 Weeks Before Launch</h2>
@@ -99,6 +102,7 @@ ${cta("Build a SaaS Ready for Its Launch Moment")}
     tag: "Technical",
     date: "November 23, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/81/1200/630",
     body: `<div class="article-body">
 <p>The TypeScript ORM landscape has consolidated around two main options: Prisma (mature, widely adopted) and Drizzle (newer, lightweight, SQL-first). Here's how to choose between them for a SaaS project.</p>
 <h2 id="prisma">Prisma</h2>
@@ -123,6 +127,7 @@ ${cta("Build Your SaaS with the Right Data Stack")}
     tag: "Product",
     date: "November 21, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/82/1200/630",
     body: `<div class="article-body">
 <p>A great SaaS dashboard is not the one with the most charts — it's the one that most clearly answers the question users have when they first log in: "What should I do today?" Here's how to design a dashboard that actually serves that purpose.</p>
 <h2 id="one-job">The Dashboard's One Job</h2>
@@ -147,6 +152,7 @@ ${cta("Build a Dashboard Users Love")}
     tag: "Technical",
     date: "November 19, 2025",
     readTime: "6 min read",
+    ogImage: "https://picsum.photos/id/83/1200/630",
     body: `<div class="article-body">
 <p>React Server Components (RSC) are now stable in Next.js and represent the biggest shift in React development since hooks. For SaaS developers, they offer significant performance benefits — but also introduce new patterns and limitations that require careful understanding.</p>
 <h2 id="what-are-rsc">What Are React Server Components?</h2>
@@ -175,6 +181,7 @@ ${cta("Build a Modern Next.js SaaS")}
     tag: "Industry",
     date: "November 17, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/84/1200/630",
     body: `<div class="article-body">
 <p>The restaurant industry is massive — 1 million+ restaurants in the US alone — and desperately underserved by affordable software. Most small and independent restaurants pay $200–500/month for separate booking, ordering, and POS systems that don't integrate. A unified SaaS can win this market quickly.</p>
 <h2 id="reservations">1. Online Reservation System</h2>
@@ -199,6 +206,7 @@ ${cta("Build a Restaurant SaaS")}
     tag: "Business",
     date: "November 15, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/85/1200/630",
     body: `<div class="article-body">
 <p>Enterprise customers pay 10–100x more than SMB customers. One enterprise deal can equal 50 SMB customers. Going upmarket sounds attractive — but it requires significant product and process changes. Here's how to know when you're ready and what needs to change.</p>
 <h2 id="signals-to-go-upmarket">Signs You're Ready to Go Upmarket</h2>
@@ -231,6 +239,7 @@ ${cta("Build Enterprise-Ready SaaS Features")}
     tag: "Business",
     date: "November 13, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/86/1200/630",
     body: `<div class="article-body">
 <p>Investors, acquirers, and smart operators all speak the same language: SaaS metrics. Understanding what these numbers mean and how to improve them is the difference between a business that grows and one that treads water.</p>
 <h2 id="mrr-arr">MRR and ARR</h2>
@@ -258,6 +267,7 @@ ${cta("Build a SaaS Business Built on Strong Metrics")}
     tag: "Business",
     date: "November 11, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/87/1200/630",
     body: `<div class="article-body">
 <p>Your pricing page has one job: convert interested visitors into paying customers. Most SaaS pricing pages fail at this because they communicate what the product costs without communicating why it's worth it. Here's how to build one that converts.</p>
 <h2 id="three-tiers">The Three-Tier Structure</h2>
@@ -285,6 +295,7 @@ ${cta("Build a Pricing Page That Converts")}
     tag: "Strategy",
     date: "November 9, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/88/1200/630",
     body: `<div class="article-body">
 <p>VC-backed SaaS companies have money to burn. Bootstrapped founders don't. Surprisingly, this constraint consistently produces better products and more sustainable businesses. Here's why — and how to use it.</p>
 <h2 id="constraints-force-focus">Constraints Force Focus</h2>
@@ -314,6 +325,7 @@ ${cta("Build a Profitable, Bootstrapped SaaS")}
     tag: "AI",
     date: "November 7, 2025",
     readTime: "6 min read",
+    ogImage: "https://picsum.photos/id/89/1200/630",
     body: `<div class="article-body">
 <p>The AI writing market is crowded but not saturated — because most AI writing tools are undifferentiated. The opportunity is vertical specialization: an AI writing tool for job descriptions, for legal briefs, for email marketing, for technical documentation. Verticals win because they can train on domain-specific examples and build workflows that generic tools can't offer.</p>
 <h2 id="architecture">Technical Architecture</h2>
@@ -341,6 +353,7 @@ ${cta("Build an AI Writing SaaS")}
     tag: "Business",
     date: "November 5, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/90/1200/630",
     body: `<div class="article-body">
 <p>Customer success is the proactive management of customer relationships to ensure they get value from your product and stay subscribed. At scale, customer success is the function that turns good retention into great retention. Here's how to know when you need it.</p>
 <h2 id="when-you-need-csm">When to Hire Your First CSM</h2>
@@ -373,6 +386,7 @@ ${cta("Build a SaaS That Supports Customer Success")}
     tag: "Business",
     date: "November 3, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/91/1200/630",
     body: `<div class="article-body">
 <p>An affiliate program lets other people promote your SaaS in exchange for a commission. Done right, it creates a self-sustaining distribution channel where affiliates are motivated to send you qualified customers at zero upfront cost. Done wrong, it attracts low-quality traffic and discount abuse.</p>
 <h2 id="should-you-have-one">Should Your SaaS Have an Affiliate Program?</h2>
@@ -400,6 +414,7 @@ ${cta("Grow Your SaaS with Affiliates")}
     tag: "Hiring Guide",
     date: "November 1, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/92/1200/630",
     body: `<div class="article-body">
 <p>The brief you send to a developer determines everything: the quality of proposals you receive, the accuracy of timelines and budgets, and whether the final product matches what you envisioned. Most founders write briefs that are too vague. Here's how to write one that gets results.</p>
 <h2 id="overview">The Project Overview</h2>
@@ -434,6 +449,7 @@ ${cta("Work with a Developer Who Delivers")}
     tag: "Hiring Guide",
     date: "October 30, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/93/1200/630",
     body: `<div class="article-body">
 <p>Remote development relationships fail for predictable reasons: unclear expectations, poor communication cadence, no visibility into progress, and scope creep. Here's how to structure a remote development engagement to avoid all of them.</p>
 <h2 id="before-you-start">Before Work Begins</h2>
@@ -456,6 +472,7 @@ ${cta("Work with a Developer You Can Trust")}
     tag: "AI",
     date: "October 28, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/94/1200/630",
     body: `<div class="article-body">
 <p>The AI model you choose for your SaaS features affects output quality, latency, cost, and reliability. With three major providers offering competing models, here's a practical guide to choosing correctly.</p>
 <h2 id="openai-gpt4">OpenAI GPT-4 Family</h2>
@@ -488,6 +505,7 @@ ${cta("Add AI to Your SaaS")}
     tag: "Technical",
     date: "October 26, 2025",
     readTime: "4 min read",
+    ogImage: "https://picsum.photos/id/95/1200/630",
     body: `<div class="article-body">
 <p>Transactional email is critical infrastructure for a SaaS product. Welcome emails, payment receipts, and password resets must reach the inbox reliably. Here's how the two most-discussed options compare for SaaS developers in 2025.</p>
 <h2 id="resend">Resend</h2>
@@ -520,6 +538,7 @@ ${cta("Build Reliable Email Into Your SaaS")}
     tag: "Technical",
     date: "October 24, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/96/1200/630",
     body: `<div class="article-body">
 <p>Every SaaS product carries technical debt. Decisions made under time pressure, features built quickly to test a hypothesis, and shortcuts taken to meet a deadline all accumulate. The question isn't whether you'll have technical debt — it's whether you'll manage it consciously or let it manage you.</p>
 <h2 id="what-is-tech-debt">What Technical Debt Actually Is</h2>
@@ -543,6 +562,7 @@ ${cta("Build With a Developer Who Thinks Long-Term")}
     tag: "AI",
     date: "October 22, 2025",
     readTime: "6 min read",
+    ogImage: "https://picsum.photos/id/97/1200/630",
     body: `<div class="article-body">
 <p>Most businesses have data — in spreadsheets, databases, CRM exports — that they don't have time or expertise to analyze. An AI data analysis SaaS that turns uploaded files into actionable insights solves a genuine, common pain. Here's the technical architecture.</p>
 <h2 id="data-ingestion">Data Ingestion</h2>
@@ -571,6 +591,7 @@ ${cta("Build an AI Data Analysis SaaS")}
     tag: "Comparison",
     date: "October 20, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/98/1200/630",
     body: `<div class="article-body">
 <p>Next.js is Vercel's own framework, so it's natural to assume Vercel is always the best host. But for many SaaS applications, Replit offers significant advantages. Here's the detailed comparison.</p>
 <h2 id="development-workflow">Development Workflow</h2>
@@ -598,6 +619,7 @@ ${cta("Build Your Next.js SaaS on Replit")}
     tag: "Industry",
     date: "October 18, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/99/1200/630",
     body: `<div class="article-body">
 <p>QuickBooks dominates small business accounting — but it's complex, expensive, and generic. Millions of small businesses in specific niches would gladly switch to a simpler, cheaper tool built specifically for their industry. This is the opportunity for niche bookkeeping SaaS.</p>
 <h2 id="who-to-target">Who to Target</h2>
@@ -625,6 +647,7 @@ ${cta("Build a Bookkeeping SaaS")}
     tag: "AI",
     date: "October 16, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/100/1200/630",
     body: `<div class="article-body">
 <p>Netflix recommends movies. Spotify recommends songs. Amazon recommends products. Recommendation systems increase engagement and reduce the effort users need to spend finding what they need. You can add a version of this to your SaaS without a data science team. Here's how.</p>
 <h2 id="types-of-recommendations">Types of Recommendations for SaaS</h2>
@@ -652,6 +675,7 @@ ${cta("Add Smart Recommendations to Your SaaS")}
     tag: "Hiring Guide",
     date: "October 14, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/101/1200/630",
     body: `<div class="article-body">
 <p>You hired a developer and they're sending you code. You can't read it. How do you know if it's good? Here are practical ways non-technical founders can assess code quality without needing a computer science degree.</p>
 <h2 id="test-the-product">Test the Product, Not the Code</h2>

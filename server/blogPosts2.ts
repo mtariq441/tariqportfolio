@@ -15,6 +15,7 @@ export const POSTS2: BlogPost[] = [
     tag: "Guide",
     date: "April 5, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/15/1200/630",
     body: `<div class="article-body">
 <p>If you've heard the word "Replit" from a developer and wondered what it actually means, you're not alone. Replit is one of the most powerful tools in modern software development — but it's often explained in technical language that founders don't need.</p>
 <p>Here's what you need to know.</p>
@@ -53,6 +54,7 @@ ${cta("Want a SaaS Built on Replit?")}
     tag: "Comparison",
     date: "April 3, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/16/1200/630",
     body: `<div class="article-body">
 <p>Both Replit and Vercel can host a Next.js SaaS app. But they're built for different stages and different workflows. Here's how to choose between them.</p>
 <h2 id="what-each-does">What Each Platform Does</h2>
@@ -87,6 +89,7 @@ ${cta()}
     tag: "Comparison",
     date: "April 1, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/17/1200/630",
     body: `<div class="article-body">
 <p>Every SaaS startup eventually faces the infrastructure question: AWS or something simpler? Here's how Replit stacks up against Amazon Web Services for early-stage products.</p>
 <h2 id="complexity">Complexity Comparison</h2>
@@ -113,6 +116,7 @@ ${cta("Build Your SaaS on Replit")}
     tag: "Technical",
     date: "March 30, 2026",
     readTime: "7 min read",
+    ogImage: "https://picsum.photos/id/18/1200/630",
     body: `<div class="article-body">
 <p>Multi-tenancy means multiple customers (tenants) use the same application instance while their data stays completely isolated. It's the foundation of every B2B SaaS product. Here's how to build it correctly on Replit.</p>
 <h2 id="what-is-multi-tenancy">What Is Multi-Tenancy?</h2>
@@ -154,6 +158,7 @@ ${cta("Need a Multi-Tenant SaaS Built Correctly?")}
     tag: "Guide",
     date: "March 28, 2026",
     readTime: "4 min read",
+    ogImage: "https://picsum.photos/id/19/1200/630",
     body: `<div class="article-body">
 <p>A custom domain is the difference between <code>yourapp.replit.app</code> and <code>yourapp.com</code>. For a SaaS product, the custom domain is non-negotiable — it builds trust, enables professional email, and makes your product look legitimate. Here's exactly how to connect one.</p>
 <h2 id="prerequisites">Prerequisites</h2>
@@ -182,6 +187,7 @@ ${cta("Need Help Setting Up Your Replit SaaS?")}
     tag: "Technical",
     date: "March 25, 2026",
     readTime: "6 min read",
+    ogImage: "https://picsum.photos/id/20/1200/630",
     body: `<div class="article-body">
 <p>AI features are now expected in SaaS products. Founders who were building "basic" SaaS apps two years ago are now adding AI layers to stay competitive. Replit is an excellent platform for AI-powered SaaS — here's how to do it right.</p>
 <h2 id="ai-api-setup">Setting Up AI API Access in Replit</h2>
@@ -209,6 +215,7 @@ ${cta("Build Your AI SaaS on Replit")}
     tag: "Strategy",
     date: "March 23, 2026",
     readTime: "6 min read",
+    ogImage: "https://picsum.photos/id/21/1200/630",
     body: `<div class="article-body">
 <p>Most failed SaaS products didn't fail because of bad code. They failed because nobody wanted what was built. Validation before building is the most important thing a founder can do — and most skip it.</p>
 <h2 id="the-validation-trap">The Validation Trap</h2>
@@ -234,6 +241,7 @@ ${cta("Ready to Build the Validated Version?")}
     tag: "Strategy",
     date: "March 21, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/22/1200/630",
     body: `<div class="article-body">
 <p>Every founder wants to build everything. The MVP discipline is resisting that urge and shipping the smallest thing that creates real value for real customers. After building 350+ SaaS products, I have strong opinions about what belongs in an MVP and what doesn't.</p>
 <h2 id="what-mvp-means">What MVP Actually Means</h2>
@@ -269,6 +277,7 @@ ${cta("Build Your SaaS MVP in 4 Weeks")}
     tag: "Business",
     date: "March 19, 2026",
     readTime: "6 min read",
+    ogImage: "https://picsum.photos/id/23/1200/630",
     body: `<div class="article-body">
 <p>Pricing is where most SaaS founders leave the most money on the table. They either underprice (charging $9/month when customers would pay $49) or overprice (charging enterprise rates to SMBs who can't afford it). Here's how to get it right.</p>
 <h2 id="start-high">Start Higher Than You Think</h2>
@@ -297,6 +306,7 @@ ${cta("Build Your SaaS with Pricing Built In")}
     tag: "Product",
     date: "March 17, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/24/1200/630",
     body: `<div class="article-body">
 <p>You can have the best SaaS product in the world. If new users can't figure out what to do in the first 5 minutes, they'll leave and never come back. Onboarding is where most SaaS churn actually starts — not when users cancel, but when they signed up and got lost.</p>
 <h2 id="the-aha-moment">Get to the Aha Moment Fast</h2>
@@ -333,6 +343,7 @@ ${cta("Want These Patterns Built Into Your SaaS?")}
     tag: "Technical",
     date: "March 15, 2026",
     readTime: "6 min read",
+    ogImage: "https://picsum.photos/id/25/1200/630",
     body: `<div class="article-body">
 <p>Security is the one thing you can't retrofit after launch. A data breach destroys customer trust instantly and may have legal consequences. Here are the 15 security steps I complete on every SaaS before it goes live.</p>
 <h2 id="auth-security">Authentication Security</h2>
@@ -373,6 +384,7 @@ ${cta("Want Security Built In From Day One?")}
     tag: "Product",
     date: "March 13, 2026",
     readTime: "6 min read",
+    ogImage: "https://picsum.photos/id/26/1200/630",
     body: `<div class="article-body">
 <p>Churn is the percentage of customers who cancel each month. At 10% monthly churn, your business loses all its customers every 10 months. At 2% monthly churn, the average customer stays 4 years. The difference between 2% and 10% churn is the difference between a growing business and a treadmill.</p>
 <h2 id="why-users-churn">Why Users Really Churn</h2>
@@ -403,6 +415,7 @@ ${cta("Build a SaaS Designed to Retain Users")}
     tag: "Product",
     date: "March 11, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/27/1200/630",
     body: `<div class="article-body">
 <p>Analytics in a SaaS product is not optional. Without data, you're making product decisions based on guesses. With data, you make decisions based on what your users actually do. Here's what to track and how to build it.</p>
 <h2 id="the-8-metrics">The 8 SaaS Metrics That Actually Matter</h2>
@@ -432,6 +445,7 @@ ${cta("Build a Data-Driven SaaS From Day One")}
     tag: "Technical",
     date: "March 9, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/28/1200/630",
     body: `<div class="article-body">
 <p>Next.js 15 is the most significant release in the framework's history for SaaS developers. The changes to the App Router, Server Actions, and caching model have real implications for how SaaS applications are built. Here's what matters.</p>
 <h2 id="server-actions">Server Actions Are Stable</h2>
@@ -459,6 +473,7 @@ ${cta("Build Your SaaS with Next.js 15")}
     tag: "Comparison",
     date: "March 7, 2026",
     readTime: "6 min read",
+    ogImage: "https://picsum.photos/id/29/1200/630",
     body: `<div class="article-body">
 <p>Both Supabase and Firebase promise to be your "backend as a service." But they're fundamentally different products designed for different use cases. Here's how to choose between them for a SaaS product.</p>
 <h2 id="data-model">Data Model</h2>
@@ -488,6 +503,7 @@ ${cta("Build Your SaaS with Supabase")}
     tag: "Technical",
     date: "March 5, 2026",
     readTime: "7 min read",
+    ogImage: "https://picsum.photos/id/30/1200/630",
     body: `<div class="article-body">
 <p>Stripe is the payment platform for SaaS. But setting it up correctly — with proper subscription management, webhook handling, and the Customer Portal — requires understanding how the pieces fit together. Here's the complete implementation guide.</p>
 <h2 id="stripe-objects">Understanding Stripe's Object Model</h2>
@@ -532,6 +548,7 @@ ${cta("Need Stripe Billing Implemented in Your SaaS?")}
     tag: "Technical",
     date: "March 3, 2026",
     readTime: "6 min read",
+    ogImage: "https://picsum.photos/id/31/1200/630",
     body: `<div class="article-body">
 <p>Authentication sounds simple — users log in and log out. But for a SaaS product, auth includes: social logins, MFA, organization management, role-based access control, SSO, and API key management. Choosing the wrong tool means rebuilding all of this later.</p>
 <h2 id="nextauth">NextAuth (Now Auth.js)</h2>
@@ -563,6 +580,7 @@ ${cta("Need a SaaS with Proper Auth Built In?")}
     tag: "Technical",
     date: "March 1, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/32/1200/630",
     body: `<div class="article-body">
 <p>I used to build SaaS products in JavaScript. After rebuilding several of them in TypeScript, I'll never go back. For a SaaS product that needs to evolve for months or years, TypeScript is not optional — it's essential.</p>
 <h2 id="the-problem-with-javascript">The Problem with JavaScript for SaaS</h2>
@@ -594,6 +612,7 @@ ${cta("Build Your SaaS in TypeScript")}
     tag: "Technical",
     date: "February 27, 2026",
     readTime: "7 min read",
+    ogImage: "https://picsum.photos/id/33/1200/630",
     body: `<div class="article-body">
 <p>Stripe webhooks are how your SaaS knows when payments succeed, subscriptions change, and customers cancel. Get this wrong and your app will charge people who shouldn't be charged, or give access to people who haven't paid. Here's how to implement webhooks correctly.</p>
 <h2 id="what-are-webhooks">What Are Webhooks?</h2>
@@ -625,6 +644,7 @@ ${cta("Need Webhooks Implemented Correctly?")}
     tag: "Business",
     date: "February 25, 2026",
     readTime: "6 min read",
+    ogImage: "https://picsum.photos/id/34/1200/630",
     body: `<div class="article-body">
 <p>One of the most common questions I get from founders: "How much will it cost to build my SaaS?" The honest answer is: it depends on scope. But here's how to think about the cost categories.</p>
 <h2 id="development-cost">Development Cost</h2>
@@ -666,6 +686,7 @@ ${cta("Build Your SaaS Within Budget")}
     tag: "Hiring Guide",
     date: "February 23, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/35/1200/630",
     body: `<div class="article-body">
 <p>Most founders approach this choice as "cheaper freelancer vs reliable agency." That's the wrong frame. The right question is: "Which model gives me the best outcome for this specific project?"</p>
 <h2 id="agencies">What Agencies Get Right</h2>
@@ -707,6 +728,7 @@ ${cta("Work with a Specialist Freelancer for Your SaaS")}
     tag: "Hiring Guide",
     date: "February 21, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/36/1200/630",
     body: `<div class="article-body">
 <p>SaaS developer rates range from $15/hour to $300/hour — a 20x range. Understanding what you get at each price point helps you avoid both overpaying and underpaying for what you actually need.</p>
 <h2 id="the-tiers">The Four Developer Tiers</h2>
@@ -734,6 +756,7 @@ ${cta("Get a Fixed-Price SaaS MVP Quote")}
     tag: "Business",
     date: "February 19, 2026",
     readTime: "6 min read",
+    ogImage: "https://picsum.photos/id/37/1200/630",
     body: `<div class="article-body">
 <p>The first 10 paying customers are more valuable than the next 100. They validate your idea, provide real feedback, and become your first testimonials. Here's how to get them without spending on ads.</p>
 <h2 id="your-network">Step 1: Start With Your Network</h2>
@@ -759,6 +782,7 @@ ${cta("Build a SaaS Ready for Its First Customers")}
     tag: "Product",
     date: "February 17, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/38/1200/630",
     body: `<div class="article-body">
 <p>Your landing page is where most people's first impression of your SaaS is formed. A weak landing page kills conversion even for great products. A strong landing page can carry a mediocre product. Here's how to build one that converts.</p>
 <h2 id="hero">The Hero Section</h2>
@@ -787,6 +811,7 @@ ${cta("Build a Landing Page That Converts")}
     tag: "Business",
     date: "February 15, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/39/1200/630",
     body: `<div class="article-body">
 <p>Two of the most common SaaS acquisition models: the free trial (full access for a limited time) and freemium (limited features forever free). Most founders pick one without thinking through the implications. Here's how to choose correctly.</p>
 <h2 id="free-trial">Free Trial: Time-Limited Full Access</h2>
@@ -831,6 +856,7 @@ ${cta("Build Your SaaS With the Right Monetization Model")}
     tag: "Industry",
     date: "February 13, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/40/1200/630",
     body: `<div class="article-body">
 <p>Real estate agencies are underserved by software. Most use a patchwork of generic tools — spreadsheets, Gmail, and whatever CRM their brokerage recommends. A SaaS built specifically for real estate agencies can charge premium prices for solving these specific pains.</p>
 <h2 id="lead-tracking">1. Lead Tracking and Pipeline Management</h2>
@@ -855,6 +881,7 @@ ${cta("Build a Real Estate SaaS in 4 Weeks")}
     tag: "Industry",
     date: "February 11, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/41/1200/630",
     body: `<div class="article-body">
 <p>The coaching and consulting market is massive and digitizing rapidly. Coaches who used to manage everything via email and Calendly are looking for integrated platforms. A SaaS serving this market can charge $49–149/month and find thousands of paying customers.</p>
 <h2 id="scheduling">1. Session Scheduling</h2>
@@ -879,6 +906,7 @@ ${cta("Build Your Coaching SaaS in 4 Weeks")}
     tag: "AI",
     date: "February 9, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/42/1200/630",
     body: `<div class="article-body">
 <p>Every SaaS founder is asking the same question right now: "Should we add AI?" The better question is: "Which AI feature would create genuine value for our specific customers?" Here's how to add AI to your SaaS without losing focus on what your product actually does.</p>
 <h2 id="the-mistake">The Most Common Mistake</h2>
@@ -907,6 +935,7 @@ ${cta("Add AI to Your SaaS")}
     tag: "AI",
     date: "February 7, 2026",
     readTime: "6 min read",
+    ogImage: "https://picsum.photos/id/43/1200/630",
     body: `<div class="article-body">
 <p>The OpenAI API is the fastest way to add AI capabilities to any SaaS product. Here's how to integrate it correctly — with proper error handling, streaming, cost controls, and security.</p>
 <h2 id="setup">Setup and Authentication</h2>
@@ -943,6 +972,7 @@ ${cta("Add OpenAI to Your SaaS")}
     tag: "Industry",
     date: "February 5, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/44/1200/630",
     body: `<div class="article-body">
 <p>Digital marketing agencies are drowning in tools. They have one platform for social media, another for SEO, another for ads, and another for reporting — and none of them talk to each other. A unified SaaS for marketing agencies is a compelling product that agencies will pay a premium for.</p>
 <h2 id="client-reporting">1. Client Reporting Dashboard</h2>
@@ -967,6 +997,7 @@ ${cta("Build a Marketing Agency SaaS")}
     tag: "Industry",
     date: "February 3, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/45/1200/630",
     body: `<div class="article-body">
 <p>The creator economy is exploding. Millions of educators are building online courses, and most of them use platforms that take 30–50% of their revenue. A SaaS that lets creators keep more revenue while giving them powerful tools will win customers quickly.</p>
 <h2 id="course-builder">1. Course Builder</h2>
@@ -991,6 +1022,7 @@ ${cta("Build a Course Creator SaaS")}
     tag: "Technical",
     date: "February 1, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/46/1200/630",
     body: `<div class="article-body">
 <p>Big SaaS features take weeks. But there's a category of features that take a few hours, feel meaningful to users, and have an outsized impact on retention and conversion. Here are 10 to build next weekend.</p>
 <h2 id="dark-mode">1. Dark Mode (4 hours)</h2>
@@ -1023,6 +1055,7 @@ ${cta("Build These Features Into Your SaaS")}
     tag: "Process",
     date: "January 30, 2026",
     readTime: "7 min read",
+    ogImage: "https://picsum.photos/id/47/1200/630",
     body: `<div class="article-body">
 <p>Launching a SaaS is exciting and terrifying. The things you forget to do before launch become the support tickets you deal with on day one. This checklist is what I run through before every SaaS launch.</p>
 <h2 id="security">Security (Must Do)</h2>

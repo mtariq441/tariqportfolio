@@ -8,6 +8,7 @@ export const POSTS5: BlogPost[] = [
     tag: "Integrations",
     date: "April 14, 2026",
     readTime: "8 min",
+    ogImage: "https://picsum.photos/id/102/1200/630",
     body: `<p>Twilio powers SMS, voice, and WhatsApp notifications in thousands of SaaS products. But integrating it properly — with webhooks, error handling, and rate limiting — takes more than copy-pasting their quickstart. Here is everything you need to know.</p>
 
 <h2>1. Why Twilio for SaaS (Not Just Transactional Email)</h2>
@@ -105,6 +106,7 @@ if (check.status === 'approved') {
     tag: "Integrations",
     date: "April 13, 2026",
     readTime: "7 min",
+    ogImage: "https://picsum.photos/id/103/1200/630",
     body: `<p>GMass is the go-to tool for sending mass emails directly from Gmail. But if you run a SaaS product — an agency tool, a CRM, or a sales automation platform — you may need to integrate GMass capabilities directly into your product. Here is how to do it.</p>
 
 <h2>1. When to Build a GMass Integration</h2>
@@ -186,6 +188,7 @@ async function gmassRequest(apiKey: string, endpoint: string, payload?: object) 
     tag: "Growth",
     date: "April 12, 2026",
     readTime: "9 min",
+    ogImage: "https://picsum.photos/id/104/1200/630",
     body: `<p>AppSumo has launched thousands of SaaS products to hundreds of thousands of buyers. A successful AppSumo deal can generate $50K–$500K in revenue in a single week. But most developers do not understand what AppSumo actually requires — technically or commercially.</p>
 
 <h2>1. What AppSumo Looks For in a SaaS Deal</h2>
@@ -264,6 +267,7 @@ async function gmassRequest(apiKey: string, endpoint: string, payload?: object) 
     tag: "Career",
     date: "April 11, 2026",
     readTime: "8 min",
+    ogImage: "https://picsum.photos/id/105/1200/630",
     body: `<p>I built 350+ SaaS products and generated $27M+ in client revenue. I do not have a traditional CS degree. Neither do many of the most successful developers working today. Here is the actual roadmap that works in 2025.</p>
 
 <h2>1. Why SaaS Development Is the Best Entry Point</h2>
@@ -340,6 +344,7 @@ async function gmassRequest(apiKey: string, endpoint: string, payload?: object) 
     tag: "Ideas",
     date: "April 10, 2026",
     readTime: "10 min",
+    ogImage: "https://picsum.photos/id/106/1200/630",
     body: `<p>After building 350+ SaaS products, I know which ideas work and which do not. Here are 25 profitable SaaS ideas you can start building on Replit today — each one validated by real market demand.</p>
 
 <h2>1. Invoice Generator for Freelancers</h2>
@@ -427,6 +432,7 @@ async function gmassRequest(apiKey: string, endpoint: string, payload?: object) 
     tag: "Hiring",
     date: "April 9, 2026",
     readTime: "7 min",
+    ogImage: "https://picsum.photos/id/107/1200/630",
     body: `<p>If you are a founder who needs a SaaS developer and you are comparing Fiverr, Upwork, and Toptal, this guide will save you weeks of trial and error. I have been on all three platforms and have talked to hundreds of clients who have used them. Here is the honest truth.</p>
 
 <h2>Overview: What Each Platform Is Actually For</h2>
@@ -520,6 +526,7 @@ async function gmassRequest(apiKey: string, endpoint: string, payload?: object) 
     tag: "Analytics",
     date: "April 8, 2026",
     readTime: "8 min",
+    ogImage: "https://picsum.photos/id/108/1200/630",
     body: `<p>Baremetrics charges $129+/month to display your Stripe metrics. You can build 90% of it yourself in a weekend. Here is how — and why it matters.</p>
 
 <h2>1. The Metrics That Actually Matter</h2>
@@ -611,6 +618,7 @@ async function gmassRequest(apiKey: string, endpoint: string, payload?: object) 
     tag: "Replit",
     date: "April 7, 2026",
     readTime: "7 min",
+    ogImage: "https://picsum.photos/id/109/1200/630",
     body: `<p>If you are still using cPanel shared hosting or managing a VPS for your SaaS, you are spending hours every month on infrastructure that a better tool handles automatically. Here is a direct comparison.</p>
 
 <h2>cPanel / Shared Hosting: Designed for Static Sites, Not SaaS</h2>
@@ -688,6 +696,7 @@ async function gmassRequest(apiKey: string, endpoint: string, payload?: object) 
     tag: "Development",
     date: "April 6, 2026",
     readTime: "9 min",
+    ogImage: "https://picsum.photos/id/110/1200/630",
     body: `<p>Membership SaaS products — from online learning platforms to community tools to professional associations — are among the most stable businesses to build. Here is how to build one properly.</p>
 
 <h2>1. The Core Architecture of a Membership SaaS</h2>
@@ -772,6 +781,7 @@ async function gmassRequest(apiKey: string, endpoint: string, payload?: object) 
     tag: "eCommerce",
     date: "April 5, 2026",
     readTime: "8 min",
+    ogImage: "https://picsum.photos/id/111/1200/630",
     body: `<p>The dropshipping market is worth $476 billion and growing. Dropshippers have a constant pain: managing orders across multiple stores and suppliers manually. A SaaS that automates this is a recurring revenue machine. Here is how to build one.</p>
 
 <h2>1. The Core Problems Your SaaS Solves</h2>
@@ -854,6 +864,7 @@ async function gmassRequest(apiKey: string, endpoint: string, payload?: object) 
     tag: "Development",
     date: "April 4, 2026",
     readTime: "8 min",
+    ogImage: "https://picsum.photos/id/112/1200/630",
     body: `<p>Social media management tools like SocialBee, Buffer, and Hootsuite collectively serve millions of users. Building your own means either niching down hard (a tool just for LinkedIn, or just for agencies, or just for eCommerce brands) or solving a specific pain they miss. Here is the technical blueprint.</p>
 
 <h2>1. Core Architecture</h2>
@@ -938,6 +949,7 @@ async function gmassRequest(apiKey: string, endpoint: string, payload?: object) 
     tag: "Hiring",
     date: "April 3, 2026",
     readTime: "7 min",
+    ogImage: "https://picsum.photos/id/113/1200/630",
     body: `<p>Building an AI-powered SaaS product requires a specific skill set: not just backend development, but knowledge of OpenAI APIs, vector databases, prompt engineering, and the cost optimisation patterns that keep your AI costs from eating your margin. Where do you find this developer?</p>
 
 <h2>The Three Options</h2>

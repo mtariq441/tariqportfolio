@@ -15,6 +15,7 @@ export const POSTS3: BlogPost[] = [
     tag: "Industry",
     date: "January 28, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/48/1200/630",
     body: `<div class="article-body">
 <p>The recruiting industry runs on relationships, speed, and documentation. Most recruiters cobble together an ATS, a CRM, email, and a spreadsheet — and hate all of them. A purpose-built recruiting SaaS can win customers quickly by solving their specific pain.</p>
 <h2 id="candidate-pipeline">1. Candidate Pipeline Management</h2>
@@ -39,6 +40,7 @@ ${cta("Build a Recruiting SaaS")}
     tag: "Industry",
     date: "January 26, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/49/1200/630",
     body: `<div class="article-body">
 <p>Law firms have old-school software problems but very real budgets. Small and mid-size law firms (1–25 attorneys) often pay $200–500/month for software that barely meets their needs. A modern, well-designed SaaS can easily displace these incumbents.</p>
 <h2 id="client-intake">1. Client Intake and Conflict Checking</h2>
@@ -63,6 +65,7 @@ ${cta("Build a Legal Tech SaaS")}
     tag: "Industry",
     date: "January 24, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/50/1200/630",
     body: `<div class="article-body">
 <p>Property management companies manage multiple properties, multiple tenants, and constant maintenance requests — all while tracking rent payments, lease expirations, and maintenance costs. The generic solutions are terrible. A focused SaaS wins customers immediately.</p>
 <h2 id="tenant-portal">1. Tenant Portal</h2>
@@ -87,6 +90,7 @@ ${cta("Build a Property Management SaaS")}
     tag: "AI",
     date: "January 22, 2026",
     readTime: "6 min read",
+    ogImage: "https://picsum.photos/id/51/1200/630",
     body: `<div class="article-body">
 <p>Support tickets are expensive. Every ticket requires human time to read, understand, and respond. An AI chatbot that can answer 40–60% of common support questions — accurately and instantly — dramatically improves unit economics for growing SaaS companies.</p>
 <h2 id="rag-architecture">The RAG Architecture</h2>
@@ -111,6 +115,7 @@ ${cta("Add AI Support to Your SaaS")}
     tag: "AI",
     date: "January 20, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/52/1200/630",
     body: `<div class="article-body">
 <p>As AI features become standard in SaaS products, vector databases have moved from exotic infrastructure to a common requirement. If you're adding semantic search, RAG-based AI, or recommendation features, you need vector storage. Here's how to choose between the two main options.</p>
 <h2 id="what-is-vector-db">What Is a Vector Database?</h2>
@@ -146,6 +151,7 @@ ${cta("Build AI Features Into Your SaaS")}
     tag: "Strategy",
     date: "January 18, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/53/1200/630",
     body: `<div class="article-body">
 <p>B2B (business-to-business) and B2C (business-to-consumer) SaaS are both subscription software, but they require fundamentally different decisions. Getting this wrong — building a B2C product when your market is B2B — leads to misaligned features, pricing, and go-to-market strategy.</p>
 <h2 id="who-pays">Who Pays and Who Uses</h2>
@@ -172,6 +178,7 @@ ${cta("Build the Right SaaS for Your Market")}
     tag: "Technical",
     date: "January 16, 2026",
     readTime: "6 min read",
+    ogImage: "https://picsum.photos/id/54/1200/630",
     body: `<div class="article-body">
 <p>Row-Level Security (RLS) is a PostgreSQL feature that enforces data access rules at the database level. For multi-tenant SaaS products, it's the most important security control you can implement. Here's how it works and how to use it correctly.</p>
 <h2 id="what-is-rls">What Is Row-Level Security?</h2>
@@ -203,6 +210,7 @@ ${cta("Need RLS Implemented Correctly in Your SaaS?")}
     tag: "Technical",
     date: "January 14, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/55/1200/630",
     body: `<div class="article-body">
 <p>Email is still the most effective communication channel for SaaS products. But email in SaaS has two completely different use cases with different tools, different regulations, and different deliverability requirements. Getting this wrong means your emails land in spam.</p>
 <h2 id="transactional-vs-marketing">Transactional vs Marketing Email</h2>
@@ -237,6 +245,7 @@ ${cta("Build Proper Email Into Your SaaS")}
     tag: "Technical",
     date: "January 12, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/56/1200/630",
     body: `<div class="article-body">
 <p>Shadcn/UI has become the default choice for SaaS dashboard components in the Next.js ecosystem. It's not a traditional component library — you own the code. Here's how to use it effectively for a production SaaS.</p>
 <h2 id="what-is-shadcn">What Makes Shadcn/UI Different</h2>
@@ -268,6 +277,7 @@ ${cta("Build a Beautiful SaaS Dashboard")}
     tag: "Technical",
     date: "January 10, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/57/1200/630",
     body: `<div class="article-body">
 <p>Your SaaS admin panel is the internal tool you use to manage customers, debug problems, and run your business. Building the right admin panel early saves enormous time — but over-engineering it before you have customers is waste. Here's the right set of features at each stage.</p>
 <h2 id="day-one-essentials">Day One Essentials</h2>
@@ -305,6 +315,7 @@ ${cta("Build Your SaaS with a Proper Admin Panel")}
     tag: "Technical",
     date: "January 8, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/58/1200/630",
     body: `<div class="article-body">
 <p>Almost every SaaS needs file uploads: profile pictures, CSV imports, document attachments, image uploads. Getting file storage wrong leads to security vulnerabilities, storage cost explosions, or a poor user experience. Here's the right way to handle it.</p>
 <h2 id="never-to-server">Never Upload Files to Your Server</h2>
@@ -336,6 +347,7 @@ ${cta("Build Proper File Handling Into Your SaaS")}
     tag: "Technical",
     date: "January 6, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/59/1200/630",
     body: `<div class="article-body">
 <p>Without rate limiting, a single aggressive user can consume resources meant for all your customers, or worse, run up your AI API bill by thousands of dollars. Rate limiting is not optional for a production SaaS — here's how to implement it correctly.</p>
 <h2 id="what-to-rate-limit">What to Rate Limit</h2>
@@ -369,6 +381,7 @@ ${cta("Build Production-Grade Rate Limiting Into Your SaaS")}
     tag: "Industry",
     date: "January 4, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/60/1200/630",
     body: `<div class="article-body">
 <p>The fitness industry is a multi-billion-dollar market with terrible software. Studio owners use outdated booking platforms, separate payment processors, and manual communication tools. A modern SaaS built specifically for fitness studios can charge $99–299/month and find thousands of customers.</p>
 <h2 id="class-booking">1. Class Booking System</h2>
@@ -393,6 +406,7 @@ ${cta("Build a Fitness Studio SaaS")}
     tag: "Product",
     date: "January 2, 2026",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/61/1200/630",
     body: `<div class="article-body">
 <p>Referral programs are the cheapest customer acquisition channel available for SaaS products. When a happy customer refers someone who becomes a paying customer, your effective CAC approaches zero. Here's how to build one that works.</p>
 <h2 id="how-referral-programs-work">How SaaS Referral Programs Work</h2>
@@ -421,6 +435,7 @@ ${cta("Add a Referral Program to Your SaaS")}
     tag: "Product",
     date: "December 31, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/62/1200/630",
     body: `<div class="article-body">
 <p>White-label SaaS lets other businesses buy your software and resell it under their own brand to their own customers. It's a powerful B2B2B revenue model where a single partner relationship can bring you dozens of end customers.</p>
 <h2 id="what-is-white-label">What White-Label SaaS Looks Like</h2>
@@ -449,6 +464,7 @@ ${cta("Build White-Label Into Your SaaS")}
     tag: "Technical",
     date: "December 29, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/63/1200/630",
     body: `<div class="article-body">
 <p>Annual subscriptions are one of the highest-impact features you can add to a SaaS business. They improve cash flow (12 months upfront vs monthly payments), dramatically reduce churn (an annual subscriber churns at 1/4 the rate of a monthly subscriber), and signal customer commitment. Here's how to implement them correctly in Stripe.</p>
 <h2 id="stripe-setup">Stripe Setup for Annual Plans</h2>
@@ -477,6 +493,7 @@ ${cta("Build Annual Plans Into Your SaaS")}
     tag: "Industry",
     date: "December 27, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/64/1200/630",
     body: `<div class="article-body">
 <p>There are over 70 million freelancers in the US alone. Most run their business with a combination of spreadsheets, PayPal, and disorganized email threads. A well-designed SaaS for freelancers can win thousands of paying customers with a focused feature set.</p>
 <h2 id="client-management">1. Client and Project Management</h2>
@@ -501,6 +518,7 @@ ${cta("Build a Freelancer SaaS")}
     tag: "Industry",
     date: "December 25, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/65/1200/630",
     body: `<div class="article-body">
 <p>Event planning is a detail-intensive, high-stakes profession where one missed task or vendor failure ruins an event. Most planners manage this complexity with spreadsheets, shared Google Docs, and too many email threads. A focused SaaS can transform their workflow.</p>
 <h2 id="event-dashboard">1. Event Dashboard and Timeline</h2>
@@ -525,6 +543,7 @@ ${cta("Build an Event Planning SaaS")}
     tag: "AI",
     date: "December 23, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/66/1200/630",
     body: `<div class="article-body">
 <p>AI features cost real money to operate. Every GPT-4 call has a price. Without thoughtful AI pricing, you'll either lose money on power users or price out customers who would have paid for a more accessible option. Here's how to structure AI pricing in your SaaS.</p>
 <h2 id="the-challenge">The Challenge with AI Pricing</h2>
@@ -551,6 +570,7 @@ ${cta("Add AI Pricing to Your SaaS")}
     tag: "Business",
     date: "December 21, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/67/1200/630",
     body: `<div class="article-body">
 <p>A waitlist does two things: validates that people are interested enough to give you their email, and creates a launch audience ready to convert on day one. Here's how to build a waitlist that's worth having.</p>
 <h2 id="the-landing-page">The Waitlist Landing Page</h2>
@@ -573,6 +593,7 @@ ${cta("Build Your SaaS With a Real Launch Strategy")}
     tag: "Business",
     date: "December 19, 2025",
     readTime: "6 min read",
+    ogImage: "https://picsum.photos/id/68/1200/630",
     body: `<div class="article-body">
 <p>The average SaaS free trial conversion rate is 2–5%. The best SaaS products convert 20–40% of trials to paid. The gap is almost never about product quality — it's about activation, onboarding, and engagement during the trial. Here's how to close that gap.</p>
 <h2 id="the-activation-imperative">The Activation Imperative</h2>
@@ -605,6 +626,7 @@ ${cta("Build a SaaS Designed to Convert")}
     tag: "Industry",
     date: "December 17, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/69/1200/630",
     body: `<div class="article-body">
 <p>Accounting firms run some of the most valuable workflows in any business — and they often run them on software from 2005. A modern SaaS for accountants competes against desktop software, complex enterprise systems, and spreadsheets. The opportunity is enormous.</p>
 <h2 id="client-portal">1. Client Document Portal</h2>
@@ -629,6 +651,7 @@ ${cta("Build an Accounting Firm SaaS")}
     tag: "Industry",
     date: "December 15, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/70/1200/630",
     body: `<div class="article-body">
 <p>The e-commerce market is enormous and growing. Brands selling on Shopify, WooCommerce, and direct-to-consumer channels need specialized tools that platform plugins don't fully cover. A niche SaaS for e-commerce brands can find passionate, paying customers quickly.</p>
 <h2 id="review-management">1. Review and UGC Management</h2>
@@ -653,6 +676,7 @@ ${cta("Build an E-commerce SaaS")}
     tag: "Technical",
     date: "December 13, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/71/1200/630",
     body: `<div class="article-body">
 <p>Performance is a retention factor. Users who experience a slow product churn at 2–3x the rate of users who experience a fast one. These 7 optimizations are the highest-ROI performance improvements for most SaaS products.</p>
 <h2 id="optimize-db-queries">1. Fix N+1 Database Queries (Biggest Impact)</h2>
@@ -679,6 +703,7 @@ ${cta("Build a Performant SaaS From Day One")}
     tag: "Industry",
     date: "December 11, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/72/1200/630",
     body: `<div class="article-body">
 <p>Logistics is one of the most operational-heavy industries in the world — and also one of the most underserved by modern software. Many delivery companies still dispatch with phone calls and track routes on paper maps. A modern SaaS can win customers quickly with features that genuinely save time and money.</p>
 <h2 id="route-optimization">1. Route Optimization</h2>
@@ -703,6 +728,7 @@ ${cta("Build a Logistics SaaS")}
     tag: "Product",
     date: "December 9, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/73/1200/630",
     body: `<div class="article-body">
 <p>Integrations are one of the most powerful features in a SaaS product — not just because they add functionality, but because every integration makes your product harder to leave. A user who has connected your app to their Slack, Google Calendar, and CRM has built a workflow around your product. Switching becomes painful.</p>
 <h2 id="which-integrations-first">Which Integrations to Build First</h2>
@@ -731,6 +757,7 @@ ${cta("Build Integrations That Drive Retention")}
     tag: "AI",
     date: "December 7, 2025",
     readTime: "6 min read",
+    ogImage: "https://picsum.photos/id/74/1200/630",
     body: `<div class="article-body">
 <p>Document AI SaaS products are in massive demand. Lawyers analyzing contracts, accountants reviewing financial statements, researchers summarizing papers, HR teams processing resumes — every knowledge worker deals with documents daily. Here's how to build the technical foundation.</p>
 <h2 id="architecture">The Technical Architecture</h2>
@@ -767,6 +794,7 @@ ${cta("Build Your Document AI SaaS")}
     tag: "Technical",
     date: "December 5, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/75/1200/630",
     body: `<div class="article-body">
 <p>The first time a customer messages you "your app is down" before you knew it was down is a bad day. The second time it happens, you've damaged their trust. Monitoring is the infrastructure that tells you about problems before customers do.</p>
 <h2 id="error-tracking">1. Error Tracking with Sentry</h2>
@@ -791,6 +819,7 @@ ${cta("Build a Production-Ready SaaS")}
     tag: "Industry",
     date: "December 3, 2025",
     readTime: "6 min read",
+    ogImage: "https://picsum.photos/id/76/1200/630",
     body: `<div class="article-body">
 <p>Healthcare SaaS is a massive, underserved, and high-value market. The barrier most developers face: HIPAA compliance. But HIPAA is manageable with the right architecture — and the premium pricing healthcare practices pay makes it worth the investment.</p>
 <h2 id="what-is-hipaa">What HIPAA Actually Requires</h2>
@@ -820,6 +849,7 @@ ${cta("Build HIPAA-Compliant Healthcare SaaS")}
     tag: "Technical",
     date: "December 1, 2025",
     readTime: "5 min read",
+    ogImage: "https://picsum.photos/id/77/1200/630",
     body: `<div class="article-body">
 <p>Data loss is one of the few things that can permanently destroy a SaaS business. Customers can forgive downtime. They cannot forgive losing their data. A proper backup and disaster recovery strategy is non-negotiable before you have paying customers.</p>
 <h2 id="supabase-backups">Supabase Backup Configuration</h2>

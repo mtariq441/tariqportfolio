@@ -36,6 +36,7 @@ export const POSTS: BlogPost[] = [
     tag: "Case Study",
     date: "April 17, 2026",
     readTime: "7 min read",
+    ogImage: "https://picsum.photos/id/10/1200/630",
     body: `
 <div class="article-body">
   <p>When people hear I've built <strong>350+ SaaS applications on Replit</strong>, the first question is always the same: "How is that even possible?" The second question is usually: "Are they real products or just demos?"</p>
@@ -99,6 +100,7 @@ export const POSTS: BlogPost[] = [
     tag: "Guide",
     date: "April 15, 2026",
     readTime: "6 min read",
+    ogImage: "https://picsum.photos/id/11/1200/630",
     body: `
 <div class="article-body">
   <p>Three years ago, if you told a VC-backed startup to build their product on Replit, they'd laugh. Today, some of the fastest-growing SaaS companies — including products generating $1M+ ARR — are built entirely on Replit.</p>
@@ -162,6 +164,7 @@ export const POSTS: BlogPost[] = [
     tag: "Technical",
     date: "April 12, 2026",
     readTime: "8 min read",
+    ogImage: "https://picsum.photos/id/12/1200/630",
     body: `
 <div class="article-body">
   <p>After building <strong>350+ SaaS products</strong> across six years, I've tried almost every tool, framework, and database combination imaginable. Today, I use the same four-tool stack for virtually every SaaS build. It's not trendy — it's proven.</p>
@@ -231,6 +234,7 @@ export const POSTS: BlogPost[] = [
     tag: "Hiring Guide",
     date: "April 10, 2026",
     readTime: "6 min read",
+    ogImage: "https://picsum.photos/id/13/1200/630",
     body: `
 <div class="article-body">
   <p>I've been a full-stack SaaS developer on Fiverr for years. I've seen hundreds of project briefs, and I've talked to founders who had great experiences hiring on Fiverr — and founders who had very bad ones. The difference is almost never the platform. It's the process.</p>
@@ -293,6 +297,7 @@ export const POSTS: BlogPost[] = [
   },
   {
     slug: "mvp-to-launch-4-weeks-saas",
+    ogImage: "https://picsum.photos/id/14/1200/630",
     title: "MVP to Launch in 4 Weeks: My Exact Process for Building SaaS That Founders Love",
     description: "The 4-week SaaS launch is real — if you follow the right process. Muhammad Tariq breaks down his exact week-by-week plan for taking a SaaS idea from zero to live paying customers.",
     tag: "Process",
