@@ -631,6 +631,7 @@ function blogPostHtml(post: BlogPost): string {
         </div>
         <div class="byline-badges">
           <span class="byline-badge">${post.date}</span>
+          ${post.dateModified && post.dateModified !== post.date ? `<span class="byline-badge byline-badge--updated">Updated on ${post.dateModified}</span>` : ""}
           <span class="byline-badge">${post.readTime}</span>
         </div>
       </div>

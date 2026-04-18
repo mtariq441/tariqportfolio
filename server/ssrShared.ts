@@ -126,6 +126,7 @@ img{max-width:100%;height:auto;display:block}
 .byline-sub{font-size:.75rem;color:rgba(255,255,255,.4);font-weight:500}
 .byline-badges{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-left:auto}
 .byline-badge{font-size:.68rem;font-weight:700;color:rgba(255,255,255,.4);background:rgba(255,255,255,.06);padding:.3rem .75rem;border-radius:999px;text-transform:uppercase;letter-spacing:.06em}
+.byline-badge--updated{color:var(--neon);background:rgba(215,255,0,.08)}
 
 /* ARTICLE BODY */
 .article-body{font-size:1.05rem;color:rgba(255,255,255,.78);line-height:1.85}
