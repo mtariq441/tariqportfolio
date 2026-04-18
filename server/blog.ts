@@ -12,6 +12,7 @@ export interface BlogPost {
   description: string;
   tag: string;
   date: string;
+  dateModified?: string;
   readTime: string;
   body: string;
 }
@@ -523,6 +524,7 @@ function blogPostHtml(post: BlogPost): string {
 </aside>`;
 
   const isoDate = parsePostDate(post.date);
+  const isoDateModified = post.dateModified ? parsePostDate(post.dateModified) : isoDate;
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -530,7 +532,7 @@ function blogPostHtml(post: BlogPost): string {
       "headline": post.title,
       "description": post.description,
       "datePublished": isoDate,
-      "dateModified": isoDate,
+      "dateModified": isoDateModified,
       "url": `${SITE}/blog/${post.slug}`,
       "image": `${SITE}/og-image.png`,
       "author": {
