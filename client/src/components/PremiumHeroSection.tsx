@@ -2,6 +2,19 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
 import { ArrowRight, ArrowUpRight, Link2, Twitter, Linkedin } from "lucide-react";
 import { SiFiverr } from "react-icons/si";
+import maraNikolicImg from "@assets/image_1762114716597.png";
+import danaisaUrgellesImg from "@assets/image_1762202849213.png";
+import kamMalikImg from "@assets/image_1762202919284.png";
+import kateBagoyImg from "@assets/image_1762202947311.png";
+import johnDSaundersImg from "@assets/image_1762202781701.png";
+
+const clientAvatars = [
+  { src: maraNikolicImg, initials: "MN", name: "Mara Nikolic" },
+  { src: danaisaUrgellesImg, initials: "DU", name: "Danaisa Urgelles" },
+  { src: kamMalikImg, initials: "KM", name: "Kam Malik" },
+  { src: kateBagoyImg, initials: "KB", name: "Kate Bagoy" },
+  { src: johnDSaundersImg, initials: "JS", name: "John D Saunders" },
+];
 
 export function PremiumHeroSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -87,13 +100,18 @@ export function PremiumHeroSection() {
               {/* Social proof avatars */}
               <div className="flex items-center gap-4">
                 <div className="flex -space-x-2">
-                  {["MN", "DU", "KM", "KB", "JS"].map((initials, i) => (
+                  {clientAvatars.map((client, i) => (
                     <div
                       key={i}
-                      className="w-9 h-9 rounded-full border-2 flex items-center justify-center text-[10px] font-black flex-shrink-0"
-                      style={{ background: "#CCFF00", color: "#3700FF", borderColor: "#3700FF", zIndex: 5 - i }}
+                      className="w-9 h-9 rounded-full border-2 overflow-hidden flex-shrink-0"
+                      style={{ borderColor: "#CCFF00", zIndex: 5 - i }}
+                      title={client.name}
                     >
-                      {initials}
+                      <img
+                        src={client.src}
+                        alt={client.name}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   ))}
                 </div>
