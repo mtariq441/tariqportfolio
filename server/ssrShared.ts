@@ -3,6 +3,7 @@ export interface SsrPageOptions {
   description: string;
   canonical: string;
   ogImage?: string;
+  ogType?: string;
   body: string;
   isPost?: boolean;
   structuredData?: object | object[];
@@ -24,7 +25,7 @@ function head(opts: SsrPageOptions): string {
 <meta name="author" content="Muhammad Tariq">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="${opts.canonical}">
-<meta property="og:type" content="article">
+<meta property="og:type" content="${opts.ogType ?? "website"}">
 <meta property="og:title" content="${opts.title}">
 <meta property="og:description" content="${opts.description}">
 <meta property="og:url" content="${opts.canonical}">

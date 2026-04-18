@@ -554,6 +554,7 @@ function blogPostHtml(post: BlogPost): string {
     title: `${post.title} | Muhammad Tariq`,
     description: post.description,
     canonical: `${SITE}/blog/${post.slug}`,
+    ogType: "article",
     isPost: true,
     structuredData,
     body: `
