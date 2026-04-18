@@ -662,3 +662,8 @@ export function getBlogPostHtml(slug: string): string | null {
   cachedBlogPostHtmlMap.set(slug, html);
   return html;
 }
+
+export function clearBlogCaches(): void {
+  cachedBlogIndexHtml = null;
+  cachedBlogPostHtmlMap.clear();
+}

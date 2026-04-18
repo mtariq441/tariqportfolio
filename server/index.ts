@@ -23,8 +23,8 @@ async function startServer() {
     next();
   });
 
-  const { getBlogIndexHtml, getBlogPostHtml, prewarmBlogCaches } = await import('./blog.js');
-  const { getHomeHtml } = await import('./home.js');
+  const { getBlogIndexHtml, getBlogPostHtml, prewarmBlogCaches, clearBlogCaches } = await import('./blog.js');
+  const { getHomeHtml, clearHomeCache } = await import('./home.js');
   const { getIntegrationsHtml } = await import('./integrations.js');
 
   if (isProd) {
@@ -33,6 +33,24 @@ async function startServer() {
     prewarmBlogCaches();
     console.log('SSR blog index and post caches pre-warmed');
   }
+
+  app.post('/admin/cache/clear', (req, res) => {
+    const token = process.env.CACHE_CLEAR_TOKEN;
+    if (!token) {
+      res.status(503).json({ error: 'Cache clear endpoint is not configured (CACHE_CLEAR_TOKEN not set).' });
+      return;
+    }
+    const authHeader = req.headers['authorization'] || '';
+    const provided = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : '';
+    if (!provided || provided !== token) {
+      res.status(401).json({ error: 'Unauthorized.' });
+      return;
+    }
+    clearBlogCaches();
+    clearHomeCache();
+    console.log('[cache] Blog and home caches cleared via /admin/cache/clear');
+    res.json({ cleared: ['blogIndex', 'blogPosts', 'home'] });
+  });
 
   if (isProd) {
     const distPublic = path.resolve(__dirname, 'public');

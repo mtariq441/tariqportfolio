@@ -396,3 +396,7 @@ export function getHomeHtml(isProd: boolean): string {
   if (isProd && cachedSpaAssets !== null) cachedHomeHtml = html;
   return html;
 }
+
+export function clearHomeCache(): void {
+  cachedHomeHtml = null;
+}
