@@ -590,6 +590,11 @@ function blogPostHtml(post: BlogPost): string {
         "@type": "WebPage",
         "@id": `${SITE}/blog/${post.slug}`,
       },
+      ...(post.readTime ? (() => {
+        const mins = parseInt(post.readTime, 10);
+        return isNaN(mins) ? {} : { "timeRequired": `PT${mins}M` };
+      })() : {}),
+      ...(post.body ? { "wordCount": post.body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().split(' ').filter(Boolean).length } : {}),
     },
     {
       "@context": "https://schema.org",
