@@ -548,6 +548,8 @@ function blogPostHtml(post: BlogPost): string {
 
   const isoDate = parsePostDate(post.date);
   const isoDateModified = post.dateModified ? parsePostDate(post.dateModified) : isoDate;
+  const rawImage = post.ogImage || `${SITE}/og-image.png`;
+  const absoluteImage = rawImage.startsWith('http') ? rawImage : `${SITE}${rawImage.startsWith('/') ? '' : '/'}${rawImage}`;
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -557,7 +559,7 @@ function blogPostHtml(post: BlogPost): string {
       "datePublished": isoDate,
       "dateModified": isoDateModified,
       "url": `${SITE}/blog/${post.slug}`,
-      "image": post.ogImage || `${SITE}/og-image.png`,
+      "image": absoluteImage,
       "author": {
         "@type": "Person",
         "@id": `${SITE}/#person`,
