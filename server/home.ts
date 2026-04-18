@@ -88,7 +88,7 @@ export function getHomeHtml(isProd: boolean): string {
         "offers": {
           "@type": "Offer",
           "name": "Full Stack SaaS Development on Replit",
-          "description": "End-to-end SaaS product development — from MVP to production in 2–4 weeks.",
+          "description": "End-to-end SaaS product development — from MVP to production in 2–4 weeks. Specialising in Replit-powered apps with Next.js, Supabase, Stripe, and Clerk.",
           "url": "${FIVERR}",
           "priceCurrency": "USD",
           "availability": "https://schema.org/LimitedAvailability"
