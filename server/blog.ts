@@ -35,6 +35,7 @@ export const POSTS: BlogPost[] = [
     description: "Muhammad Tariq shares the real lessons from building over 350 SaaS products on Replit, including the patterns that generate $1M+ and the mistakes most developers make.",
     tag: "Case Study",
     date: "April 17, 2026",
+    dateModified: "April 18, 2026",
     readTime: "7 min read",
     ogImage: "https://picsum.photos/id/10/1200/630",
     body: `
@@ -436,6 +437,11 @@ function shareButtons(title: string, slug: string): string {
 </div>`;
 }
 
+function updatedLabel(p: BlogPost): string {
+  if (!p.dateModified || p.dateModified === p.date) return '';
+  return `<span class="bc-updated">Updated ${p.dateModified}</span>`;
+}
+
 function blogIndexHtml(): string {
   const [featured, ...rest] = ALL_POSTS;
 
@@ -448,6 +454,7 @@ function blogIndexHtml(): string {
     <span class="bc-date">${featured.date} &nbsp;·&nbsp; ${featured.readTime}</span>
     <span class="bc-read">Read Full Article</span>
   </div>
+  ${updatedLabel(featured)}
 </a>`;
 
   const sideCard = rest[0] ? `
@@ -461,6 +468,7 @@ function blogIndexHtml(): string {
     <span class="bc-date">${rest[0].readTime}</span>
     <span class="bc-read">Read</span>
   </div>
+  ${updatedLabel(rest[0])}
 </a>` : '';
 
   const smallCards = rest.slice(1).map(p => `
@@ -472,6 +480,7 @@ function blogIndexHtml(): string {
     <span class="bc-date">${p.readTime}</span>
     <span class="bc-read">Read</span>
   </div>
+  ${updatedLabel(p)}
 </a>`).join('\n');
 
   const structuredData = {

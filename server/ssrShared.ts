@@ -109,6 +109,7 @@ img{max-width:100%;height:auto;display:block}
 .bc-read{font-size:.72rem;font-weight:800;color:var(--neon);text-transform:uppercase;letter-spacing:.1em;display:flex;align-items:center;gap:.3rem}
 .bc-read::after{content:'→'}
 .bc.featured .bc-read::after{content:'→ Read Full Article'}
+.bc-updated{display:inline-block;margin-top:.55rem;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--neon);background:rgba(204,255,0,.08);border:1px solid rgba(204,255,0,.2);border-radius:999px;padding:.2rem .65rem}
 .section-title{font-size:.7rem;font-weight:900;text-transform:uppercase;letter-spacing:.2em;color:rgba(255,255,255,.3);margin-bottom:1rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.06)}
 
 /* ARTICLE LAYOUT */
