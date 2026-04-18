@@ -65,12 +65,11 @@ async function startServer() {
   }
 
   app.post('/admin/cache/clear', (req, res) => {
-    // Use the raw socket address as the rate-limit key — it is the only IP
-    // that cannot be forged by the client. In production all external requests
-    // arrive via Replit's proxy, so the socket address is the proxy's IP and
-    // all callers share one bucket.  That is acceptable: the endpoint is
-    // admin-only and legitimately called at most a handful of times per hour.
-    const ip = req.socket.remoteAddress || 'unknown';
+    // req.ip is populated by Express using the trusted proxy chain.
+    // With `trust proxy = 1` (set above) Express strips the innermost
+    // forwarded hop (added by Replit's edge proxy) and returns the real
+    // client IP — giving true per-client-IP rate limiting.
+    const ip = req.ip || 'unknown';
 
     if (isRateLimited(ip)) {
       res.setHeader('Retry-After', '60');
