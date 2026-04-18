@@ -7,6 +7,10 @@ import { POSTS5 } from "./blogPosts5.js";
 const SITE = "https://tariqservices.site";
 const FIVERR = "https://www.fiverr.com/tariq_webflow";
 
+function attrEscape(s: string): string {
+  return s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -447,6 +451,7 @@ function blogIndexHtml(): string {
 
   const featuredCard = `
 <a class="bc featured" href="/blog/${featured.slug}">
+  ${featured.ogImage ? `<img class="bc-thumb" src="${featured.ogImage}" alt="${attrEscape(featured.title)}" loading="eager" decoding="async">` : ''}
   <div class="bc-tag">${featured.tag}</div>
   <h2>${featured.title}</h2>
   <p>${featured.description}</p>
@@ -458,21 +463,25 @@ function blogIndexHtml(): string {
 </a>`;
 
   const sideCard = rest[0] ? `
-<a class="bc" href="/blog/${rest[0].slug}" style="height:100%;display:flex;flex-direction:column;justify-content:space-between">
-  <div>
-    <div class="bc-tag">${rest[0].tag}</div>
-    <h2>${rest[0].title}</h2>
-    <p>${rest[0].description}</p>
+<a class="bc" href="/blog/${rest[0].slug}" style="height:100%;display:flex;flex-direction:column">
+  ${rest[0].ogImage ? `<img class="bc-thumb" src="${rest[0].ogImage}" alt="${attrEscape(rest[0].title)}" loading="lazy" decoding="async">` : ''}
+  <div style="display:flex;flex-direction:column;justify-content:space-between;flex:1">
+    <div>
+      <div class="bc-tag">${rest[0].tag}</div>
+      <h2>${rest[0].title}</h2>
+      <p>${rest[0].description}</p>
+    </div>
+    <div class="bc-meta">
+      <span class="bc-date">${rest[0].readTime}</span>
+      <span class="bc-read">Read</span>
+    </div>
+    ${updatedLabel(rest[0])}
   </div>
-  <div class="bc-meta">
-    <span class="bc-date">${rest[0].readTime}</span>
-    <span class="bc-read">Read</span>
-  </div>
-  ${updatedLabel(rest[0])}
 </a>` : '';
 
   const smallCards = rest.slice(1).map(p => `
 <a class="bc" href="/blog/${p.slug}">
+  ${p.ogImage ? `<img class="bc-thumb" src="${p.ogImage}" alt="${attrEscape(p.title)}" loading="lazy" decoding="async">` : ''}
   <div class="bc-tag">${p.tag}</div>
   <h2>${p.title}</h2>
   <p>${p.description}</p>
