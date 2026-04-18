@@ -143,8 +143,9 @@ export function getHomeHtml(isProd: boolean): string {
     :root{--blue:#3700FF;--neon:#CCFF00;--dark:#0a0a14}
     body{font-family:'Inter',system-ui,sans-serif;background:var(--dark);color:#fff;line-height:1.7;overflow-x:hidden}
     a{color:var(--neon);text-decoration:none}
-    #spa-root{display:none}
-    #ssr-shell{display:block}
+    #spa-root{display:none;opacity:0;transform:translateY(4px);transition:opacity .35s ease,transform .35s ease}
+    #ssr-shell{display:block;opacity:1;transition:opacity .35s ease}
+    @media(prefers-reduced-motion:reduce){#spa-root,#ssr-shell{transition:none}}
     .ssr-nav{position:sticky;top:0;z-index:100;background:rgba(10,10,20,0.97);backdrop-filter:blur(24px);border-bottom:1px solid rgba(204,255,0,0.1);padding:0 1.5rem}
     .ssr-nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;gap:1rem}
     .ssr-logo{display:flex;align-items:center;gap:.75rem;color:#fff;font-weight:900;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase}
@@ -322,9 +323,21 @@ export function getHomeHtml(isProd: boolean): string {
 
     var observer = new MutationObserver(function () {
       if (root.children.length > 0) {
-        ssrShell.style.display = 'none';
-        spaRoot.style.display = 'block';
         observer.disconnect();
+        ssrShell.style.opacity = '0';
+        spaRoot.style.display = 'block';
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            spaRoot.style.opacity = '1';
+            spaRoot.style.transform = 'translateY(0)';
+          });
+        });
+        var shellHidden = false;
+        function hideShell() {
+          if (!shellHidden) { shellHidden = true; ssrShell.style.display = 'none'; }
+        }
+        ssrShell.addEventListener('transitionend', hideShell, { once: true });
+        setTimeout(hideShell, 500);
       }
     });
     observer.observe(root, { childList: true });
