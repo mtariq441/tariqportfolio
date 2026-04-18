@@ -200,10 +200,12 @@ img{max-width:100%;height:auto;display:block}
 .back-link::before{content:'←'}
 
 /* BREADCRUMB */
-.breadcrumb{font-size:.75rem;color:rgba(255,255,255,.3);margin-bottom:2rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
-.breadcrumb a{color:rgba(255,255,255,.3);text-decoration:none}
+.breadcrumb{font-size:.75rem;color:rgba(255,255,255,.3);margin-bottom:2rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;flex-wrap:nowrap;overflow:hidden}
+.breadcrumb a{color:rgba(255,255,255,.3);text-decoration:none;white-space:nowrap}
 .breadcrumb a:hover{color:var(--neon)}
-.breadcrumb span{color:rgba(255,255,255,.15)}
+.breadcrumb>span[aria-hidden]{color:rgba(255,255,255,.15);flex-shrink:0;white-space:nowrap}
+.breadcrumb .bc-current{color:rgba(255,255,255,.3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+@media(max-width:639px){.breadcrumb a{padding:.55rem .3rem;min-height:44px;display:inline-flex;align-items:center}}
 
 /* FOOTER */
 .site-footer{border-top:1px solid rgba(255,255,255,.06);padding:2.5rem 1.5rem;background:rgba(0,0,0,.3)}

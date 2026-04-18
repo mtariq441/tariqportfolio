@@ -625,7 +625,7 @@ function blogPostHtml(post: BlogPost): string {
       <span aria-hidden="true"> &rsaquo; </span>
       <a href="${SITE}/blog">Blog</a>
       <span aria-hidden="true"> &rsaquo; </span>
-      ${post.title}
+      <span class="bc-current">${post.title}</span>
     </nav>
     <div class="article-header">
       <div class="article-tag">${post.tag}</div>
