@@ -613,6 +613,13 @@ function blogPostHtml(post: BlogPost): string {
 <div class="article-wrap">
   <main>
     <a href="/blog" class="back-link">Back to Blog</a>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="${SITE}">Home</a>
+      <span aria-hidden="true"> &rsaquo; </span>
+      <a href="${SITE}/blog">Blog</a>
+      <span aria-hidden="true"> &rsaquo; </span>
+      ${post.title}
+    </nav>
     <div class="article-header">
       <div class="article-tag">${post.tag}</div>
       <h1 class="article-title">${post.title}</h1>
