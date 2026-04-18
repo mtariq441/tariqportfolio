@@ -25,6 +25,7 @@ async function startServer() {
 
   const { getBlogIndexHtml, getBlogPostHtml, prewarmBlogCaches } = await import('./blog.js');
   const { getHomeHtml } = await import('./home.js');
+  const { getIntegrationsHtml } = await import('./integrations.js');
 
   if (isProd) {
     getHomeHtml(true);
@@ -74,6 +75,13 @@ async function startServer() {
       res.setHeader('Content-Type', 'text/html; charset=utf-8');
       res.setHeader('Cache-Control', 'public, max-age=3600');
       res.send(html);
+    });
+
+    // SSR Integrations resource page
+    app.get('/integrations', (_req, res) => {
+      res.setHeader('Content-Type', 'text/html; charset=utf-8');
+      res.setHeader('Cache-Control', 'public, max-age=3600');
+      res.send(getIntegrationsHtml());
     });
 
     app.use(
@@ -134,6 +142,12 @@ async function startServer() {
       if (!html) { res.status(404).end(); return; }
       res.setHeader('Content-Type', 'text/html; charset=utf-8');
       res.send(html);
+    });
+
+    // SSR Integrations resource page (dev)
+    app.get('/integrations', (_req, res) => {
+      res.setHeader('Content-Type', 'text/html; charset=utf-8');
+      res.send(getIntegrationsHtml());
     });
 
     app.use(vite.middlewares);

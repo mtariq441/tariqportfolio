@@ -2,6 +2,7 @@ import { ssrPage } from "./ssrShared.js";
 import { POSTS2 } from "./blogPosts2.js";
 import { POSTS3 } from "./blogPosts3.js";
 import { POSTS4 } from "./blogPosts4.js";
+import { POSTS5 } from "./blogPosts5.js";
 
 const SITE = "https://tariqservices.site";
 const FIVERR = "https://www.fiverr.com/tariq_webflow";
@@ -373,7 +374,7 @@ export const POSTS: BlogPost[] = [
   },
 ];
 
-const ALL_POSTS: BlogPost[] = [...POSTS, ...POSTS2, ...POSTS3, ...POSTS4];
+const ALL_POSTS: BlogPost[] = [...POSTS, ...POSTS2, ...POSTS3, ...POSTS4, ...POSTS5];
 
 function parsePostDate(dateStr: string): string {
   const d = new Date(dateStr);
