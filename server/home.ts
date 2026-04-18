@@ -324,18 +324,56 @@ export function getHomeHtml(isProd: boolean): string {
     var observer = new MutationObserver(function () {
       if (root.children.length > 0) {
         observer.disconnect();
+
+        var savedScrollY = window.scrollY;
+        var hash = window.location.hash;
+
         ssrShell.style.opacity = '0';
         spaRoot.style.display = 'block';
+
+        window.scrollTo(0, savedScrollY);
+
         requestAnimationFrame(function () {
           requestAnimationFrame(function () {
             spaRoot.style.opacity = '1';
             spaRoot.style.transform = 'translateY(0)';
+
+            window.scrollTo(0, savedScrollY);
           });
         });
+
+        function scrollToAnchor() {
+          if (!hash) return;
+          var target = document.querySelector(hash);
+          if (target) {
+            target.scrollIntoView({ behavior: 'auto' });
+          } else {
+            var attempts = 0;
+            var interval = setInterval(function () {
+              attempts++;
+              var el = document.querySelector(hash);
+              if (el) {
+                clearInterval(interval);
+                el.scrollIntoView({ behavior: 'auto' });
+              } else if (attempts >= 20) {
+                clearInterval(interval);
+              }
+            }, 50);
+          }
+        }
+
         var shellHidden = false;
         function hideShell() {
-          if (!shellHidden) { shellHidden = true; ssrShell.style.display = 'none'; }
+          if (!shellHidden) {
+            shellHidden = true;
+            ssrShell.style.display = 'none';
+            scrollToAnchor();
+          }
         }
+        spaRoot.addEventListener('transitionend', function onSpaVisible() {
+          spaRoot.removeEventListener('transitionend', onSpaVisible);
+          scrollToAnchor();
+        });
         ssrShell.addEventListener('transitionend', hideShell, { once: true });
         setTimeout(hideShell, 500);
       }
