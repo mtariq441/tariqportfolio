@@ -23,12 +23,14 @@ async function startServer() {
     next();
   });
 
-  const { getBlogIndexHtml, getBlogPostHtml } = await import('./blog.js');
+  const { getBlogIndexHtml, getBlogPostHtml, prewarmBlogCaches } = await import('./blog.js');
   const { getHomeHtml } = await import('./home.js');
 
   if (isProd) {
     getHomeHtml(true);
     console.log('SSR home page cache pre-warmed');
+    prewarmBlogCaches();
+    console.log('SSR blog index and post caches pre-warmed');
   }
 
   if (isProd) {

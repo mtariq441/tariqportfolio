@@ -585,12 +585,28 @@ function blogPostHtml(post: BlogPost): string {
   });
 }
 
+let cachedBlogIndexHtml: string | null = null;
+const cachedBlogPostHtmlMap = new Map<string, string>();
+
+export function prewarmBlogCaches(): void {
+  getBlogIndexHtml();
+  for (const post of ALL_POSTS) {
+    getBlogPostHtml(post.slug);
+  }
+}
+
 export function getBlogIndexHtml(): string {
-  return blogIndexHtml();
+  if (cachedBlogIndexHtml !== null) return cachedBlogIndexHtml;
+  const html = blogIndexHtml();
+  cachedBlogIndexHtml = html;
+  return html;
 }
 
 export function getBlogPostHtml(slug: string): string | null {
+  if (cachedBlogPostHtmlMap.has(slug)) return cachedBlogPostHtmlMap.get(slug)!;
   const post = ALL_POSTS.find(p => p.slug === slug);
   if (!post) return null;
-  return blogPostHtml(post);
+  const html = blogPostHtml(post);
+  cachedBlogPostHtmlMap.set(slug, html);
+  return html;
 }
