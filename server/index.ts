@@ -8,6 +8,32 @@ const isProd = process.env.NODE_ENV === 'production';
 
 const SEO_STATIC = ['/robots.txt', '/sitemap.xml'];
 
+// Lightweight in-memory rate limiter for /admin/cache/clear
+// Max 5 requests per IP per 60-second window.
+const RATE_LIMIT_MAX = 5;
+const RATE_LIMIT_WINDOW_MS = 60_000;
+interface RateBucket { count: number; resetAt: number }
+const rateBuckets = new Map<string, RateBucket>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  let bucket = rateBuckets.get(ip);
+  if (!bucket || now >= bucket.resetAt) {
+    bucket = { count: 0, resetAt: now + RATE_LIMIT_WINDOW_MS };
+    rateBuckets.set(ip, bucket);
+  }
+  bucket.count += 1;
+  return bucket.count > RATE_LIMIT_MAX;
+}
+
+// Periodically evict expired buckets so the map does not grow unbounded.
+setInterval(() => {
+  const now = Date.now();
+  for (const [ip, bucket] of rateBuckets) {
+    if (now >= bucket.resetAt) rateBuckets.delete(ip);
+  }
+}, RATE_LIMIT_WINDOW_MS);
+
 async function startServer() {
   const app = express();
 
@@ -35,6 +61,16 @@ async function startServer() {
   }
 
   app.post('/admin/cache/clear', (req, res) => {
+    const ip = (req.headers['x-forwarded-for'] as string | undefined)?.split(',')[0].trim()
+      || req.socket.remoteAddress
+      || 'unknown';
+
+    if (isRateLimited(ip)) {
+      res.setHeader('Retry-After', '60');
+      res.status(429).json({ error: 'Too many requests. Try again in 60 seconds.' });
+      return;
+    }
+
     const token = process.env.CACHE_CLEAR_TOKEN;
     if (!token) {
       res.status(503).json({ error: 'Cache clear endpoint is not configured (CACHE_CLEAR_TOKEN not set).' });
