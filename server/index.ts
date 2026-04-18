@@ -74,6 +74,7 @@ async function startServer() {
     if (isRateLimited(ip)) {
       const bucket = rateBuckets.get(ip);
       const retryAfter = bucket ? Math.ceil((bucket.resetAt - Date.now()) / 1000) : 60;
+      console.warn(`[rate-limit] /admin/cache/clear blocked IP ${ip} (${bucket?.count ?? '?'} attempts in window)`);
       res.setHeader('Retry-After', String(retryAfter));
       res.status(429).json({ error: `Too many requests. Try again in ${retryAfter} seconds.` });
       return;
