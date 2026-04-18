@@ -35,7 +35,14 @@ export function getHomeHtml(isProd: boolean): string {
     const distPublicDir = path.resolve(__dirname, 'public');
     spaAssets = extractSpaAssets(distPublicDir);
   } else {
-    spaAssets = `<script type="module" src="/src/main.tsx"></script>`;
+    spaAssets = `<script type="module">
+  import RefreshRuntime from '/@react-refresh'
+  RefreshRuntime.injectIntoGlobalHook(window)
+  window.$RefreshReg$ = () => {}
+  window.$RefreshSig$ = () => () => {}
+  window.__vite_plugin_react_preamble_installed__ = true
+</script>
+<script type="module" src="/src/main.tsx"></script>`;
   }
 
   const html = `<!DOCTYPE html>
