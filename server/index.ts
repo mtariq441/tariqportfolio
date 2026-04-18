@@ -38,6 +38,10 @@ async function startServer() {
   const app = express();
 
   app.disable('x-powered-by');
+  // Trust one proxy hop (Replit's edge proxy) so req.ip resolves to the real
+  // client IP from X-Forwarded-For rather than the proxy's address.
+  // This is safe because only the innermost trusted proxy appends the entry.
+  app.set('trust proxy', 1);
   app.use(compression());
 
   // www → non-www canonical redirect (constrained to known domain)
@@ -61,9 +65,12 @@ async function startServer() {
   }
 
   app.post('/admin/cache/clear', (req, res) => {
-    const ip = (req.headers['x-forwarded-for'] as string | undefined)?.split(',')[0].trim()
-      || req.socket.remoteAddress
-      || 'unknown';
+    // Use the raw socket address as the rate-limit key — it is the only IP
+    // that cannot be forged by the client. In production all external requests
+    // arrive via Replit's proxy, so the socket address is the proxy's IP and
+    // all callers share one bucket.  That is acceptable: the endpoint is
+    // admin-only and legitimately called at most a handful of times per hour.
+    const ip = req.socket.remoteAddress || 'unknown';
 
     if (isRateLimited(ip)) {
       res.setHeader('Retry-After', '60');
