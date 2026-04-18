@@ -1,4 +1,5 @@
 import express from 'express';
+import compression from 'compression';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -10,7 +11,20 @@ const SEO_STATIC = ['/robots.txt', '/sitemap.xml'];
 async function startServer() {
   const app = express();
 
+  app.disable('x-powered-by');
+  app.use(compression());
+
+  // www → non-www canonical redirect (constrained to known domain)
+  app.use((req, res, next) => {
+    const host = req.headers.host || '';
+    if (host === 'www.tariqservices.site') {
+      return res.redirect(301, `https://tariqservices.site${req.url}`);
+    }
+    next();
+  });
+
   const { getBlogIndexHtml, getBlogPostHtml } = await import('./blog.js');
+  const { getHomeHtml } = await import('./home.js');
 
   if (isProd) {
     const distPublic = path.resolve(__dirname, 'public');
@@ -31,6 +45,13 @@ async function startServer() {
       res.setHeader('Content-Type', 'application/xml; charset=utf-8');
       res.setHeader('Cache-Control', 'public, max-age=3600');
       res.sendFile(path.join(distPublic, 'sitemap.xml'));
+    });
+
+    // SSR Home route
+    app.get('/', (_req, res) => {
+      res.setHeader('Content-Type', 'text/html; charset=utf-8');
+      res.setHeader('Cache-Control', 'public, max-age=3600');
+      res.send(getHomeHtml());
     });
 
     // SSR Blog routes
@@ -57,6 +78,7 @@ async function startServer() {
     );
 
     app.get('*', (_req, res) => {
+      res.setHeader('Content-Type', 'text/html; charset=utf-8');
       res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
       res.sendFile(path.join(distPublic, 'index.html'));
     });
@@ -86,6 +108,12 @@ async function startServer() {
       res.setHeader('Content-Type', 'application/xml; charset=utf-8');
       res.setHeader('Cache-Control', 'public, max-age=3600');
       res.sendFile(path.resolve('./client/public/sitemap.xml'));
+    });
+
+    // SSR Home route (dev)
+    app.get('/', (_req, res) => {
+      res.setHeader('Content-Type', 'text/html; charset=utf-8');
+      res.send(getHomeHtml());
     });
 
     // SSR Blog routes (dev)

@@ -1,12 +1,20 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { useRef, useState } from "react";
+import { ArrowRight, ArrowUpRight, Link2, Twitter, Linkedin } from "lucide-react";
 import { SiFiverr } from "react-icons/si";
 
 export function PremiumHeroSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [copied, setCopied] = useState(false);
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] });
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+
+  function handleCopyLink() {
+    navigator.clipboard.writeText("https://tariqservices.site/").then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  }
 
   return (
     <section
@@ -142,6 +150,46 @@ export function PremiumHeroSection() {
                   </span>
                   <ArrowUpRight className="h-3.5 w-3.5" style={{ color: "rgba(29,191,110,0.6)" }} />
                 </a>
+
+                {/* Social share bar */}
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.3)" }}>Share</span>
+                  <a
+                    href="https://twitter.com/intent/tweet?text=Muhammad+Tariq+%E2%80%94+Replit+SaaS+Developer+%7C+350%2B+apps+shipped%2C+%2427M%2B+client+revenue&url=https%3A%2F%2Ftariqservices.site%2F"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Share on X (Twitter)"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide px-3 py-1.5 rounded-full transition-all hover:scale-105"
+                    style={{ background: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.6)", border: "1px solid rgba(255,255,255,0.12)" }}
+                  >
+                    <Twitter className="h-3 w-3" />
+                    X
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftariqservices.site%2F"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Share on LinkedIn"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide px-3 py-1.5 rounded-full transition-all hover:scale-105"
+                    style={{ background: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.6)", border: "1px solid rgba(255,255,255,0.12)" }}
+                  >
+                    <Linkedin className="h-3 w-3" />
+                    LinkedIn
+                  </a>
+                  <button
+                    onClick={handleCopyLink}
+                    aria-label="Copy page link"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide px-3 py-1.5 rounded-full transition-all hover:scale-105 cursor-pointer"
+                    style={{
+                      background: copied ? "rgba(204,255,0,0.15)" : "rgba(255,255,255,0.08)",
+                      color: copied ? "#CCFF00" : "rgba(255,255,255,0.6)",
+                      border: copied ? "1px solid rgba(204,255,0,0.4)" : "1px solid rgba(255,255,255,0.12)",
+                    }}
+                  >
+                    <Link2 className="h-3 w-3" />
+                    {copied ? "Copied!" : "Copy Link"}
+                  </button>
+                </div>
               </div>
             </motion.div>
           </div>
