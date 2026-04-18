@@ -338,22 +338,41 @@ export function getHomeHtml(isProd: boolean): string {
         ssrShell.style.opacity = '0';
         spaRoot.style.display = 'block';
 
-        window.scrollTo(0, savedScrollY);
+        // Only restore scroll position when there is no hash anchor.
+        // When a hash is present, scrollToAnchor will handle positioning
+        // so restoring savedScrollY first would cause a double-scroll jump.
+        if (!hash) {
+          // Temporarily override CSS scroll-behavior so the restoration is
+          // instant rather than animated (smooth CSS would cause a visible jump).
+          var htmlEl = document.documentElement;
+          var prevScrollBehavior = htmlEl.style.scrollBehavior;
+          htmlEl.style.scrollBehavior = 'auto';
+          window.scrollTo(0, savedScrollY);
+          htmlEl.style.scrollBehavior = prevScrollBehavior;
+        }
 
         requestAnimationFrame(function () {
           requestAnimationFrame(function () {
             spaRoot.style.opacity = '1';
             spaRoot.style.transform = 'translateY(0)';
 
-            window.scrollTo(0, savedScrollY);
+            if (!hash) {
+              var htmlEl2 = document.documentElement;
+              var prev2 = htmlEl2.style.scrollBehavior;
+              htmlEl2.style.scrollBehavior = 'auto';
+              window.scrollTo(0, savedScrollY);
+              htmlEl2.style.scrollBehavior = prev2;
+            }
           });
         });
 
+        var anchorScrolled = false;
         function scrollToAnchor() {
-          if (!hash) return;
+          if (!hash || anchorScrolled) return;
+          anchorScrolled = true;
           var target = document.querySelector(hash);
           if (target) {
-            target.scrollIntoView({ behavior: 'auto' });
+            target.scrollIntoView({ behavior: 'smooth' });
           } else {
             var attempts = 0;
             var interval = setInterval(function () {
@@ -361,7 +380,7 @@ export function getHomeHtml(isProd: boolean): string {
               var el = document.querySelector(hash);
               if (el) {
                 clearInterval(interval);
-                el.scrollIntoView({ behavior: 'auto' });
+                el.scrollIntoView({ behavior: 'smooth' });
               } else if (attempts >= 20) {
                 clearInterval(interval);
               }

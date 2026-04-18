@@ -272,6 +272,16 @@ body {
   text-shadow: 0 0 20px rgba(55,0,255,0.5), 0 0 40px rgba(55,0,255,0.2);
 }
 
+/* ===================== SECTION SCROLL OFFSET ===================== */
+/* Prevent the fixed navbar (~65px) from covering section headings on anchor scroll */
+#home,
+#services,
+#portfolio,
+#testimonials,
+#contact {
+  scroll-margin-top: 80px;
+}
+
 /* ===================== SCROLLBAR ===================== */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: #0a0a14; }
