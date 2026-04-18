@@ -47,11 +47,11 @@ async function startServer() {
       res.sendFile(path.join(distPublic, 'sitemap.xml'));
     });
 
-    // SSR Home route
+    // SSR Home route — SEO shell + React SPA hydration
     app.get('/', (_req, res) => {
       res.setHeader('Content-Type', 'text/html; charset=utf-8');
-      res.setHeader('Cache-Control', 'public, max-age=3600');
-      res.send(getHomeHtml());
+      res.setHeader('Cache-Control', 'public, max-age=300, stale-while-revalidate=3600');
+      res.send(getHomeHtml(true));
     });
 
     // SSR Blog routes
@@ -110,10 +110,10 @@ async function startServer() {
       res.sendFile(path.resolve('./client/public/sitemap.xml'));
     });
 
-    // SSR Home route (dev)
+    // SSR Home route (dev) — SEO shell + Vite React SPA hydration
     app.get('/', (_req, res) => {
       res.setHeader('Content-Type', 'text/html; charset=utf-8');
-      res.send(getHomeHtml());
+      res.send(getHomeHtml(false));
     });
 
     // SSR Blog routes (dev)
