@@ -467,10 +467,31 @@ function blogIndexHtml(): string {
   </div>
 </a>`).join('\n');
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Muhammad Tariq — SaaS Development Blog",
+    "description": "Insights on SaaS development, hiring developers, tech stacks, and building $1M+ products on Replit. By Muhammad Tariq — 350+ apps, $27M+ client revenue.",
+    "url": `${SITE}/blog`,
+    "author": {
+      "@type": "Person",
+      "name": "Muhammad Tariq",
+      "url": SITE,
+    },
+    "hasPart": ALL_POSTS.map(p => ({
+      "@type": "BlogPosting",
+      "headline": p.title,
+      "url": `${SITE}/blog/${p.slug}`,
+      "description": p.description,
+      "datePublished": parsePostDate(p.date),
+    })),
+  };
+
   return ssrPage({
     title: "Blog — Muhammad Tariq | Replit SaaS Developer",
     description: "Insights on SaaS development, hiring developers, tech stacks, and building $1M+ products on Replit. By Muhammad Tariq — 350+ apps, $27M+ client revenue.",
     canonical: `${SITE}/blog`,
+    structuredData,
     body: `
 <div class="blog-hero">
   <div class="blog-hero-inner">
