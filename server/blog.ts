@@ -15,6 +15,7 @@ export interface BlogPost {
   dateModified?: string;
   readTime: string;
   body: string;
+  ogImage?: string;
 }
 
 function ctaCard(headline = "Ready to Ship Your SaaS?") {
@@ -555,7 +556,7 @@ function blogPostHtml(post: BlogPost): string {
       "datePublished": isoDate,
       "dateModified": isoDateModified,
       "url": `${SITE}/blog/${post.slug}`,
-      "image": `${SITE}/og-image.png`,
+      "image": post.ogImage || `${SITE}/og-image.png`,
       "author": {
         "@type": "Person",
         "@id": `${SITE}/#person`,
@@ -603,6 +604,7 @@ function blogPostHtml(post: BlogPost): string {
     title: `${post.title} | Muhammad Tariq`,
     description: post.description,
     canonical: `${SITE}/blog/${post.slug}`,
+    ogImage: post.ogImage,
     ogType: "article",
     isPost: true,
     structuredData,
