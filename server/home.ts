@@ -374,17 +374,17 @@ export function getHomeHtml(isProd: boolean): string {
           if (target) {
             target.scrollIntoView({ behavior: 'smooth' });
           } else {
-            var attempts = 0;
-            var interval = setInterval(function () {
-              attempts++;
+            var scrollObserver = new MutationObserver(function () {
               var el = document.querySelector(hash);
               if (el) {
-                clearInterval(interval);
+                scrollObserver.disconnect();
                 el.scrollIntoView({ behavior: 'smooth' });
-              } else if (attempts >= 20) {
-                clearInterval(interval);
               }
-            }, 50);
+            });
+            scrollObserver.observe(document.body, { childList: true, subtree: true });
+            setTimeout(function () {
+              scrollObserver.disconnect();
+            }, 8000);
           }
         }
 
