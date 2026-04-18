@@ -373,6 +373,11 @@ export const POSTS: BlogPost[] = [
 
 const ALL_POSTS: BlogPost[] = [...POSTS, ...POSTS2, ...POSTS3, ...POSTS4];
 
+function parsePostDate(dateStr: string): string {
+  const d = new Date(dateStr);
+  return isNaN(d.getTime()) ? dateStr : d.toISOString().split('T')[0];
+}
+
 function tocFromBody(body: string): string {
   const matches = [...body.matchAll(/<h2 id="([^"]+)">([^<]+)<\/h2>/g)];
   if (matches.length < 2) return '';
@@ -517,11 +522,40 @@ function blogPostHtml(post: BlogPost): string {
   </div>
 </aside>`;
 
+  const isoDate = parsePostDate(post.date);
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": post.description,
+    "datePublished": isoDate,
+    "dateModified": isoDate,
+    "url": `${SITE}/blog/${post.slug}`,
+    "image": `${SITE}/og-image.png`,
+    "author": {
+      "@type": "Person",
+      "@id": `${SITE}/#person`,
+      "name": "Muhammad Tariq",
+      "url": SITE,
+    },
+    "publisher": {
+      "@type": "Person",
+      "@id": `${SITE}/#person`,
+      "name": "Muhammad Tariq",
+      "url": SITE,
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `${SITE}/blog/${post.slug}`,
+    },
+  };
+
   return ssrPage({
     title: `${post.title} | Muhammad Tariq`,
     description: post.description,
     canonical: `${SITE}/blog/${post.slug}`,
     isPost: true,
+    structuredData,
     body: `
 <div class="article-wrap">
   <main>
