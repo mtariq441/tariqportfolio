@@ -384,6 +384,39 @@ export function getHomeHtml(isProd: boolean): string {
             scrollObserver.observe(document.body, { childList: true, subtree: true });
             setTimeout(function () {
               scrollObserver.disconnect();
+              if (!document.querySelector(hash)) {
+                var toast = document.createElement('div');
+                toast.textContent = 'Section not found';
+                toast.setAttribute('role', 'status');
+                toast.setAttribute('aria-live', 'polite');
+                toast.style.cssText = [
+                  'position:fixed',
+                  'bottom:24px',
+                  'left:50%',
+                  'transform:translateX(-50%)',
+                  'background:rgba(30,30,30,0.92)',
+                  'color:#fff',
+                  'padding:10px 20px',
+                  'border-radius:8px',
+                  'font-size:14px',
+                  'font-family:inherit',
+                  'z-index:99999',
+                  'pointer-events:none',
+                  'opacity:0',
+                  'transition:opacity 0.3s ease',
+                  'white-space:nowrap',
+                ].join(';');
+                document.body.appendChild(toast);
+                requestAnimationFrame(function () {
+                  toast.style.opacity = '1';
+                  setTimeout(function () {
+                    toast.style.opacity = '0';
+                    setTimeout(function () {
+                      toast.parentNode && toast.parentNode.removeChild(toast);
+                    }, 350);
+                  }, 3000);
+                });
+              }
             }, 8000);
           }
         }
