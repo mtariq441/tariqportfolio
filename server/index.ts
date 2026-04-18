@@ -72,8 +72,10 @@ async function startServer() {
     const ip = req.ip || 'unknown';
 
     if (isRateLimited(ip)) {
-      res.setHeader('Retry-After', '60');
-      res.status(429).json({ error: 'Too many requests. Try again in 60 seconds.' });
+      const bucket = rateBuckets.get(ip);
+      const retryAfter = bucket ? Math.ceil((bucket.resetAt - Date.now()) / 1000) : 60;
+      res.setHeader('Retry-After', String(retryAfter));
+      res.status(429).json({ error: `Too many requests. Try again in ${retryAfter} seconds.` });
       return;
     }
 
