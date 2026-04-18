@@ -7,7 +7,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SITE = 'https://tariqservices.site';
 const FIVERR = 'https://www.fiverr.com/tariq_webflow';
 
+let cachedSpaAssets: string | null = null;
+let cachedHomeHtml: string | null = null;
+
 function extractSpaAssets(distPublicDir: string): string {
+  if (cachedSpaAssets !== null) return cachedSpaAssets;
   try {
     const indexPath = path.join(distPublicDir, 'index.html');
     const html = fs.readFileSync(indexPath, 'utf-8');
@@ -15,13 +19,17 @@ function extractSpaAssets(distPublicDir: string): string {
     const linkTags = [...html.matchAll(/<link[^>]+rel="(?:stylesheet|modulepreload)"[^>]*>/g)].map(m => m[0]);
     const scriptTags = [...html.matchAll(/<script[^>]+src="\/assets\/[^"]*"[^>]*><\/script>/g)].map(m => m[0]);
 
-    return [...linkTags, ...scriptTags].join('\n  ');
-  } catch {
+    cachedSpaAssets = [...linkTags, ...scriptTags].join('\n  ');
+    return cachedSpaAssets;
+  } catch (err) {
+    console.warn('[SSR] Failed to extract SPA assets from dist/public/index.html — SPA hydration tags will be missing:', err);
     return '';
   }
 }
 
 export function getHomeHtml(isProd: boolean): string {
+  if (isProd && cachedHomeHtml !== null) return cachedHomeHtml;
+
   let spaAssets: string;
   if (isProd) {
     const distPublicDir = path.resolve(__dirname, 'public');
@@ -30,7 +38,7 @@ export function getHomeHtml(isProd: boolean): string {
     spaAssets = `<script type="module" src="/src/main.tsx"></script>`;
   }
 
-  return `<!DOCTYPE html>
+  const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -326,4 +334,7 @@ export function getHomeHtml(isProd: boolean): string {
   ${spaAssets}
 </body>
 </html>`;
+
+  if (isProd && cachedSpaAssets !== null) cachedHomeHtml = html;
+  return html;
 }

@@ -27,6 +27,11 @@ async function startServer() {
   const { getHomeHtml } = await import('./home.js');
 
   if (isProd) {
+    getHomeHtml(true);
+    console.log('SSR home page cache pre-warmed');
+  }
+
+  if (isProd) {
     const distPublic = path.resolve(__dirname, 'public');
 
     app.use((req, res, next) => {
